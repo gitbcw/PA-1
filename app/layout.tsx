@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { NuqsAdapter } from "nuqs/adapters/next/app";
 import { Sidebar } from "@/components/Sidebar";
 import AuthProvider from "@/components/auth/AuthProvider";
+import LogArchiveInitializer from "@/components/LogArchiveInitializer";
 
 const publicSans = Public_Sans({ subsets: ["latin"] });
 
@@ -76,6 +77,7 @@ export default function RootLayout({
               </div>
             </div>
             <Toaster />
+            <LogArchiveInitializer />
           </NuqsAdapter>
         </AuthProvider>
       </body>

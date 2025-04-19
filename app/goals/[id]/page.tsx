@@ -19,7 +19,9 @@ import {
   Target,
   ListTodo,
   LoaderCircle,
+  Share2,
 } from "lucide-react";
+import { GoalHierarchy } from "@/components/goals/GoalHierarchy";
 import Link from "next/link";
 import { formatDate, formatLocalDate } from "@/utils/date";
 
@@ -228,53 +230,8 @@ export default function GoalDetailPage({ params }: GoalDetailPageProps) {
           </Card>
         )}
 
-        {/* 父目标 */}
-        {goal.parent && (
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">父目标</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Link
-                href={`/goals/${goal.parent.id}`}
-                className="flex items-center gap-2 text-primary hover:underline"
-              >
-                <Target className="h-4 w-4" />
-                {goal.parent.title}
-              </Link>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* 子目标 */}
-        {goal.subGoals && goal.subGoals.length > 0 && (
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">子目标</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2">
-                {goal.subGoals.map((subGoal) => (
-                  <li key={subGoal.id}>
-                    <Link
-                      href={`/goals/${subGoal.id}`}
-                      className="flex items-center justify-between hover:bg-accent p-2 rounded-md"
-                    >
-                      <div className="flex items-center gap-2">
-                        <Target className="h-4 w-4" />
-                        <span>{subGoal.title}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        {getLevelBadge(subGoal.level)}
-                        {getStatusBadge(subGoal.status)}
-                      </div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        )}
+        {/* 目标层次结构 */}
+        <GoalHierarchy goalId={goal.id} userId={goal.userId} />
 
         {/* 相关任务 */}
         <Card>

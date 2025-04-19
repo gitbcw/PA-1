@@ -43,6 +43,26 @@ export type Category = $Result.DefaultSelection<Prisma.$CategoryPayload>
  * 
  */
 export type Tag = $Result.DefaultSelection<Prisma.$TagPayload>
+/**
+ * Model TimeRecord
+ * 
+ */
+export type TimeRecord = $Result.DefaultSelection<Prisma.$TimeRecordPayload>
+/**
+ * Model ProgressLog
+ * 
+ */
+export type ProgressLog = $Result.DefaultSelection<Prisma.$ProgressLogPayload>
+/**
+ * Model ImportedFile
+ * 
+ */
+export type ImportedFile = $Result.DefaultSelection<Prisma.$ImportedFilePayload>
+/**
+ * Model LogArchive
+ * 
+ */
+export type LogArchive = $Result.DefaultSelection<Prisma.$LogArchivePayload>
 
 /**
  * Enums
@@ -290,6 +310,46 @@ export class PrismaClient<
     * ```
     */
   get tag(): Prisma.TagDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.timeRecord`: Exposes CRUD operations for the **TimeRecord** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TimeRecords
+    * const timeRecords = await prisma.timeRecord.findMany()
+    * ```
+    */
+  get timeRecord(): Prisma.TimeRecordDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.progressLog`: Exposes CRUD operations for the **ProgressLog** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ProgressLogs
+    * const progressLogs = await prisma.progressLog.findMany()
+    * ```
+    */
+  get progressLog(): Prisma.ProgressLogDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.importedFile`: Exposes CRUD operations for the **ImportedFile** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ImportedFiles
+    * const importedFiles = await prisma.importedFile.findMany()
+    * ```
+    */
+  get importedFile(): Prisma.ImportedFileDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.logArchive`: Exposes CRUD operations for the **LogArchive** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more LogArchives
+    * const logArchives = await prisma.logArchive.findMany()
+    * ```
+    */
+  get logArchive(): Prisma.LogArchiveDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -735,7 +795,11 @@ export namespace Prisma {
     Goal: 'Goal',
     Message: 'Message',
     Category: 'Category',
-    Tag: 'Tag'
+    Tag: 'Tag',
+    TimeRecord: 'TimeRecord',
+    ProgressLog: 'ProgressLog',
+    ImportedFile: 'ImportedFile',
+    LogArchive: 'LogArchive'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -754,7 +818,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "task" | "goal" | "message" | "category" | "tag"
+      modelProps: "user" | "task" | "goal" | "message" | "category" | "tag" | "timeRecord" | "progressLog" | "importedFile" | "logArchive"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1202,6 +1266,302 @@ export namespace Prisma {
           }
         }
       }
+      TimeRecord: {
+        payload: Prisma.$TimeRecordPayload<ExtArgs>
+        fields: Prisma.TimeRecordFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TimeRecordFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TimeRecordFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>
+          }
+          findFirst: {
+            args: Prisma.TimeRecordFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TimeRecordFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>
+          }
+          findMany: {
+            args: Prisma.TimeRecordFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>[]
+          }
+          create: {
+            args: Prisma.TimeRecordCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>
+          }
+          createMany: {
+            args: Prisma.TimeRecordCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TimeRecordCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>[]
+          }
+          delete: {
+            args: Prisma.TimeRecordDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>
+          }
+          update: {
+            args: Prisma.TimeRecordUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>
+          }
+          deleteMany: {
+            args: Prisma.TimeRecordDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TimeRecordUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TimeRecordUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>[]
+          }
+          upsert: {
+            args: Prisma.TimeRecordUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TimeRecordPayload>
+          }
+          aggregate: {
+            args: Prisma.TimeRecordAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTimeRecord>
+          }
+          groupBy: {
+            args: Prisma.TimeRecordGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TimeRecordGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TimeRecordCountArgs<ExtArgs>
+            result: $Utils.Optional<TimeRecordCountAggregateOutputType> | number
+          }
+        }
+      }
+      ProgressLog: {
+        payload: Prisma.$ProgressLogPayload<ExtArgs>
+        fields: Prisma.ProgressLogFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ProgressLogFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ProgressLogFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>
+          }
+          findFirst: {
+            args: Prisma.ProgressLogFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ProgressLogFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>
+          }
+          findMany: {
+            args: Prisma.ProgressLogFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>[]
+          }
+          create: {
+            args: Prisma.ProgressLogCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>
+          }
+          createMany: {
+            args: Prisma.ProgressLogCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ProgressLogCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>[]
+          }
+          delete: {
+            args: Prisma.ProgressLogDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>
+          }
+          update: {
+            args: Prisma.ProgressLogUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>
+          }
+          deleteMany: {
+            args: Prisma.ProgressLogDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ProgressLogUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ProgressLogUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>[]
+          }
+          upsert: {
+            args: Prisma.ProgressLogUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProgressLogPayload>
+          }
+          aggregate: {
+            args: Prisma.ProgressLogAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProgressLog>
+          }
+          groupBy: {
+            args: Prisma.ProgressLogGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ProgressLogGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ProgressLogCountArgs<ExtArgs>
+            result: $Utils.Optional<ProgressLogCountAggregateOutputType> | number
+          }
+        }
+      }
+      ImportedFile: {
+        payload: Prisma.$ImportedFilePayload<ExtArgs>
+        fields: Prisma.ImportedFileFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ImportedFileFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ImportedFileFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>
+          }
+          findFirst: {
+            args: Prisma.ImportedFileFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ImportedFileFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>
+          }
+          findMany: {
+            args: Prisma.ImportedFileFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>[]
+          }
+          create: {
+            args: Prisma.ImportedFileCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>
+          }
+          createMany: {
+            args: Prisma.ImportedFileCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ImportedFileCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>[]
+          }
+          delete: {
+            args: Prisma.ImportedFileDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>
+          }
+          update: {
+            args: Prisma.ImportedFileUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>
+          }
+          deleteMany: {
+            args: Prisma.ImportedFileDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ImportedFileUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ImportedFileUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>[]
+          }
+          upsert: {
+            args: Prisma.ImportedFileUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImportedFilePayload>
+          }
+          aggregate: {
+            args: Prisma.ImportedFileAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateImportedFile>
+          }
+          groupBy: {
+            args: Prisma.ImportedFileGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ImportedFileGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ImportedFileCountArgs<ExtArgs>
+            result: $Utils.Optional<ImportedFileCountAggregateOutputType> | number
+          }
+        }
+      }
+      LogArchive: {
+        payload: Prisma.$LogArchivePayload<ExtArgs>
+        fields: Prisma.LogArchiveFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.LogArchiveFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.LogArchiveFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>
+          }
+          findFirst: {
+            args: Prisma.LogArchiveFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.LogArchiveFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>
+          }
+          findMany: {
+            args: Prisma.LogArchiveFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>[]
+          }
+          create: {
+            args: Prisma.LogArchiveCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>
+          }
+          createMany: {
+            args: Prisma.LogArchiveCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.LogArchiveCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>[]
+          }
+          delete: {
+            args: Prisma.LogArchiveDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>
+          }
+          update: {
+            args: Prisma.LogArchiveUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>
+          }
+          deleteMany: {
+            args: Prisma.LogArchiveDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.LogArchiveUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.LogArchiveUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>[]
+          }
+          upsert: {
+            args: Prisma.LogArchiveUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$LogArchivePayload>
+          }
+          aggregate: {
+            args: Prisma.LogArchiveAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateLogArchive>
+          }
+          groupBy: {
+            args: Prisma.LogArchiveGroupByArgs<ExtArgs>
+            result: $Utils.Optional<LogArchiveGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.LogArchiveCountArgs<ExtArgs>
+            result: $Utils.Optional<LogArchiveCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1292,6 +1652,10 @@ export namespace Prisma {
     message?: MessageOmit
     category?: CategoryOmit
     tag?: TagOmit
+    timeRecord?: TimeRecordOmit
+    progressLog?: ProgressLogOmit
+    importedFile?: ImportedFileOmit
+    logArchive?: LogArchiveOmit
   }
 
   /* Types for Logging */
@@ -1389,12 +1753,18 @@ export namespace Prisma {
     goals: number
     messages: number
     tasks: number
+    timeRecords: number
+    progressLogs: number
+    importedFiles: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     goals?: boolean | UserCountOutputTypeCountGoalsArgs
     messages?: boolean | UserCountOutputTypeCountMessagesArgs
     tasks?: boolean | UserCountOutputTypeCountTasksArgs
+    timeRecords?: boolean | UserCountOutputTypeCountTimeRecordsArgs
+    progressLogs?: boolean | UserCountOutputTypeCountProgressLogsArgs
+    importedFiles?: boolean | UserCountOutputTypeCountImportedFilesArgs
   }
 
   // Custom InputTypes
@@ -1429,6 +1799,27 @@ export namespace Prisma {
     where?: TaskWhereInput
   }
 
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountTimeRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TimeRecordWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountProgressLogsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProgressLogWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
+  export type UserCountOutputTypeCountImportedFilesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ImportedFileWhereInput
+  }
+
 
   /**
    * Count Type TaskCountOutputType
@@ -1437,11 +1828,15 @@ export namespace Prisma {
   export type TaskCountOutputType = {
     subTasks: number
     tags: number
+    timeRecords: number
+    progressLogs: number
   }
 
   export type TaskCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     subTasks?: boolean | TaskCountOutputTypeCountSubTasksArgs
     tags?: boolean | TaskCountOutputTypeCountTagsArgs
+    timeRecords?: boolean | TaskCountOutputTypeCountTimeRecordsArgs
+    progressLogs?: boolean | TaskCountOutputTypeCountProgressLogsArgs
   }
 
   // Custom InputTypes
@@ -1469,6 +1864,20 @@ export namespace Prisma {
     where?: TagWhereInput
   }
 
+  /**
+   * TaskCountOutputType without action
+   */
+  export type TaskCountOutputTypeCountTimeRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TimeRecordWhereInput
+  }
+
+  /**
+   * TaskCountOutputType without action
+   */
+  export type TaskCountOutputTypeCountProgressLogsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProgressLogWhereInput
+  }
+
 
   /**
    * Count Type GoalCountOutputType
@@ -1478,12 +1887,14 @@ export namespace Prisma {
     subGoals: number
     tasks: number
     tags: number
+    progressLogs: number
   }
 
   export type GoalCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     subGoals?: boolean | GoalCountOutputTypeCountSubGoalsArgs
     tasks?: boolean | GoalCountOutputTypeCountTasksArgs
     tags?: boolean | GoalCountOutputTypeCountTagsArgs
+    progressLogs?: boolean | GoalCountOutputTypeCountProgressLogsArgs
   }
 
   // Custom InputTypes
@@ -1516,6 +1927,13 @@ export namespace Prisma {
    */
   export type GoalCountOutputTypeCountTagsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: TagWhereInput
+  }
+
+  /**
+   * GoalCountOutputType without action
+   */
+  export type GoalCountOutputTypeCountProgressLogsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProgressLogWhereInput
   }
 
 
@@ -1818,6 +2236,9 @@ export namespace Prisma {
     goals?: boolean | User$goalsArgs<ExtArgs>
     messages?: boolean | User$messagesArgs<ExtArgs>
     tasks?: boolean | User$tasksArgs<ExtArgs>
+    timeRecords?: boolean | User$timeRecordsArgs<ExtArgs>
+    progressLogs?: boolean | User$progressLogsArgs<ExtArgs>
+    importedFiles?: boolean | User$importedFilesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1853,6 +2274,9 @@ export namespace Prisma {
     goals?: boolean | User$goalsArgs<ExtArgs>
     messages?: boolean | User$messagesArgs<ExtArgs>
     tasks?: boolean | User$tasksArgs<ExtArgs>
+    timeRecords?: boolean | User$timeRecordsArgs<ExtArgs>
+    progressLogs?: boolean | User$progressLogsArgs<ExtArgs>
+    importedFiles?: boolean | User$importedFilesArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1864,6 +2288,9 @@ export namespace Prisma {
       goals: Prisma.$GoalPayload<ExtArgs>[]
       messages: Prisma.$MessagePayload<ExtArgs>[]
       tasks: Prisma.$TaskPayload<ExtArgs>[]
+      timeRecords: Prisma.$TimeRecordPayload<ExtArgs>[]
+      progressLogs: Prisma.$ProgressLogPayload<ExtArgs>[]
+      importedFiles: Prisma.$ImportedFilePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -2269,6 +2696,9 @@ export namespace Prisma {
     goals<T extends User$goalsArgs<ExtArgs> = {}>(args?: Subset<T, User$goalsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$GoalPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     messages<T extends User$messagesArgs<ExtArgs> = {}>(args?: Subset<T, User$messagesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$MessagePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     tasks<T extends User$tasksArgs<ExtArgs> = {}>(args?: Subset<T, User$tasksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    timeRecords<T extends User$timeRecordsArgs<ExtArgs> = {}>(args?: Subset<T, User$timeRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    progressLogs<T extends User$progressLogsArgs<ExtArgs> = {}>(args?: Subset<T, User$progressLogsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    importedFiles<T extends User$importedFilesArgs<ExtArgs> = {}>(args?: Subset<T, User$importedFilesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2764,6 +3194,78 @@ export namespace Prisma {
   }
 
   /**
+   * User.timeRecords
+   */
+  export type User$timeRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    where?: TimeRecordWhereInput
+    orderBy?: TimeRecordOrderByWithRelationInput | TimeRecordOrderByWithRelationInput[]
+    cursor?: TimeRecordWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: TimeRecordScalarFieldEnum | TimeRecordScalarFieldEnum[]
+  }
+
+  /**
+   * User.progressLogs
+   */
+  export type User$progressLogsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    where?: ProgressLogWhereInput
+    orderBy?: ProgressLogOrderByWithRelationInput | ProgressLogOrderByWithRelationInput[]
+    cursor?: ProgressLogWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProgressLogScalarFieldEnum | ProgressLogScalarFieldEnum[]
+  }
+
+  /**
+   * User.importedFiles
+   */
+  export type User$importedFilesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    where?: ImportedFileWhereInput
+    orderBy?: ImportedFileOrderByWithRelationInput | ImportedFileOrderByWithRelationInput[]
+    cursor?: ImportedFileWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ImportedFileScalarFieldEnum | ImportedFileScalarFieldEnum[]
+  }
+
+  /**
    * User without action
    */
   export type UserDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2788,8 +3290,18 @@ export namespace Prisma {
 
   export type AggregateTask = {
     _count: TaskCountAggregateOutputType | null
+    _avg: TaskAvgAggregateOutputType | null
+    _sum: TaskSumAggregateOutputType | null
     _min: TaskMinAggregateOutputType | null
     _max: TaskMaxAggregateOutputType | null
+  }
+
+  export type TaskAvgAggregateOutputType = {
+    totalTime: number | null
+  }
+
+  export type TaskSumAggregateOutputType = {
+    totalTime: number | null
   }
 
   export type TaskMinAggregateOutputType = {
@@ -2804,6 +3316,7 @@ export namespace Prisma {
     userId: string | null
     parentId: string | null
     goalId: string | null
+    totalTime: number | null
   }
 
   export type TaskMaxAggregateOutputType = {
@@ -2818,6 +3331,7 @@ export namespace Prisma {
     userId: string | null
     parentId: string | null
     goalId: string | null
+    totalTime: number | null
   }
 
   export type TaskCountAggregateOutputType = {
@@ -2833,9 +3347,18 @@ export namespace Prisma {
     parentId: number
     goalId: number
     metadata: number
+    totalTime: number
     _all: number
   }
 
+
+  export type TaskAvgAggregateInputType = {
+    totalTime?: true
+  }
+
+  export type TaskSumAggregateInputType = {
+    totalTime?: true
+  }
 
   export type TaskMinAggregateInputType = {
     id?: true
@@ -2849,6 +3372,7 @@ export namespace Prisma {
     userId?: true
     parentId?: true
     goalId?: true
+    totalTime?: true
   }
 
   export type TaskMaxAggregateInputType = {
@@ -2863,6 +3387,7 @@ export namespace Prisma {
     userId?: true
     parentId?: true
     goalId?: true
+    totalTime?: true
   }
 
   export type TaskCountAggregateInputType = {
@@ -2878,6 +3403,7 @@ export namespace Prisma {
     parentId?: true
     goalId?: true
     metadata?: true
+    totalTime?: true
     _all?: true
   }
 
@@ -2919,6 +3445,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: TaskAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TaskSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: TaskMinAggregateInputType
@@ -2949,6 +3487,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: TaskCountAggregateInputType | true
+    _avg?: TaskAvgAggregateInputType
+    _sum?: TaskSumAggregateInputType
     _min?: TaskMinAggregateInputType
     _max?: TaskMaxAggregateInputType
   }
@@ -2966,7 +3506,10 @@ export namespace Prisma {
     parentId: string | null
     goalId: string | null
     metadata: JsonValue | null
+    totalTime: number
     _count: TaskCountAggregateOutputType | null
+    _avg: TaskAvgAggregateOutputType | null
+    _sum: TaskSumAggregateOutputType | null
     _min: TaskMinAggregateOutputType | null
     _max: TaskMaxAggregateOutputType | null
   }
@@ -2998,11 +3541,14 @@ export namespace Prisma {
     parentId?: boolean
     goalId?: boolean
     metadata?: boolean
+    totalTime?: boolean
     goal?: boolean | Task$goalArgs<ExtArgs>
     parent?: boolean | Task$parentArgs<ExtArgs>
     subTasks?: boolean | Task$subTasksArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
     tags?: boolean | Task$tagsArgs<ExtArgs>
+    timeRecords?: boolean | Task$timeRecordsArgs<ExtArgs>
+    progressLogs?: boolean | Task$progressLogsArgs<ExtArgs>
     _count?: boolean | TaskCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["task"]>
 
@@ -3019,6 +3565,7 @@ export namespace Prisma {
     parentId?: boolean
     goalId?: boolean
     metadata?: boolean
+    totalTime?: boolean
     goal?: boolean | Task$goalArgs<ExtArgs>
     parent?: boolean | Task$parentArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -3037,6 +3584,7 @@ export namespace Prisma {
     parentId?: boolean
     goalId?: boolean
     metadata?: boolean
+    totalTime?: boolean
     goal?: boolean | Task$goalArgs<ExtArgs>
     parent?: boolean | Task$parentArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
@@ -3055,15 +3603,18 @@ export namespace Prisma {
     parentId?: boolean
     goalId?: boolean
     metadata?: boolean
+    totalTime?: boolean
   }
 
-  export type TaskOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "status" | "priority" | "dueDate" | "createdAt" | "updatedAt" | "userId" | "parentId" | "goalId" | "metadata", ExtArgs["result"]["task"]>
+  export type TaskOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "description" | "status" | "priority" | "dueDate" | "createdAt" | "updatedAt" | "userId" | "parentId" | "goalId" | "metadata" | "totalTime", ExtArgs["result"]["task"]>
   export type TaskInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     goal?: boolean | Task$goalArgs<ExtArgs>
     parent?: boolean | Task$parentArgs<ExtArgs>
     subTasks?: boolean | Task$subTasksArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
     tags?: boolean | Task$tagsArgs<ExtArgs>
+    timeRecords?: boolean | Task$timeRecordsArgs<ExtArgs>
+    progressLogs?: boolean | Task$progressLogsArgs<ExtArgs>
     _count?: boolean | TaskCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type TaskIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -3085,6 +3636,8 @@ export namespace Prisma {
       subTasks: Prisma.$TaskPayload<ExtArgs>[]
       user: Prisma.$UserPayload<ExtArgs>
       tags: Prisma.$TagPayload<ExtArgs>[]
+      timeRecords: Prisma.$TimeRecordPayload<ExtArgs>[]
+      progressLogs: Prisma.$ProgressLogPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -3099,6 +3652,7 @@ export namespace Prisma {
       parentId: string | null
       goalId: string | null
       metadata: Prisma.JsonValue | null
+      totalTime: number
     }, ExtArgs["result"]["task"]>
     composites: {}
   }
@@ -3498,6 +4052,8 @@ export namespace Prisma {
     subTasks<T extends Task$subTasksArgs<ExtArgs> = {}>(args?: Subset<T, Task$subTasksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     tags<T extends Task$tagsArgs<ExtArgs> = {}>(args?: Subset<T, Task$tagsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TagPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    timeRecords<T extends Task$timeRecordsArgs<ExtArgs> = {}>(args?: Subset<T, Task$timeRecordsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    progressLogs<T extends Task$progressLogsArgs<ExtArgs> = {}>(args?: Subset<T, Task$progressLogsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3539,6 +4095,7 @@ export namespace Prisma {
     readonly parentId: FieldRef<"Task", 'String'>
     readonly goalId: FieldRef<"Task", 'String'>
     readonly metadata: FieldRef<"Task", 'Json'>
+    readonly totalTime: FieldRef<"Task", 'Int'>
   }
     
 
@@ -4021,6 +4578,54 @@ export namespace Prisma {
   }
 
   /**
+   * Task.timeRecords
+   */
+  export type Task$timeRecordsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    where?: TimeRecordWhereInput
+    orderBy?: TimeRecordOrderByWithRelationInput | TimeRecordOrderByWithRelationInput[]
+    cursor?: TimeRecordWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: TimeRecordScalarFieldEnum | TimeRecordScalarFieldEnum[]
+  }
+
+  /**
+   * Task.progressLogs
+   */
+  export type Task$progressLogsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    where?: ProgressLogWhereInput
+    orderBy?: ProgressLogOrderByWithRelationInput | ProgressLogOrderByWithRelationInput[]
+    cursor?: ProgressLogWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProgressLogScalarFieldEnum | ProgressLogScalarFieldEnum[]
+  }
+
+  /**
    * Task without action
    */
   export type TaskDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4334,6 +4939,7 @@ export namespace Prisma {
     user?: boolean | UserDefaultArgs<ExtArgs>
     tasks?: boolean | Goal$tasksArgs<ExtArgs>
     tags?: boolean | Goal$tagsArgs<ExtArgs>
+    progressLogs?: boolean | Goal$progressLogsArgs<ExtArgs>
     _count?: boolean | GoalCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["goal"]>
 
@@ -4408,6 +5014,7 @@ export namespace Prisma {
     user?: boolean | UserDefaultArgs<ExtArgs>
     tasks?: boolean | Goal$tasksArgs<ExtArgs>
     tags?: boolean | Goal$tagsArgs<ExtArgs>
+    progressLogs?: boolean | Goal$progressLogsArgs<ExtArgs>
     _count?: boolean | GoalCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type GoalIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -4427,6 +5034,7 @@ export namespace Prisma {
       user: Prisma.$UserPayload<ExtArgs>
       tasks: Prisma.$TaskPayload<ExtArgs>[]
       tags: Prisma.$TagPayload<ExtArgs>[]
+      progressLogs: Prisma.$ProgressLogPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
@@ -4845,6 +5453,7 @@ export namespace Prisma {
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     tasks<T extends Goal$tasksArgs<ExtArgs> = {}>(args?: Subset<T, Goal$tasksArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     tags<T extends Goal$tagsArgs<ExtArgs> = {}>(args?: Subset<T, Goal$tagsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TagPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    progressLogs<T extends Goal$progressLogsArgs<ExtArgs> = {}>(args?: Subset<T, Goal$progressLogsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5375,6 +5984,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: TagScalarFieldEnum | TagScalarFieldEnum[]
+  }
+
+  /**
+   * Goal.progressLogs
+   */
+  export type Goal$progressLogsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    where?: ProgressLogWhereInput
+    orderBy?: ProgressLogOrderByWithRelationInput | ProgressLogOrderByWithRelationInput[]
+    cursor?: ProgressLogWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProgressLogScalarFieldEnum | ProgressLogScalarFieldEnum[]
   }
 
   /**
@@ -8847,6 +9480,4568 @@ export namespace Prisma {
 
 
   /**
+   * Model TimeRecord
+   */
+
+  export type AggregateTimeRecord = {
+    _count: TimeRecordCountAggregateOutputType | null
+    _avg: TimeRecordAvgAggregateOutputType | null
+    _sum: TimeRecordSumAggregateOutputType | null
+    _min: TimeRecordMinAggregateOutputType | null
+    _max: TimeRecordMaxAggregateOutputType | null
+  }
+
+  export type TimeRecordAvgAggregateOutputType = {
+    duration: number | null
+  }
+
+  export type TimeRecordSumAggregateOutputType = {
+    duration: number | null
+  }
+
+  export type TimeRecordMinAggregateOutputType = {
+    id: string | null
+    startTime: Date | null
+    endTime: Date | null
+    duration: number | null
+    note: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: string | null
+    taskId: string | null
+  }
+
+  export type TimeRecordMaxAggregateOutputType = {
+    id: string | null
+    startTime: Date | null
+    endTime: Date | null
+    duration: number | null
+    note: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: string | null
+    taskId: string | null
+  }
+
+  export type TimeRecordCountAggregateOutputType = {
+    id: number
+    startTime: number
+    endTime: number
+    duration: number
+    note: number
+    createdAt: number
+    updatedAt: number
+    userId: number
+    taskId: number
+    _all: number
+  }
+
+
+  export type TimeRecordAvgAggregateInputType = {
+    duration?: true
+  }
+
+  export type TimeRecordSumAggregateInputType = {
+    duration?: true
+  }
+
+  export type TimeRecordMinAggregateInputType = {
+    id?: true
+    startTime?: true
+    endTime?: true
+    duration?: true
+    note?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    taskId?: true
+  }
+
+  export type TimeRecordMaxAggregateInputType = {
+    id?: true
+    startTime?: true
+    endTime?: true
+    duration?: true
+    note?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    taskId?: true
+  }
+
+  export type TimeRecordCountAggregateInputType = {
+    id?: true
+    startTime?: true
+    endTime?: true
+    duration?: true
+    note?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    taskId?: true
+    _all?: true
+  }
+
+  export type TimeRecordAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TimeRecord to aggregate.
+     */
+    where?: TimeRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TimeRecords to fetch.
+     */
+    orderBy?: TimeRecordOrderByWithRelationInput | TimeRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TimeRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TimeRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TimeRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TimeRecords
+    **/
+    _count?: true | TimeRecordCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TimeRecordAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TimeRecordSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TimeRecordMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TimeRecordMaxAggregateInputType
+  }
+
+  export type GetTimeRecordAggregateType<T extends TimeRecordAggregateArgs> = {
+        [P in keyof T & keyof AggregateTimeRecord]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTimeRecord[P]>
+      : GetScalarType<T[P], AggregateTimeRecord[P]>
+  }
+
+
+
+
+  export type TimeRecordGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TimeRecordWhereInput
+    orderBy?: TimeRecordOrderByWithAggregationInput | TimeRecordOrderByWithAggregationInput[]
+    by: TimeRecordScalarFieldEnum[] | TimeRecordScalarFieldEnum
+    having?: TimeRecordScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TimeRecordCountAggregateInputType | true
+    _avg?: TimeRecordAvgAggregateInputType
+    _sum?: TimeRecordSumAggregateInputType
+    _min?: TimeRecordMinAggregateInputType
+    _max?: TimeRecordMaxAggregateInputType
+  }
+
+  export type TimeRecordGroupByOutputType = {
+    id: string
+    startTime: Date
+    endTime: Date | null
+    duration: number | null
+    note: string | null
+    createdAt: Date
+    updatedAt: Date
+    userId: string
+    taskId: string
+    _count: TimeRecordCountAggregateOutputType | null
+    _avg: TimeRecordAvgAggregateOutputType | null
+    _sum: TimeRecordSumAggregateOutputType | null
+    _min: TimeRecordMinAggregateOutputType | null
+    _max: TimeRecordMaxAggregateOutputType | null
+  }
+
+  type GetTimeRecordGroupByPayload<T extends TimeRecordGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TimeRecordGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TimeRecordGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TimeRecordGroupByOutputType[P]>
+            : GetScalarType<T[P], TimeRecordGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TimeRecordSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    startTime?: boolean
+    endTime?: boolean
+    duration?: boolean
+    note?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    taskId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | TaskDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["timeRecord"]>
+
+  export type TimeRecordSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    startTime?: boolean
+    endTime?: boolean
+    duration?: boolean
+    note?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    taskId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | TaskDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["timeRecord"]>
+
+  export type TimeRecordSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    startTime?: boolean
+    endTime?: boolean
+    duration?: boolean
+    note?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    taskId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | TaskDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["timeRecord"]>
+
+  export type TimeRecordSelectScalar = {
+    id?: boolean
+    startTime?: boolean
+    endTime?: boolean
+    duration?: boolean
+    note?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    taskId?: boolean
+  }
+
+  export type TimeRecordOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "startTime" | "endTime" | "duration" | "note" | "createdAt" | "updatedAt" | "userId" | "taskId", ExtArgs["result"]["timeRecord"]>
+  export type TimeRecordInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | TaskDefaultArgs<ExtArgs>
+  }
+  export type TimeRecordIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | TaskDefaultArgs<ExtArgs>
+  }
+  export type TimeRecordIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | TaskDefaultArgs<ExtArgs>
+  }
+
+  export type $TimeRecordPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TimeRecord"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      task: Prisma.$TaskPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      startTime: Date
+      endTime: Date | null
+      duration: number | null
+      note: string | null
+      createdAt: Date
+      updatedAt: Date
+      userId: string
+      taskId: string
+    }, ExtArgs["result"]["timeRecord"]>
+    composites: {}
+  }
+
+  type TimeRecordGetPayload<S extends boolean | null | undefined | TimeRecordDefaultArgs> = $Result.GetResult<Prisma.$TimeRecordPayload, S>
+
+  type TimeRecordCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TimeRecordFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TimeRecordCountAggregateInputType | true
+    }
+
+  export interface TimeRecordDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TimeRecord'], meta: { name: 'TimeRecord' } }
+    /**
+     * Find zero or one TimeRecord that matches the filter.
+     * @param {TimeRecordFindUniqueArgs} args - Arguments to find a TimeRecord
+     * @example
+     * // Get one TimeRecord
+     * const timeRecord = await prisma.timeRecord.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TimeRecordFindUniqueArgs>(args: SelectSubset<T, TimeRecordFindUniqueArgs<ExtArgs>>): Prisma__TimeRecordClient<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one TimeRecord that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TimeRecordFindUniqueOrThrowArgs} args - Arguments to find a TimeRecord
+     * @example
+     * // Get one TimeRecord
+     * const timeRecord = await prisma.timeRecord.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TimeRecordFindUniqueOrThrowArgs>(args: SelectSubset<T, TimeRecordFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TimeRecordClient<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TimeRecord that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TimeRecordFindFirstArgs} args - Arguments to find a TimeRecord
+     * @example
+     * // Get one TimeRecord
+     * const timeRecord = await prisma.timeRecord.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TimeRecordFindFirstArgs>(args?: SelectSubset<T, TimeRecordFindFirstArgs<ExtArgs>>): Prisma__TimeRecordClient<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TimeRecord that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TimeRecordFindFirstOrThrowArgs} args - Arguments to find a TimeRecord
+     * @example
+     * // Get one TimeRecord
+     * const timeRecord = await prisma.timeRecord.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TimeRecordFindFirstOrThrowArgs>(args?: SelectSubset<T, TimeRecordFindFirstOrThrowArgs<ExtArgs>>): Prisma__TimeRecordClient<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more TimeRecords that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TimeRecordFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TimeRecords
+     * const timeRecords = await prisma.timeRecord.findMany()
+     * 
+     * // Get first 10 TimeRecords
+     * const timeRecords = await prisma.timeRecord.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const timeRecordWithIdOnly = await prisma.timeRecord.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TimeRecordFindManyArgs>(args?: SelectSubset<T, TimeRecordFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a TimeRecord.
+     * @param {TimeRecordCreateArgs} args - Arguments to create a TimeRecord.
+     * @example
+     * // Create one TimeRecord
+     * const TimeRecord = await prisma.timeRecord.create({
+     *   data: {
+     *     // ... data to create a TimeRecord
+     *   }
+     * })
+     * 
+     */
+    create<T extends TimeRecordCreateArgs>(args: SelectSubset<T, TimeRecordCreateArgs<ExtArgs>>): Prisma__TimeRecordClient<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many TimeRecords.
+     * @param {TimeRecordCreateManyArgs} args - Arguments to create many TimeRecords.
+     * @example
+     * // Create many TimeRecords
+     * const timeRecord = await prisma.timeRecord.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TimeRecordCreateManyArgs>(args?: SelectSubset<T, TimeRecordCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many TimeRecords and returns the data saved in the database.
+     * @param {TimeRecordCreateManyAndReturnArgs} args - Arguments to create many TimeRecords.
+     * @example
+     * // Create many TimeRecords
+     * const timeRecord = await prisma.timeRecord.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many TimeRecords and only return the `id`
+     * const timeRecordWithIdOnly = await prisma.timeRecord.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TimeRecordCreateManyAndReturnArgs>(args?: SelectSubset<T, TimeRecordCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a TimeRecord.
+     * @param {TimeRecordDeleteArgs} args - Arguments to delete one TimeRecord.
+     * @example
+     * // Delete one TimeRecord
+     * const TimeRecord = await prisma.timeRecord.delete({
+     *   where: {
+     *     // ... filter to delete one TimeRecord
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TimeRecordDeleteArgs>(args: SelectSubset<T, TimeRecordDeleteArgs<ExtArgs>>): Prisma__TimeRecordClient<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one TimeRecord.
+     * @param {TimeRecordUpdateArgs} args - Arguments to update one TimeRecord.
+     * @example
+     * // Update one TimeRecord
+     * const timeRecord = await prisma.timeRecord.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TimeRecordUpdateArgs>(args: SelectSubset<T, TimeRecordUpdateArgs<ExtArgs>>): Prisma__TimeRecordClient<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more TimeRecords.
+     * @param {TimeRecordDeleteManyArgs} args - Arguments to filter TimeRecords to delete.
+     * @example
+     * // Delete a few TimeRecords
+     * const { count } = await prisma.timeRecord.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TimeRecordDeleteManyArgs>(args?: SelectSubset<T, TimeRecordDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TimeRecords.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TimeRecordUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TimeRecords
+     * const timeRecord = await prisma.timeRecord.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TimeRecordUpdateManyArgs>(args: SelectSubset<T, TimeRecordUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TimeRecords and returns the data updated in the database.
+     * @param {TimeRecordUpdateManyAndReturnArgs} args - Arguments to update many TimeRecords.
+     * @example
+     * // Update many TimeRecords
+     * const timeRecord = await prisma.timeRecord.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more TimeRecords and only return the `id`
+     * const timeRecordWithIdOnly = await prisma.timeRecord.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TimeRecordUpdateManyAndReturnArgs>(args: SelectSubset<T, TimeRecordUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one TimeRecord.
+     * @param {TimeRecordUpsertArgs} args - Arguments to update or create a TimeRecord.
+     * @example
+     * // Update or create a TimeRecord
+     * const timeRecord = await prisma.timeRecord.upsert({
+     *   create: {
+     *     // ... data to create a TimeRecord
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TimeRecord we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TimeRecordUpsertArgs>(args: SelectSubset<T, TimeRecordUpsertArgs<ExtArgs>>): Prisma__TimeRecordClient<$Result.GetResult<Prisma.$TimeRecordPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of TimeRecords.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TimeRecordCountArgs} args - Arguments to filter TimeRecords to count.
+     * @example
+     * // Count the number of TimeRecords
+     * const count = await prisma.timeRecord.count({
+     *   where: {
+     *     // ... the filter for the TimeRecords we want to count
+     *   }
+     * })
+    **/
+    count<T extends TimeRecordCountArgs>(
+      args?: Subset<T, TimeRecordCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TimeRecordCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TimeRecord.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TimeRecordAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TimeRecordAggregateArgs>(args: Subset<T, TimeRecordAggregateArgs>): Prisma.PrismaPromise<GetTimeRecordAggregateType<T>>
+
+    /**
+     * Group by TimeRecord.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TimeRecordGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TimeRecordGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TimeRecordGroupByArgs['orderBy'] }
+        : { orderBy?: TimeRecordGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TimeRecordGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTimeRecordGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TimeRecord model
+   */
+  readonly fields: TimeRecordFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TimeRecord.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TimeRecordClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    task<T extends TaskDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TaskDefaultArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TimeRecord model
+   */
+  interface TimeRecordFieldRefs {
+    readonly id: FieldRef<"TimeRecord", 'String'>
+    readonly startTime: FieldRef<"TimeRecord", 'DateTime'>
+    readonly endTime: FieldRef<"TimeRecord", 'DateTime'>
+    readonly duration: FieldRef<"TimeRecord", 'Int'>
+    readonly note: FieldRef<"TimeRecord", 'String'>
+    readonly createdAt: FieldRef<"TimeRecord", 'DateTime'>
+    readonly updatedAt: FieldRef<"TimeRecord", 'DateTime'>
+    readonly userId: FieldRef<"TimeRecord", 'String'>
+    readonly taskId: FieldRef<"TimeRecord", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TimeRecord findUnique
+   */
+  export type TimeRecordFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which TimeRecord to fetch.
+     */
+    where: TimeRecordWhereUniqueInput
+  }
+
+  /**
+   * TimeRecord findUniqueOrThrow
+   */
+  export type TimeRecordFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which TimeRecord to fetch.
+     */
+    where: TimeRecordWhereUniqueInput
+  }
+
+  /**
+   * TimeRecord findFirst
+   */
+  export type TimeRecordFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which TimeRecord to fetch.
+     */
+    where?: TimeRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TimeRecords to fetch.
+     */
+    orderBy?: TimeRecordOrderByWithRelationInput | TimeRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TimeRecords.
+     */
+    cursor?: TimeRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TimeRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TimeRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TimeRecords.
+     */
+    distinct?: TimeRecordScalarFieldEnum | TimeRecordScalarFieldEnum[]
+  }
+
+  /**
+   * TimeRecord findFirstOrThrow
+   */
+  export type TimeRecordFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which TimeRecord to fetch.
+     */
+    where?: TimeRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TimeRecords to fetch.
+     */
+    orderBy?: TimeRecordOrderByWithRelationInput | TimeRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TimeRecords.
+     */
+    cursor?: TimeRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TimeRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TimeRecords.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TimeRecords.
+     */
+    distinct?: TimeRecordScalarFieldEnum | TimeRecordScalarFieldEnum[]
+  }
+
+  /**
+   * TimeRecord findMany
+   */
+  export type TimeRecordFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * Filter, which TimeRecords to fetch.
+     */
+    where?: TimeRecordWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TimeRecords to fetch.
+     */
+    orderBy?: TimeRecordOrderByWithRelationInput | TimeRecordOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TimeRecords.
+     */
+    cursor?: TimeRecordWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TimeRecords from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TimeRecords.
+     */
+    skip?: number
+    distinct?: TimeRecordScalarFieldEnum | TimeRecordScalarFieldEnum[]
+  }
+
+  /**
+   * TimeRecord create
+   */
+  export type TimeRecordCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * The data needed to create a TimeRecord.
+     */
+    data: XOR<TimeRecordCreateInput, TimeRecordUncheckedCreateInput>
+  }
+
+  /**
+   * TimeRecord createMany
+   */
+  export type TimeRecordCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TimeRecords.
+     */
+    data: TimeRecordCreateManyInput | TimeRecordCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * TimeRecord createManyAndReturn
+   */
+  export type TimeRecordCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * The data used to create many TimeRecords.
+     */
+    data: TimeRecordCreateManyInput | TimeRecordCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TimeRecord update
+   */
+  export type TimeRecordUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * The data needed to update a TimeRecord.
+     */
+    data: XOR<TimeRecordUpdateInput, TimeRecordUncheckedUpdateInput>
+    /**
+     * Choose, which TimeRecord to update.
+     */
+    where: TimeRecordWhereUniqueInput
+  }
+
+  /**
+   * TimeRecord updateMany
+   */
+  export type TimeRecordUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TimeRecords.
+     */
+    data: XOR<TimeRecordUpdateManyMutationInput, TimeRecordUncheckedUpdateManyInput>
+    /**
+     * Filter which TimeRecords to update
+     */
+    where?: TimeRecordWhereInput
+    /**
+     * Limit how many TimeRecords to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TimeRecord updateManyAndReturn
+   */
+  export type TimeRecordUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * The data used to update TimeRecords.
+     */
+    data: XOR<TimeRecordUpdateManyMutationInput, TimeRecordUncheckedUpdateManyInput>
+    /**
+     * Filter which TimeRecords to update
+     */
+    where?: TimeRecordWhereInput
+    /**
+     * Limit how many TimeRecords to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TimeRecord upsert
+   */
+  export type TimeRecordUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * The filter to search for the TimeRecord to update in case it exists.
+     */
+    where: TimeRecordWhereUniqueInput
+    /**
+     * In case the TimeRecord found by the `where` argument doesn't exist, create a new TimeRecord with this data.
+     */
+    create: XOR<TimeRecordCreateInput, TimeRecordUncheckedCreateInput>
+    /**
+     * In case the TimeRecord was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TimeRecordUpdateInput, TimeRecordUncheckedUpdateInput>
+  }
+
+  /**
+   * TimeRecord delete
+   */
+  export type TimeRecordDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+    /**
+     * Filter which TimeRecord to delete.
+     */
+    where: TimeRecordWhereUniqueInput
+  }
+
+  /**
+   * TimeRecord deleteMany
+   */
+  export type TimeRecordDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TimeRecords to delete
+     */
+    where?: TimeRecordWhereInput
+    /**
+     * Limit how many TimeRecords to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * TimeRecord without action
+   */
+  export type TimeRecordDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TimeRecord
+     */
+    select?: TimeRecordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TimeRecord
+     */
+    omit?: TimeRecordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TimeRecordInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ProgressLog
+   */
+
+  export type AggregateProgressLog = {
+    _count: ProgressLogCountAggregateOutputType | null
+    _avg: ProgressLogAvgAggregateOutputType | null
+    _sum: ProgressLogSumAggregateOutputType | null
+    _min: ProgressLogMinAggregateOutputType | null
+    _max: ProgressLogMaxAggregateOutputType | null
+  }
+
+  export type ProgressLogAvgAggregateOutputType = {
+    progress: number | null
+  }
+
+  export type ProgressLogSumAggregateOutputType = {
+    progress: number | null
+  }
+
+  export type ProgressLogMinAggregateOutputType = {
+    id: string | null
+    progress: number | null
+    note: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: string | null
+    taskId: string | null
+    goalId: string | null
+  }
+
+  export type ProgressLogMaxAggregateOutputType = {
+    id: string | null
+    progress: number | null
+    note: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    userId: string | null
+    taskId: string | null
+    goalId: string | null
+  }
+
+  export type ProgressLogCountAggregateOutputType = {
+    id: number
+    progress: number
+    note: number
+    createdAt: number
+    updatedAt: number
+    userId: number
+    taskId: number
+    goalId: number
+    _all: number
+  }
+
+
+  export type ProgressLogAvgAggregateInputType = {
+    progress?: true
+  }
+
+  export type ProgressLogSumAggregateInputType = {
+    progress?: true
+  }
+
+  export type ProgressLogMinAggregateInputType = {
+    id?: true
+    progress?: true
+    note?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    taskId?: true
+    goalId?: true
+  }
+
+  export type ProgressLogMaxAggregateInputType = {
+    id?: true
+    progress?: true
+    note?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    taskId?: true
+    goalId?: true
+  }
+
+  export type ProgressLogCountAggregateInputType = {
+    id?: true
+    progress?: true
+    note?: true
+    createdAt?: true
+    updatedAt?: true
+    userId?: true
+    taskId?: true
+    goalId?: true
+    _all?: true
+  }
+
+  export type ProgressLogAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProgressLog to aggregate.
+     */
+    where?: ProgressLogWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProgressLogs to fetch.
+     */
+    orderBy?: ProgressLogOrderByWithRelationInput | ProgressLogOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ProgressLogWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProgressLogs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProgressLogs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ProgressLogs
+    **/
+    _count?: true | ProgressLogCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ProgressLogAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ProgressLogSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ProgressLogMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ProgressLogMaxAggregateInputType
+  }
+
+  export type GetProgressLogAggregateType<T extends ProgressLogAggregateArgs> = {
+        [P in keyof T & keyof AggregateProgressLog]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateProgressLog[P]>
+      : GetScalarType<T[P], AggregateProgressLog[P]>
+  }
+
+
+
+
+  export type ProgressLogGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProgressLogWhereInput
+    orderBy?: ProgressLogOrderByWithAggregationInput | ProgressLogOrderByWithAggregationInput[]
+    by: ProgressLogScalarFieldEnum[] | ProgressLogScalarFieldEnum
+    having?: ProgressLogScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ProgressLogCountAggregateInputType | true
+    _avg?: ProgressLogAvgAggregateInputType
+    _sum?: ProgressLogSumAggregateInputType
+    _min?: ProgressLogMinAggregateInputType
+    _max?: ProgressLogMaxAggregateInputType
+  }
+
+  export type ProgressLogGroupByOutputType = {
+    id: string
+    progress: number
+    note: string | null
+    createdAt: Date
+    updatedAt: Date
+    userId: string
+    taskId: string | null
+    goalId: string | null
+    _count: ProgressLogCountAggregateOutputType | null
+    _avg: ProgressLogAvgAggregateOutputType | null
+    _sum: ProgressLogSumAggregateOutputType | null
+    _min: ProgressLogMinAggregateOutputType | null
+    _max: ProgressLogMaxAggregateOutputType | null
+  }
+
+  type GetProgressLogGroupByPayload<T extends ProgressLogGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ProgressLogGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ProgressLogGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ProgressLogGroupByOutputType[P]>
+            : GetScalarType<T[P], ProgressLogGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ProgressLogSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    progress?: boolean
+    note?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    taskId?: boolean
+    goalId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | ProgressLog$taskArgs<ExtArgs>
+    goal?: boolean | ProgressLog$goalArgs<ExtArgs>
+  }, ExtArgs["result"]["progressLog"]>
+
+  export type ProgressLogSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    progress?: boolean
+    note?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    taskId?: boolean
+    goalId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | ProgressLog$taskArgs<ExtArgs>
+    goal?: boolean | ProgressLog$goalArgs<ExtArgs>
+  }, ExtArgs["result"]["progressLog"]>
+
+  export type ProgressLogSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    progress?: boolean
+    note?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    taskId?: boolean
+    goalId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | ProgressLog$taskArgs<ExtArgs>
+    goal?: boolean | ProgressLog$goalArgs<ExtArgs>
+  }, ExtArgs["result"]["progressLog"]>
+
+  export type ProgressLogSelectScalar = {
+    id?: boolean
+    progress?: boolean
+    note?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    taskId?: boolean
+    goalId?: boolean
+  }
+
+  export type ProgressLogOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "progress" | "note" | "createdAt" | "updatedAt" | "userId" | "taskId" | "goalId", ExtArgs["result"]["progressLog"]>
+  export type ProgressLogInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | ProgressLog$taskArgs<ExtArgs>
+    goal?: boolean | ProgressLog$goalArgs<ExtArgs>
+  }
+  export type ProgressLogIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | ProgressLog$taskArgs<ExtArgs>
+    goal?: boolean | ProgressLog$goalArgs<ExtArgs>
+  }
+  export type ProgressLogIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+    task?: boolean | ProgressLog$taskArgs<ExtArgs>
+    goal?: boolean | ProgressLog$goalArgs<ExtArgs>
+  }
+
+  export type $ProgressLogPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ProgressLog"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+      task: Prisma.$TaskPayload<ExtArgs> | null
+      goal: Prisma.$GoalPayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      progress: number
+      note: string | null
+      createdAt: Date
+      updatedAt: Date
+      userId: string
+      taskId: string | null
+      goalId: string | null
+    }, ExtArgs["result"]["progressLog"]>
+    composites: {}
+  }
+
+  type ProgressLogGetPayload<S extends boolean | null | undefined | ProgressLogDefaultArgs> = $Result.GetResult<Prisma.$ProgressLogPayload, S>
+
+  type ProgressLogCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ProgressLogFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ProgressLogCountAggregateInputType | true
+    }
+
+  export interface ProgressLogDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ProgressLog'], meta: { name: 'ProgressLog' } }
+    /**
+     * Find zero or one ProgressLog that matches the filter.
+     * @param {ProgressLogFindUniqueArgs} args - Arguments to find a ProgressLog
+     * @example
+     * // Get one ProgressLog
+     * const progressLog = await prisma.progressLog.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ProgressLogFindUniqueArgs>(args: SelectSubset<T, ProgressLogFindUniqueArgs<ExtArgs>>): Prisma__ProgressLogClient<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ProgressLog that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ProgressLogFindUniqueOrThrowArgs} args - Arguments to find a ProgressLog
+     * @example
+     * // Get one ProgressLog
+     * const progressLog = await prisma.progressLog.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ProgressLogFindUniqueOrThrowArgs>(args: SelectSubset<T, ProgressLogFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProgressLogClient<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProgressLog that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProgressLogFindFirstArgs} args - Arguments to find a ProgressLog
+     * @example
+     * // Get one ProgressLog
+     * const progressLog = await prisma.progressLog.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ProgressLogFindFirstArgs>(args?: SelectSubset<T, ProgressLogFindFirstArgs<ExtArgs>>): Prisma__ProgressLogClient<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProgressLog that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProgressLogFindFirstOrThrowArgs} args - Arguments to find a ProgressLog
+     * @example
+     * // Get one ProgressLog
+     * const progressLog = await prisma.progressLog.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ProgressLogFindFirstOrThrowArgs>(args?: SelectSubset<T, ProgressLogFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProgressLogClient<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ProgressLogs that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProgressLogFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ProgressLogs
+     * const progressLogs = await prisma.progressLog.findMany()
+     * 
+     * // Get first 10 ProgressLogs
+     * const progressLogs = await prisma.progressLog.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const progressLogWithIdOnly = await prisma.progressLog.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ProgressLogFindManyArgs>(args?: SelectSubset<T, ProgressLogFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ProgressLog.
+     * @param {ProgressLogCreateArgs} args - Arguments to create a ProgressLog.
+     * @example
+     * // Create one ProgressLog
+     * const ProgressLog = await prisma.progressLog.create({
+     *   data: {
+     *     // ... data to create a ProgressLog
+     *   }
+     * })
+     * 
+     */
+    create<T extends ProgressLogCreateArgs>(args: SelectSubset<T, ProgressLogCreateArgs<ExtArgs>>): Prisma__ProgressLogClient<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ProgressLogs.
+     * @param {ProgressLogCreateManyArgs} args - Arguments to create many ProgressLogs.
+     * @example
+     * // Create many ProgressLogs
+     * const progressLog = await prisma.progressLog.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ProgressLogCreateManyArgs>(args?: SelectSubset<T, ProgressLogCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ProgressLogs and returns the data saved in the database.
+     * @param {ProgressLogCreateManyAndReturnArgs} args - Arguments to create many ProgressLogs.
+     * @example
+     * // Create many ProgressLogs
+     * const progressLog = await prisma.progressLog.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ProgressLogs and only return the `id`
+     * const progressLogWithIdOnly = await prisma.progressLog.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ProgressLogCreateManyAndReturnArgs>(args?: SelectSubset<T, ProgressLogCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ProgressLog.
+     * @param {ProgressLogDeleteArgs} args - Arguments to delete one ProgressLog.
+     * @example
+     * // Delete one ProgressLog
+     * const ProgressLog = await prisma.progressLog.delete({
+     *   where: {
+     *     // ... filter to delete one ProgressLog
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ProgressLogDeleteArgs>(args: SelectSubset<T, ProgressLogDeleteArgs<ExtArgs>>): Prisma__ProgressLogClient<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ProgressLog.
+     * @param {ProgressLogUpdateArgs} args - Arguments to update one ProgressLog.
+     * @example
+     * // Update one ProgressLog
+     * const progressLog = await prisma.progressLog.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ProgressLogUpdateArgs>(args: SelectSubset<T, ProgressLogUpdateArgs<ExtArgs>>): Prisma__ProgressLogClient<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ProgressLogs.
+     * @param {ProgressLogDeleteManyArgs} args - Arguments to filter ProgressLogs to delete.
+     * @example
+     * // Delete a few ProgressLogs
+     * const { count } = await prisma.progressLog.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ProgressLogDeleteManyArgs>(args?: SelectSubset<T, ProgressLogDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProgressLogs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProgressLogUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ProgressLogs
+     * const progressLog = await prisma.progressLog.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ProgressLogUpdateManyArgs>(args: SelectSubset<T, ProgressLogUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProgressLogs and returns the data updated in the database.
+     * @param {ProgressLogUpdateManyAndReturnArgs} args - Arguments to update many ProgressLogs.
+     * @example
+     * // Update many ProgressLogs
+     * const progressLog = await prisma.progressLog.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ProgressLogs and only return the `id`
+     * const progressLogWithIdOnly = await prisma.progressLog.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ProgressLogUpdateManyAndReturnArgs>(args: SelectSubset<T, ProgressLogUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ProgressLog.
+     * @param {ProgressLogUpsertArgs} args - Arguments to update or create a ProgressLog.
+     * @example
+     * // Update or create a ProgressLog
+     * const progressLog = await prisma.progressLog.upsert({
+     *   create: {
+     *     // ... data to create a ProgressLog
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ProgressLog we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ProgressLogUpsertArgs>(args: SelectSubset<T, ProgressLogUpsertArgs<ExtArgs>>): Prisma__ProgressLogClient<$Result.GetResult<Prisma.$ProgressLogPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ProgressLogs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProgressLogCountArgs} args - Arguments to filter ProgressLogs to count.
+     * @example
+     * // Count the number of ProgressLogs
+     * const count = await prisma.progressLog.count({
+     *   where: {
+     *     // ... the filter for the ProgressLogs we want to count
+     *   }
+     * })
+    **/
+    count<T extends ProgressLogCountArgs>(
+      args?: Subset<T, ProgressLogCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ProgressLogCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ProgressLog.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProgressLogAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ProgressLogAggregateArgs>(args: Subset<T, ProgressLogAggregateArgs>): Prisma.PrismaPromise<GetProgressLogAggregateType<T>>
+
+    /**
+     * Group by ProgressLog.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProgressLogGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ProgressLogGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ProgressLogGroupByArgs['orderBy'] }
+        : { orderBy?: ProgressLogGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ProgressLogGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProgressLogGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ProgressLog model
+   */
+  readonly fields: ProgressLogFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ProgressLog.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ProgressLogClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    task<T extends ProgressLog$taskArgs<ExtArgs> = {}>(args?: Subset<T, ProgressLog$taskArgs<ExtArgs>>): Prisma__TaskClient<$Result.GetResult<Prisma.$TaskPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    goal<T extends ProgressLog$goalArgs<ExtArgs> = {}>(args?: Subset<T, ProgressLog$goalArgs<ExtArgs>>): Prisma__GoalClient<$Result.GetResult<Prisma.$GoalPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ProgressLog model
+   */
+  interface ProgressLogFieldRefs {
+    readonly id: FieldRef<"ProgressLog", 'String'>
+    readonly progress: FieldRef<"ProgressLog", 'Float'>
+    readonly note: FieldRef<"ProgressLog", 'String'>
+    readonly createdAt: FieldRef<"ProgressLog", 'DateTime'>
+    readonly updatedAt: FieldRef<"ProgressLog", 'DateTime'>
+    readonly userId: FieldRef<"ProgressLog", 'String'>
+    readonly taskId: FieldRef<"ProgressLog", 'String'>
+    readonly goalId: FieldRef<"ProgressLog", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ProgressLog findUnique
+   */
+  export type ProgressLogFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * Filter, which ProgressLog to fetch.
+     */
+    where: ProgressLogWhereUniqueInput
+  }
+
+  /**
+   * ProgressLog findUniqueOrThrow
+   */
+  export type ProgressLogFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * Filter, which ProgressLog to fetch.
+     */
+    where: ProgressLogWhereUniqueInput
+  }
+
+  /**
+   * ProgressLog findFirst
+   */
+  export type ProgressLogFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * Filter, which ProgressLog to fetch.
+     */
+    where?: ProgressLogWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProgressLogs to fetch.
+     */
+    orderBy?: ProgressLogOrderByWithRelationInput | ProgressLogOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProgressLogs.
+     */
+    cursor?: ProgressLogWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProgressLogs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProgressLogs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProgressLogs.
+     */
+    distinct?: ProgressLogScalarFieldEnum | ProgressLogScalarFieldEnum[]
+  }
+
+  /**
+   * ProgressLog findFirstOrThrow
+   */
+  export type ProgressLogFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * Filter, which ProgressLog to fetch.
+     */
+    where?: ProgressLogWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProgressLogs to fetch.
+     */
+    orderBy?: ProgressLogOrderByWithRelationInput | ProgressLogOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProgressLogs.
+     */
+    cursor?: ProgressLogWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProgressLogs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProgressLogs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProgressLogs.
+     */
+    distinct?: ProgressLogScalarFieldEnum | ProgressLogScalarFieldEnum[]
+  }
+
+  /**
+   * ProgressLog findMany
+   */
+  export type ProgressLogFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * Filter, which ProgressLogs to fetch.
+     */
+    where?: ProgressLogWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProgressLogs to fetch.
+     */
+    orderBy?: ProgressLogOrderByWithRelationInput | ProgressLogOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ProgressLogs.
+     */
+    cursor?: ProgressLogWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProgressLogs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProgressLogs.
+     */
+    skip?: number
+    distinct?: ProgressLogScalarFieldEnum | ProgressLogScalarFieldEnum[]
+  }
+
+  /**
+   * ProgressLog create
+   */
+  export type ProgressLogCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ProgressLog.
+     */
+    data: XOR<ProgressLogCreateInput, ProgressLogUncheckedCreateInput>
+  }
+
+  /**
+   * ProgressLog createMany
+   */
+  export type ProgressLogCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ProgressLogs.
+     */
+    data: ProgressLogCreateManyInput | ProgressLogCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ProgressLog createManyAndReturn
+   */
+  export type ProgressLogCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * The data used to create many ProgressLogs.
+     */
+    data: ProgressLogCreateManyInput | ProgressLogCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ProgressLog update
+   */
+  export type ProgressLogUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ProgressLog.
+     */
+    data: XOR<ProgressLogUpdateInput, ProgressLogUncheckedUpdateInput>
+    /**
+     * Choose, which ProgressLog to update.
+     */
+    where: ProgressLogWhereUniqueInput
+  }
+
+  /**
+   * ProgressLog updateMany
+   */
+  export type ProgressLogUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ProgressLogs.
+     */
+    data: XOR<ProgressLogUpdateManyMutationInput, ProgressLogUncheckedUpdateManyInput>
+    /**
+     * Filter which ProgressLogs to update
+     */
+    where?: ProgressLogWhereInput
+    /**
+     * Limit how many ProgressLogs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProgressLog updateManyAndReturn
+   */
+  export type ProgressLogUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * The data used to update ProgressLogs.
+     */
+    data: XOR<ProgressLogUpdateManyMutationInput, ProgressLogUncheckedUpdateManyInput>
+    /**
+     * Filter which ProgressLogs to update
+     */
+    where?: ProgressLogWhereInput
+    /**
+     * Limit how many ProgressLogs to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ProgressLog upsert
+   */
+  export type ProgressLogUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ProgressLog to update in case it exists.
+     */
+    where: ProgressLogWhereUniqueInput
+    /**
+     * In case the ProgressLog found by the `where` argument doesn't exist, create a new ProgressLog with this data.
+     */
+    create: XOR<ProgressLogCreateInput, ProgressLogUncheckedCreateInput>
+    /**
+     * In case the ProgressLog was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProgressLogUpdateInput, ProgressLogUncheckedUpdateInput>
+  }
+
+  /**
+   * ProgressLog delete
+   */
+  export type ProgressLogDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+    /**
+     * Filter which ProgressLog to delete.
+     */
+    where: ProgressLogWhereUniqueInput
+  }
+
+  /**
+   * ProgressLog deleteMany
+   */
+  export type ProgressLogDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProgressLogs to delete
+     */
+    where?: ProgressLogWhereInput
+    /**
+     * Limit how many ProgressLogs to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProgressLog.task
+   */
+  export type ProgressLog$taskArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Task
+     */
+    select?: TaskSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Task
+     */
+    omit?: TaskOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TaskInclude<ExtArgs> | null
+    where?: TaskWhereInput
+  }
+
+  /**
+   * ProgressLog.goal
+   */
+  export type ProgressLog$goalArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Goal
+     */
+    select?: GoalSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Goal
+     */
+    omit?: GoalOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: GoalInclude<ExtArgs> | null
+    where?: GoalWhereInput
+  }
+
+  /**
+   * ProgressLog without action
+   */
+  export type ProgressLogDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProgressLog
+     */
+    select?: ProgressLogSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProgressLog
+     */
+    omit?: ProgressLogOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProgressLogInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ImportedFile
+   */
+
+  export type AggregateImportedFile = {
+    _count: ImportedFileCountAggregateOutputType | null
+    _avg: ImportedFileAvgAggregateOutputType | null
+    _sum: ImportedFileSumAggregateOutputType | null
+    _min: ImportedFileMinAggregateOutputType | null
+    _max: ImportedFileMaxAggregateOutputType | null
+  }
+
+  export type ImportedFileAvgAggregateOutputType = {
+    fileSize: number | null
+  }
+
+  export type ImportedFileSumAggregateOutputType = {
+    fileSize: number | null
+  }
+
+  export type ImportedFileMinAggregateOutputType = {
+    id: string | null
+    fileName: string | null
+    fileType: string | null
+    fileSize: number | null
+    ossPath: string | null
+    description: string | null
+    uploadedAt: Date | null
+    updatedAt: Date | null
+    userId: string | null
+  }
+
+  export type ImportedFileMaxAggregateOutputType = {
+    id: string | null
+    fileName: string | null
+    fileType: string | null
+    fileSize: number | null
+    ossPath: string | null
+    description: string | null
+    uploadedAt: Date | null
+    updatedAt: Date | null
+    userId: string | null
+  }
+
+  export type ImportedFileCountAggregateOutputType = {
+    id: number
+    fileName: number
+    fileType: number
+    fileSize: number
+    ossPath: number
+    description: number
+    tags: number
+    uploadedAt: number
+    updatedAt: number
+    userId: number
+    _all: number
+  }
+
+
+  export type ImportedFileAvgAggregateInputType = {
+    fileSize?: true
+  }
+
+  export type ImportedFileSumAggregateInputType = {
+    fileSize?: true
+  }
+
+  export type ImportedFileMinAggregateInputType = {
+    id?: true
+    fileName?: true
+    fileType?: true
+    fileSize?: true
+    ossPath?: true
+    description?: true
+    uploadedAt?: true
+    updatedAt?: true
+    userId?: true
+  }
+
+  export type ImportedFileMaxAggregateInputType = {
+    id?: true
+    fileName?: true
+    fileType?: true
+    fileSize?: true
+    ossPath?: true
+    description?: true
+    uploadedAt?: true
+    updatedAt?: true
+    userId?: true
+  }
+
+  export type ImportedFileCountAggregateInputType = {
+    id?: true
+    fileName?: true
+    fileType?: true
+    fileSize?: true
+    ossPath?: true
+    description?: true
+    tags?: true
+    uploadedAt?: true
+    updatedAt?: true
+    userId?: true
+    _all?: true
+  }
+
+  export type ImportedFileAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ImportedFile to aggregate.
+     */
+    where?: ImportedFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ImportedFiles to fetch.
+     */
+    orderBy?: ImportedFileOrderByWithRelationInput | ImportedFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ImportedFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ImportedFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ImportedFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ImportedFiles
+    **/
+    _count?: true | ImportedFileCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ImportedFileAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ImportedFileSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ImportedFileMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ImportedFileMaxAggregateInputType
+  }
+
+  export type GetImportedFileAggregateType<T extends ImportedFileAggregateArgs> = {
+        [P in keyof T & keyof AggregateImportedFile]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateImportedFile[P]>
+      : GetScalarType<T[P], AggregateImportedFile[P]>
+  }
+
+
+
+
+  export type ImportedFileGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ImportedFileWhereInput
+    orderBy?: ImportedFileOrderByWithAggregationInput | ImportedFileOrderByWithAggregationInput[]
+    by: ImportedFileScalarFieldEnum[] | ImportedFileScalarFieldEnum
+    having?: ImportedFileScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ImportedFileCountAggregateInputType | true
+    _avg?: ImportedFileAvgAggregateInputType
+    _sum?: ImportedFileSumAggregateInputType
+    _min?: ImportedFileMinAggregateInputType
+    _max?: ImportedFileMaxAggregateInputType
+  }
+
+  export type ImportedFileGroupByOutputType = {
+    id: string
+    fileName: string
+    fileType: string
+    fileSize: number
+    ossPath: string
+    description: string | null
+    tags: string[]
+    uploadedAt: Date
+    updatedAt: Date
+    userId: string
+    _count: ImportedFileCountAggregateOutputType | null
+    _avg: ImportedFileAvgAggregateOutputType | null
+    _sum: ImportedFileSumAggregateOutputType | null
+    _min: ImportedFileMinAggregateOutputType | null
+    _max: ImportedFileMaxAggregateOutputType | null
+  }
+
+  type GetImportedFileGroupByPayload<T extends ImportedFileGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ImportedFileGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ImportedFileGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ImportedFileGroupByOutputType[P]>
+            : GetScalarType<T[P], ImportedFileGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ImportedFileSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    fileType?: boolean
+    fileSize?: boolean
+    ossPath?: boolean
+    description?: boolean
+    tags?: boolean
+    uploadedAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["importedFile"]>
+
+  export type ImportedFileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    fileType?: boolean
+    fileSize?: boolean
+    ossPath?: boolean
+    description?: boolean
+    tags?: boolean
+    uploadedAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["importedFile"]>
+
+  export type ImportedFileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    fileType?: boolean
+    fileSize?: boolean
+    ossPath?: boolean
+    description?: boolean
+    tags?: boolean
+    uploadedAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["importedFile"]>
+
+  export type ImportedFileSelectScalar = {
+    id?: boolean
+    fileName?: boolean
+    fileType?: boolean
+    fileSize?: boolean
+    ossPath?: boolean
+    description?: boolean
+    tags?: boolean
+    uploadedAt?: boolean
+    updatedAt?: boolean
+    userId?: boolean
+  }
+
+  export type ImportedFileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fileName" | "fileType" | "fileSize" | "ossPath" | "description" | "tags" | "uploadedAt" | "updatedAt" | "userId", ExtArgs["result"]["importedFile"]>
+  export type ImportedFileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type ImportedFileIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+  export type ImportedFileIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    user?: boolean | UserDefaultArgs<ExtArgs>
+  }
+
+  export type $ImportedFilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ImportedFile"
+    objects: {
+      user: Prisma.$UserPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      fileName: string
+      fileType: string
+      fileSize: number
+      ossPath: string
+      description: string | null
+      tags: string[]
+      uploadedAt: Date
+      updatedAt: Date
+      userId: string
+    }, ExtArgs["result"]["importedFile"]>
+    composites: {}
+  }
+
+  type ImportedFileGetPayload<S extends boolean | null | undefined | ImportedFileDefaultArgs> = $Result.GetResult<Prisma.$ImportedFilePayload, S>
+
+  type ImportedFileCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ImportedFileFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ImportedFileCountAggregateInputType | true
+    }
+
+  export interface ImportedFileDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ImportedFile'], meta: { name: 'ImportedFile' } }
+    /**
+     * Find zero or one ImportedFile that matches the filter.
+     * @param {ImportedFileFindUniqueArgs} args - Arguments to find a ImportedFile
+     * @example
+     * // Get one ImportedFile
+     * const importedFile = await prisma.importedFile.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ImportedFileFindUniqueArgs>(args: SelectSubset<T, ImportedFileFindUniqueArgs<ExtArgs>>): Prisma__ImportedFileClient<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ImportedFile that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ImportedFileFindUniqueOrThrowArgs} args - Arguments to find a ImportedFile
+     * @example
+     * // Get one ImportedFile
+     * const importedFile = await prisma.importedFile.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ImportedFileFindUniqueOrThrowArgs>(args: SelectSubset<T, ImportedFileFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ImportedFileClient<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ImportedFile that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ImportedFileFindFirstArgs} args - Arguments to find a ImportedFile
+     * @example
+     * // Get one ImportedFile
+     * const importedFile = await prisma.importedFile.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ImportedFileFindFirstArgs>(args?: SelectSubset<T, ImportedFileFindFirstArgs<ExtArgs>>): Prisma__ImportedFileClient<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ImportedFile that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ImportedFileFindFirstOrThrowArgs} args - Arguments to find a ImportedFile
+     * @example
+     * // Get one ImportedFile
+     * const importedFile = await prisma.importedFile.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ImportedFileFindFirstOrThrowArgs>(args?: SelectSubset<T, ImportedFileFindFirstOrThrowArgs<ExtArgs>>): Prisma__ImportedFileClient<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ImportedFiles that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ImportedFileFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ImportedFiles
+     * const importedFiles = await prisma.importedFile.findMany()
+     * 
+     * // Get first 10 ImportedFiles
+     * const importedFiles = await prisma.importedFile.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const importedFileWithIdOnly = await prisma.importedFile.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ImportedFileFindManyArgs>(args?: SelectSubset<T, ImportedFileFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ImportedFile.
+     * @param {ImportedFileCreateArgs} args - Arguments to create a ImportedFile.
+     * @example
+     * // Create one ImportedFile
+     * const ImportedFile = await prisma.importedFile.create({
+     *   data: {
+     *     // ... data to create a ImportedFile
+     *   }
+     * })
+     * 
+     */
+    create<T extends ImportedFileCreateArgs>(args: SelectSubset<T, ImportedFileCreateArgs<ExtArgs>>): Prisma__ImportedFileClient<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ImportedFiles.
+     * @param {ImportedFileCreateManyArgs} args - Arguments to create many ImportedFiles.
+     * @example
+     * // Create many ImportedFiles
+     * const importedFile = await prisma.importedFile.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ImportedFileCreateManyArgs>(args?: SelectSubset<T, ImportedFileCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ImportedFiles and returns the data saved in the database.
+     * @param {ImportedFileCreateManyAndReturnArgs} args - Arguments to create many ImportedFiles.
+     * @example
+     * // Create many ImportedFiles
+     * const importedFile = await prisma.importedFile.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ImportedFiles and only return the `id`
+     * const importedFileWithIdOnly = await prisma.importedFile.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ImportedFileCreateManyAndReturnArgs>(args?: SelectSubset<T, ImportedFileCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ImportedFile.
+     * @param {ImportedFileDeleteArgs} args - Arguments to delete one ImportedFile.
+     * @example
+     * // Delete one ImportedFile
+     * const ImportedFile = await prisma.importedFile.delete({
+     *   where: {
+     *     // ... filter to delete one ImportedFile
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ImportedFileDeleteArgs>(args: SelectSubset<T, ImportedFileDeleteArgs<ExtArgs>>): Prisma__ImportedFileClient<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ImportedFile.
+     * @param {ImportedFileUpdateArgs} args - Arguments to update one ImportedFile.
+     * @example
+     * // Update one ImportedFile
+     * const importedFile = await prisma.importedFile.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ImportedFileUpdateArgs>(args: SelectSubset<T, ImportedFileUpdateArgs<ExtArgs>>): Prisma__ImportedFileClient<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ImportedFiles.
+     * @param {ImportedFileDeleteManyArgs} args - Arguments to filter ImportedFiles to delete.
+     * @example
+     * // Delete a few ImportedFiles
+     * const { count } = await prisma.importedFile.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ImportedFileDeleteManyArgs>(args?: SelectSubset<T, ImportedFileDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ImportedFiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ImportedFileUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ImportedFiles
+     * const importedFile = await prisma.importedFile.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ImportedFileUpdateManyArgs>(args: SelectSubset<T, ImportedFileUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ImportedFiles and returns the data updated in the database.
+     * @param {ImportedFileUpdateManyAndReturnArgs} args - Arguments to update many ImportedFiles.
+     * @example
+     * // Update many ImportedFiles
+     * const importedFile = await prisma.importedFile.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ImportedFiles and only return the `id`
+     * const importedFileWithIdOnly = await prisma.importedFile.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ImportedFileUpdateManyAndReturnArgs>(args: SelectSubset<T, ImportedFileUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ImportedFile.
+     * @param {ImportedFileUpsertArgs} args - Arguments to update or create a ImportedFile.
+     * @example
+     * // Update or create a ImportedFile
+     * const importedFile = await prisma.importedFile.upsert({
+     *   create: {
+     *     // ... data to create a ImportedFile
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ImportedFile we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ImportedFileUpsertArgs>(args: SelectSubset<T, ImportedFileUpsertArgs<ExtArgs>>): Prisma__ImportedFileClient<$Result.GetResult<Prisma.$ImportedFilePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ImportedFiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ImportedFileCountArgs} args - Arguments to filter ImportedFiles to count.
+     * @example
+     * // Count the number of ImportedFiles
+     * const count = await prisma.importedFile.count({
+     *   where: {
+     *     // ... the filter for the ImportedFiles we want to count
+     *   }
+     * })
+    **/
+    count<T extends ImportedFileCountArgs>(
+      args?: Subset<T, ImportedFileCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ImportedFileCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ImportedFile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ImportedFileAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ImportedFileAggregateArgs>(args: Subset<T, ImportedFileAggregateArgs>): Prisma.PrismaPromise<GetImportedFileAggregateType<T>>
+
+    /**
+     * Group by ImportedFile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ImportedFileGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ImportedFileGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ImportedFileGroupByArgs['orderBy'] }
+        : { orderBy?: ImportedFileGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ImportedFileGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetImportedFileGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ImportedFile model
+   */
+  readonly fields: ImportedFileFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ImportedFile.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ImportedFileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ImportedFile model
+   */
+  interface ImportedFileFieldRefs {
+    readonly id: FieldRef<"ImportedFile", 'String'>
+    readonly fileName: FieldRef<"ImportedFile", 'String'>
+    readonly fileType: FieldRef<"ImportedFile", 'String'>
+    readonly fileSize: FieldRef<"ImportedFile", 'Int'>
+    readonly ossPath: FieldRef<"ImportedFile", 'String'>
+    readonly description: FieldRef<"ImportedFile", 'String'>
+    readonly tags: FieldRef<"ImportedFile", 'String[]'>
+    readonly uploadedAt: FieldRef<"ImportedFile", 'DateTime'>
+    readonly updatedAt: FieldRef<"ImportedFile", 'DateTime'>
+    readonly userId: FieldRef<"ImportedFile", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ImportedFile findUnique
+   */
+  export type ImportedFileFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * Filter, which ImportedFile to fetch.
+     */
+    where: ImportedFileWhereUniqueInput
+  }
+
+  /**
+   * ImportedFile findUniqueOrThrow
+   */
+  export type ImportedFileFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * Filter, which ImportedFile to fetch.
+     */
+    where: ImportedFileWhereUniqueInput
+  }
+
+  /**
+   * ImportedFile findFirst
+   */
+  export type ImportedFileFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * Filter, which ImportedFile to fetch.
+     */
+    where?: ImportedFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ImportedFiles to fetch.
+     */
+    orderBy?: ImportedFileOrderByWithRelationInput | ImportedFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ImportedFiles.
+     */
+    cursor?: ImportedFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ImportedFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ImportedFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ImportedFiles.
+     */
+    distinct?: ImportedFileScalarFieldEnum | ImportedFileScalarFieldEnum[]
+  }
+
+  /**
+   * ImportedFile findFirstOrThrow
+   */
+  export type ImportedFileFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * Filter, which ImportedFile to fetch.
+     */
+    where?: ImportedFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ImportedFiles to fetch.
+     */
+    orderBy?: ImportedFileOrderByWithRelationInput | ImportedFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ImportedFiles.
+     */
+    cursor?: ImportedFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ImportedFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ImportedFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ImportedFiles.
+     */
+    distinct?: ImportedFileScalarFieldEnum | ImportedFileScalarFieldEnum[]
+  }
+
+  /**
+   * ImportedFile findMany
+   */
+  export type ImportedFileFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * Filter, which ImportedFiles to fetch.
+     */
+    where?: ImportedFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ImportedFiles to fetch.
+     */
+    orderBy?: ImportedFileOrderByWithRelationInput | ImportedFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ImportedFiles.
+     */
+    cursor?: ImportedFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ImportedFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ImportedFiles.
+     */
+    skip?: number
+    distinct?: ImportedFileScalarFieldEnum | ImportedFileScalarFieldEnum[]
+  }
+
+  /**
+   * ImportedFile create
+   */
+  export type ImportedFileCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ImportedFile.
+     */
+    data: XOR<ImportedFileCreateInput, ImportedFileUncheckedCreateInput>
+  }
+
+  /**
+   * ImportedFile createMany
+   */
+  export type ImportedFileCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ImportedFiles.
+     */
+    data: ImportedFileCreateManyInput | ImportedFileCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ImportedFile createManyAndReturn
+   */
+  export type ImportedFileCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * The data used to create many ImportedFiles.
+     */
+    data: ImportedFileCreateManyInput | ImportedFileCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ImportedFile update
+   */
+  export type ImportedFileUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ImportedFile.
+     */
+    data: XOR<ImportedFileUpdateInput, ImportedFileUncheckedUpdateInput>
+    /**
+     * Choose, which ImportedFile to update.
+     */
+    where: ImportedFileWhereUniqueInput
+  }
+
+  /**
+   * ImportedFile updateMany
+   */
+  export type ImportedFileUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ImportedFiles.
+     */
+    data: XOR<ImportedFileUpdateManyMutationInput, ImportedFileUncheckedUpdateManyInput>
+    /**
+     * Filter which ImportedFiles to update
+     */
+    where?: ImportedFileWhereInput
+    /**
+     * Limit how many ImportedFiles to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ImportedFile updateManyAndReturn
+   */
+  export type ImportedFileUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * The data used to update ImportedFiles.
+     */
+    data: XOR<ImportedFileUpdateManyMutationInput, ImportedFileUncheckedUpdateManyInput>
+    /**
+     * Filter which ImportedFiles to update
+     */
+    where?: ImportedFileWhereInput
+    /**
+     * Limit how many ImportedFiles to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ImportedFile upsert
+   */
+  export type ImportedFileUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ImportedFile to update in case it exists.
+     */
+    where: ImportedFileWhereUniqueInput
+    /**
+     * In case the ImportedFile found by the `where` argument doesn't exist, create a new ImportedFile with this data.
+     */
+    create: XOR<ImportedFileCreateInput, ImportedFileUncheckedCreateInput>
+    /**
+     * In case the ImportedFile was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ImportedFileUpdateInput, ImportedFileUncheckedUpdateInput>
+  }
+
+  /**
+   * ImportedFile delete
+   */
+  export type ImportedFileDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+    /**
+     * Filter which ImportedFile to delete.
+     */
+    where: ImportedFileWhereUniqueInput
+  }
+
+  /**
+   * ImportedFile deleteMany
+   */
+  export type ImportedFileDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ImportedFiles to delete
+     */
+    where?: ImportedFileWhereInput
+    /**
+     * Limit how many ImportedFiles to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ImportedFile without action
+   */
+  export type ImportedFileDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ImportedFile
+     */
+    select?: ImportedFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ImportedFile
+     */
+    omit?: ImportedFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ImportedFileInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model LogArchive
+   */
+
+  export type AggregateLogArchive = {
+    _count: LogArchiveCountAggregateOutputType | null
+    _avg: LogArchiveAvgAggregateOutputType | null
+    _sum: LogArchiveSumAggregateOutputType | null
+    _min: LogArchiveMinAggregateOutputType | null
+    _max: LogArchiveMaxAggregateOutputType | null
+  }
+
+  export type LogArchiveAvgAggregateOutputType = {
+    year: number | null
+    month: number | null
+    day: number | null
+  }
+
+  export type LogArchiveSumAggregateOutputType = {
+    year: number | null
+    month: number | null
+    day: number | null
+  }
+
+  export type LogArchiveMinAggregateOutputType = {
+    id: string | null
+    content: string | null
+    logDate: Date | null
+    archiveDate: Date | null
+    year: number | null
+    month: number | null
+    day: number | null
+  }
+
+  export type LogArchiveMaxAggregateOutputType = {
+    id: string | null
+    content: string | null
+    logDate: Date | null
+    archiveDate: Date | null
+    year: number | null
+    month: number | null
+    day: number | null
+  }
+
+  export type LogArchiveCountAggregateOutputType = {
+    id: number
+    content: number
+    logDate: number
+    archiveDate: number
+    year: number
+    month: number
+    day: number
+    tags: number
+    _all: number
+  }
+
+
+  export type LogArchiveAvgAggregateInputType = {
+    year?: true
+    month?: true
+    day?: true
+  }
+
+  export type LogArchiveSumAggregateInputType = {
+    year?: true
+    month?: true
+    day?: true
+  }
+
+  export type LogArchiveMinAggregateInputType = {
+    id?: true
+    content?: true
+    logDate?: true
+    archiveDate?: true
+    year?: true
+    month?: true
+    day?: true
+  }
+
+  export type LogArchiveMaxAggregateInputType = {
+    id?: true
+    content?: true
+    logDate?: true
+    archiveDate?: true
+    year?: true
+    month?: true
+    day?: true
+  }
+
+  export type LogArchiveCountAggregateInputType = {
+    id?: true
+    content?: true
+    logDate?: true
+    archiveDate?: true
+    year?: true
+    month?: true
+    day?: true
+    tags?: true
+    _all?: true
+  }
+
+  export type LogArchiveAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LogArchive to aggregate.
+     */
+    where?: LogArchiveWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LogArchives to fetch.
+     */
+    orderBy?: LogArchiveOrderByWithRelationInput | LogArchiveOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: LogArchiveWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LogArchives from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LogArchives.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned LogArchives
+    **/
+    _count?: true | LogArchiveCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: LogArchiveAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: LogArchiveSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: LogArchiveMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: LogArchiveMaxAggregateInputType
+  }
+
+  export type GetLogArchiveAggregateType<T extends LogArchiveAggregateArgs> = {
+        [P in keyof T & keyof AggregateLogArchive]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateLogArchive[P]>
+      : GetScalarType<T[P], AggregateLogArchive[P]>
+  }
+
+
+
+
+  export type LogArchiveGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LogArchiveWhereInput
+    orderBy?: LogArchiveOrderByWithAggregationInput | LogArchiveOrderByWithAggregationInput[]
+    by: LogArchiveScalarFieldEnum[] | LogArchiveScalarFieldEnum
+    having?: LogArchiveScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: LogArchiveCountAggregateInputType | true
+    _avg?: LogArchiveAvgAggregateInputType
+    _sum?: LogArchiveSumAggregateInputType
+    _min?: LogArchiveMinAggregateInputType
+    _max?: LogArchiveMaxAggregateInputType
+  }
+
+  export type LogArchiveGroupByOutputType = {
+    id: string
+    content: string
+    logDate: Date
+    archiveDate: Date
+    year: number
+    month: number
+    day: number
+    tags: string[]
+    _count: LogArchiveCountAggregateOutputType | null
+    _avg: LogArchiveAvgAggregateOutputType | null
+    _sum: LogArchiveSumAggregateOutputType | null
+    _min: LogArchiveMinAggregateOutputType | null
+    _max: LogArchiveMaxAggregateOutputType | null
+  }
+
+  type GetLogArchiveGroupByPayload<T extends LogArchiveGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<LogArchiveGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof LogArchiveGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], LogArchiveGroupByOutputType[P]>
+            : GetScalarType<T[P], LogArchiveGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type LogArchiveSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    content?: boolean
+    logDate?: boolean
+    archiveDate?: boolean
+    year?: boolean
+    month?: boolean
+    day?: boolean
+    tags?: boolean
+  }, ExtArgs["result"]["logArchive"]>
+
+  export type LogArchiveSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    content?: boolean
+    logDate?: boolean
+    archiveDate?: boolean
+    year?: boolean
+    month?: boolean
+    day?: boolean
+    tags?: boolean
+  }, ExtArgs["result"]["logArchive"]>
+
+  export type LogArchiveSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    content?: boolean
+    logDate?: boolean
+    archiveDate?: boolean
+    year?: boolean
+    month?: boolean
+    day?: boolean
+    tags?: boolean
+  }, ExtArgs["result"]["logArchive"]>
+
+  export type LogArchiveSelectScalar = {
+    id?: boolean
+    content?: boolean
+    logDate?: boolean
+    archiveDate?: boolean
+    year?: boolean
+    month?: boolean
+    day?: boolean
+    tags?: boolean
+  }
+
+  export type LogArchiveOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "content" | "logDate" | "archiveDate" | "year" | "month" | "day" | "tags", ExtArgs["result"]["logArchive"]>
+
+  export type $LogArchivePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "LogArchive"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      content: string
+      logDate: Date
+      archiveDate: Date
+      year: number
+      month: number
+      day: number
+      tags: string[]
+    }, ExtArgs["result"]["logArchive"]>
+    composites: {}
+  }
+
+  type LogArchiveGetPayload<S extends boolean | null | undefined | LogArchiveDefaultArgs> = $Result.GetResult<Prisma.$LogArchivePayload, S>
+
+  type LogArchiveCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<LogArchiveFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: LogArchiveCountAggregateInputType | true
+    }
+
+  export interface LogArchiveDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['LogArchive'], meta: { name: 'LogArchive' } }
+    /**
+     * Find zero or one LogArchive that matches the filter.
+     * @param {LogArchiveFindUniqueArgs} args - Arguments to find a LogArchive
+     * @example
+     * // Get one LogArchive
+     * const logArchive = await prisma.logArchive.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends LogArchiveFindUniqueArgs>(args: SelectSubset<T, LogArchiveFindUniqueArgs<ExtArgs>>): Prisma__LogArchiveClient<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one LogArchive that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {LogArchiveFindUniqueOrThrowArgs} args - Arguments to find a LogArchive
+     * @example
+     * // Get one LogArchive
+     * const logArchive = await prisma.logArchive.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends LogArchiveFindUniqueOrThrowArgs>(args: SelectSubset<T, LogArchiveFindUniqueOrThrowArgs<ExtArgs>>): Prisma__LogArchiveClient<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LogArchive that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LogArchiveFindFirstArgs} args - Arguments to find a LogArchive
+     * @example
+     * // Get one LogArchive
+     * const logArchive = await prisma.logArchive.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends LogArchiveFindFirstArgs>(args?: SelectSubset<T, LogArchiveFindFirstArgs<ExtArgs>>): Prisma__LogArchiveClient<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first LogArchive that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LogArchiveFindFirstOrThrowArgs} args - Arguments to find a LogArchive
+     * @example
+     * // Get one LogArchive
+     * const logArchive = await prisma.logArchive.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends LogArchiveFindFirstOrThrowArgs>(args?: SelectSubset<T, LogArchiveFindFirstOrThrowArgs<ExtArgs>>): Prisma__LogArchiveClient<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more LogArchives that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LogArchiveFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all LogArchives
+     * const logArchives = await prisma.logArchive.findMany()
+     * 
+     * // Get first 10 LogArchives
+     * const logArchives = await prisma.logArchive.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const logArchiveWithIdOnly = await prisma.logArchive.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends LogArchiveFindManyArgs>(args?: SelectSubset<T, LogArchiveFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a LogArchive.
+     * @param {LogArchiveCreateArgs} args - Arguments to create a LogArchive.
+     * @example
+     * // Create one LogArchive
+     * const LogArchive = await prisma.logArchive.create({
+     *   data: {
+     *     // ... data to create a LogArchive
+     *   }
+     * })
+     * 
+     */
+    create<T extends LogArchiveCreateArgs>(args: SelectSubset<T, LogArchiveCreateArgs<ExtArgs>>): Prisma__LogArchiveClient<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many LogArchives.
+     * @param {LogArchiveCreateManyArgs} args - Arguments to create many LogArchives.
+     * @example
+     * // Create many LogArchives
+     * const logArchive = await prisma.logArchive.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends LogArchiveCreateManyArgs>(args?: SelectSubset<T, LogArchiveCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many LogArchives and returns the data saved in the database.
+     * @param {LogArchiveCreateManyAndReturnArgs} args - Arguments to create many LogArchives.
+     * @example
+     * // Create many LogArchives
+     * const logArchive = await prisma.logArchive.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many LogArchives and only return the `id`
+     * const logArchiveWithIdOnly = await prisma.logArchive.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends LogArchiveCreateManyAndReturnArgs>(args?: SelectSubset<T, LogArchiveCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a LogArchive.
+     * @param {LogArchiveDeleteArgs} args - Arguments to delete one LogArchive.
+     * @example
+     * // Delete one LogArchive
+     * const LogArchive = await prisma.logArchive.delete({
+     *   where: {
+     *     // ... filter to delete one LogArchive
+     *   }
+     * })
+     * 
+     */
+    delete<T extends LogArchiveDeleteArgs>(args: SelectSubset<T, LogArchiveDeleteArgs<ExtArgs>>): Prisma__LogArchiveClient<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one LogArchive.
+     * @param {LogArchiveUpdateArgs} args - Arguments to update one LogArchive.
+     * @example
+     * // Update one LogArchive
+     * const logArchive = await prisma.logArchive.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends LogArchiveUpdateArgs>(args: SelectSubset<T, LogArchiveUpdateArgs<ExtArgs>>): Prisma__LogArchiveClient<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more LogArchives.
+     * @param {LogArchiveDeleteManyArgs} args - Arguments to filter LogArchives to delete.
+     * @example
+     * // Delete a few LogArchives
+     * const { count } = await prisma.logArchive.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends LogArchiveDeleteManyArgs>(args?: SelectSubset<T, LogArchiveDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LogArchives.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LogArchiveUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many LogArchives
+     * const logArchive = await prisma.logArchive.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends LogArchiveUpdateManyArgs>(args: SelectSubset<T, LogArchiveUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more LogArchives and returns the data updated in the database.
+     * @param {LogArchiveUpdateManyAndReturnArgs} args - Arguments to update many LogArchives.
+     * @example
+     * // Update many LogArchives
+     * const logArchive = await prisma.logArchive.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more LogArchives and only return the `id`
+     * const logArchiveWithIdOnly = await prisma.logArchive.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends LogArchiveUpdateManyAndReturnArgs>(args: SelectSubset<T, LogArchiveUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one LogArchive.
+     * @param {LogArchiveUpsertArgs} args - Arguments to update or create a LogArchive.
+     * @example
+     * // Update or create a LogArchive
+     * const logArchive = await prisma.logArchive.upsert({
+     *   create: {
+     *     // ... data to create a LogArchive
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the LogArchive we want to update
+     *   }
+     * })
+     */
+    upsert<T extends LogArchiveUpsertArgs>(args: SelectSubset<T, LogArchiveUpsertArgs<ExtArgs>>): Prisma__LogArchiveClient<$Result.GetResult<Prisma.$LogArchivePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of LogArchives.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LogArchiveCountArgs} args - Arguments to filter LogArchives to count.
+     * @example
+     * // Count the number of LogArchives
+     * const count = await prisma.logArchive.count({
+     *   where: {
+     *     // ... the filter for the LogArchives we want to count
+     *   }
+     * })
+    **/
+    count<T extends LogArchiveCountArgs>(
+      args?: Subset<T, LogArchiveCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], LogArchiveCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a LogArchive.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LogArchiveAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends LogArchiveAggregateArgs>(args: Subset<T, LogArchiveAggregateArgs>): Prisma.PrismaPromise<GetLogArchiveAggregateType<T>>
+
+    /**
+     * Group by LogArchive.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {LogArchiveGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends LogArchiveGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: LogArchiveGroupByArgs['orderBy'] }
+        : { orderBy?: LogArchiveGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, LogArchiveGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetLogArchiveGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the LogArchive model
+   */
+  readonly fields: LogArchiveFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for LogArchive.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__LogArchiveClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the LogArchive model
+   */
+  interface LogArchiveFieldRefs {
+    readonly id: FieldRef<"LogArchive", 'String'>
+    readonly content: FieldRef<"LogArchive", 'String'>
+    readonly logDate: FieldRef<"LogArchive", 'DateTime'>
+    readonly archiveDate: FieldRef<"LogArchive", 'DateTime'>
+    readonly year: FieldRef<"LogArchive", 'Int'>
+    readonly month: FieldRef<"LogArchive", 'Int'>
+    readonly day: FieldRef<"LogArchive", 'Int'>
+    readonly tags: FieldRef<"LogArchive", 'String[]'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * LogArchive findUnique
+   */
+  export type LogArchiveFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * Filter, which LogArchive to fetch.
+     */
+    where: LogArchiveWhereUniqueInput
+  }
+
+  /**
+   * LogArchive findUniqueOrThrow
+   */
+  export type LogArchiveFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * Filter, which LogArchive to fetch.
+     */
+    where: LogArchiveWhereUniqueInput
+  }
+
+  /**
+   * LogArchive findFirst
+   */
+  export type LogArchiveFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * Filter, which LogArchive to fetch.
+     */
+    where?: LogArchiveWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LogArchives to fetch.
+     */
+    orderBy?: LogArchiveOrderByWithRelationInput | LogArchiveOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LogArchives.
+     */
+    cursor?: LogArchiveWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LogArchives from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LogArchives.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LogArchives.
+     */
+    distinct?: LogArchiveScalarFieldEnum | LogArchiveScalarFieldEnum[]
+  }
+
+  /**
+   * LogArchive findFirstOrThrow
+   */
+  export type LogArchiveFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * Filter, which LogArchive to fetch.
+     */
+    where?: LogArchiveWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LogArchives to fetch.
+     */
+    orderBy?: LogArchiveOrderByWithRelationInput | LogArchiveOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for LogArchives.
+     */
+    cursor?: LogArchiveWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LogArchives from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LogArchives.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of LogArchives.
+     */
+    distinct?: LogArchiveScalarFieldEnum | LogArchiveScalarFieldEnum[]
+  }
+
+  /**
+   * LogArchive findMany
+   */
+  export type LogArchiveFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * Filter, which LogArchives to fetch.
+     */
+    where?: LogArchiveWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of LogArchives to fetch.
+     */
+    orderBy?: LogArchiveOrderByWithRelationInput | LogArchiveOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing LogArchives.
+     */
+    cursor?: LogArchiveWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` LogArchives from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` LogArchives.
+     */
+    skip?: number
+    distinct?: LogArchiveScalarFieldEnum | LogArchiveScalarFieldEnum[]
+  }
+
+  /**
+   * LogArchive create
+   */
+  export type LogArchiveCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * The data needed to create a LogArchive.
+     */
+    data: XOR<LogArchiveCreateInput, LogArchiveUncheckedCreateInput>
+  }
+
+  /**
+   * LogArchive createMany
+   */
+  export type LogArchiveCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many LogArchives.
+     */
+    data: LogArchiveCreateManyInput | LogArchiveCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LogArchive createManyAndReturn
+   */
+  export type LogArchiveCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * The data used to create many LogArchives.
+     */
+    data: LogArchiveCreateManyInput | LogArchiveCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * LogArchive update
+   */
+  export type LogArchiveUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * The data needed to update a LogArchive.
+     */
+    data: XOR<LogArchiveUpdateInput, LogArchiveUncheckedUpdateInput>
+    /**
+     * Choose, which LogArchive to update.
+     */
+    where: LogArchiveWhereUniqueInput
+  }
+
+  /**
+   * LogArchive updateMany
+   */
+  export type LogArchiveUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update LogArchives.
+     */
+    data: XOR<LogArchiveUpdateManyMutationInput, LogArchiveUncheckedUpdateManyInput>
+    /**
+     * Filter which LogArchives to update
+     */
+    where?: LogArchiveWhereInput
+    /**
+     * Limit how many LogArchives to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LogArchive updateManyAndReturn
+   */
+  export type LogArchiveUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * The data used to update LogArchives.
+     */
+    data: XOR<LogArchiveUpdateManyMutationInput, LogArchiveUncheckedUpdateManyInput>
+    /**
+     * Filter which LogArchives to update
+     */
+    where?: LogArchiveWhereInput
+    /**
+     * Limit how many LogArchives to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * LogArchive upsert
+   */
+  export type LogArchiveUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * The filter to search for the LogArchive to update in case it exists.
+     */
+    where: LogArchiveWhereUniqueInput
+    /**
+     * In case the LogArchive found by the `where` argument doesn't exist, create a new LogArchive with this data.
+     */
+    create: XOR<LogArchiveCreateInput, LogArchiveUncheckedCreateInput>
+    /**
+     * In case the LogArchive was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<LogArchiveUpdateInput, LogArchiveUncheckedUpdateInput>
+  }
+
+  /**
+   * LogArchive delete
+   */
+  export type LogArchiveDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+    /**
+     * Filter which LogArchive to delete.
+     */
+    where: LogArchiveWhereUniqueInput
+  }
+
+  /**
+   * LogArchive deleteMany
+   */
+  export type LogArchiveDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which LogArchives to delete
+     */
+    where?: LogArchiveWhereInput
+    /**
+     * Limit how many LogArchives to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * LogArchive without action
+   */
+  export type LogArchiveDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogArchive
+     */
+    select?: LogArchiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogArchive
+     */
+    omit?: LogArchiveOmit<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -8884,7 +14079,8 @@ export namespace Prisma {
     userId: 'userId',
     parentId: 'parentId',
     goalId: 'goalId',
-    metadata: 'metadata'
+    metadata: 'metadata',
+    totalTime: 'totalTime'
   };
 
   export type TaskScalarFieldEnum = (typeof TaskScalarFieldEnum)[keyof typeof TaskScalarFieldEnum]
@@ -8950,6 +14146,65 @@ export namespace Prisma {
   };
 
   export type TagScalarFieldEnum = (typeof TagScalarFieldEnum)[keyof typeof TagScalarFieldEnum]
+
+
+  export const TimeRecordScalarFieldEnum: {
+    id: 'id',
+    startTime: 'startTime',
+    endTime: 'endTime',
+    duration: 'duration',
+    note: 'note',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    userId: 'userId',
+    taskId: 'taskId'
+  };
+
+  export type TimeRecordScalarFieldEnum = (typeof TimeRecordScalarFieldEnum)[keyof typeof TimeRecordScalarFieldEnum]
+
+
+  export const ProgressLogScalarFieldEnum: {
+    id: 'id',
+    progress: 'progress',
+    note: 'note',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    userId: 'userId',
+    taskId: 'taskId',
+    goalId: 'goalId'
+  };
+
+  export type ProgressLogScalarFieldEnum = (typeof ProgressLogScalarFieldEnum)[keyof typeof ProgressLogScalarFieldEnum]
+
+
+  export const ImportedFileScalarFieldEnum: {
+    id: 'id',
+    fileName: 'fileName',
+    fileType: 'fileType',
+    fileSize: 'fileSize',
+    ossPath: 'ossPath',
+    description: 'description',
+    tags: 'tags',
+    uploadedAt: 'uploadedAt',
+    updatedAt: 'updatedAt',
+    userId: 'userId'
+  };
+
+  export type ImportedFileScalarFieldEnum = (typeof ImportedFileScalarFieldEnum)[keyof typeof ImportedFileScalarFieldEnum]
+
+
+  export const LogArchiveScalarFieldEnum: {
+    id: 'id',
+    content: 'content',
+    logDate: 'logDate',
+    archiveDate: 'archiveDate',
+    year: 'year',
+    month: 'month',
+    day: 'day',
+    tags: 'tags'
+  };
+
+  export type LogArchiveScalarFieldEnum = (typeof LogArchiveScalarFieldEnum)[keyof typeof LogArchiveScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -9069,6 +14324,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Int'
+   */
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+    
+
+
+  /**
+   * Reference to a field of type 'Int[]'
+   */
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
+    
+
+
+  /**
    * Reference to a field of type 'GoalLevel'
    */
   export type EnumGoalLevelFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'GoalLevel'>
@@ -9108,20 +14377,6 @@ export namespace Prisma {
    */
   export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
-
-
-  /**
-   * Reference to a field of type 'Int'
-   */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-  /**
-   * Reference to a field of type 'Int[]'
-   */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
   /**
    * Deep Input Types
    */
@@ -9140,6 +14395,9 @@ export namespace Prisma {
     goals?: GoalListRelationFilter
     messages?: MessageListRelationFilter
     tasks?: TaskListRelationFilter
+    timeRecords?: TimeRecordListRelationFilter
+    progressLogs?: ProgressLogListRelationFilter
+    importedFiles?: ImportedFileListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
@@ -9152,6 +14410,9 @@ export namespace Prisma {
     goals?: GoalOrderByRelationAggregateInput
     messages?: MessageOrderByRelationAggregateInput
     tasks?: TaskOrderByRelationAggregateInput
+    timeRecords?: TimeRecordOrderByRelationAggregateInput
+    progressLogs?: ProgressLogOrderByRelationAggregateInput
+    importedFiles?: ImportedFileOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -9167,6 +14428,9 @@ export namespace Prisma {
     goals?: GoalListRelationFilter
     messages?: MessageListRelationFilter
     tasks?: TaskListRelationFilter
+    timeRecords?: TimeRecordListRelationFilter
+    progressLogs?: ProgressLogListRelationFilter
+    importedFiles?: ImportedFileListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
@@ -9209,11 +14473,14 @@ export namespace Prisma {
     parentId?: StringNullableFilter<"Task"> | string | null
     goalId?: StringNullableFilter<"Task"> | string | null
     metadata?: JsonNullableFilter<"Task">
+    totalTime?: IntFilter<"Task"> | number
     goal?: XOR<GoalNullableScalarRelationFilter, GoalWhereInput> | null
     parent?: XOR<TaskNullableScalarRelationFilter, TaskWhereInput> | null
     subTasks?: TaskListRelationFilter
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     tags?: TagListRelationFilter
+    timeRecords?: TimeRecordListRelationFilter
+    progressLogs?: ProgressLogListRelationFilter
   }
 
   export type TaskOrderByWithRelationInput = {
@@ -9229,11 +14496,14 @@ export namespace Prisma {
     parentId?: SortOrderInput | SortOrder
     goalId?: SortOrderInput | SortOrder
     metadata?: SortOrderInput | SortOrder
+    totalTime?: SortOrder
     goal?: GoalOrderByWithRelationInput
     parent?: TaskOrderByWithRelationInput
     subTasks?: TaskOrderByRelationAggregateInput
     user?: UserOrderByWithRelationInput
     tags?: TagOrderByRelationAggregateInput
+    timeRecords?: TimeRecordOrderByRelationAggregateInput
+    progressLogs?: ProgressLogOrderByRelationAggregateInput
   }
 
   export type TaskWhereUniqueInput = Prisma.AtLeast<{
@@ -9252,11 +14522,14 @@ export namespace Prisma {
     parentId?: StringNullableFilter<"Task"> | string | null
     goalId?: StringNullableFilter<"Task"> | string | null
     metadata?: JsonNullableFilter<"Task">
+    totalTime?: IntFilter<"Task"> | number
     goal?: XOR<GoalNullableScalarRelationFilter, GoalWhereInput> | null
     parent?: XOR<TaskNullableScalarRelationFilter, TaskWhereInput> | null
     subTasks?: TaskListRelationFilter
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     tags?: TagListRelationFilter
+    timeRecords?: TimeRecordListRelationFilter
+    progressLogs?: ProgressLogListRelationFilter
   }, "id">
 
   export type TaskOrderByWithAggregationInput = {
@@ -9272,9 +14545,12 @@ export namespace Prisma {
     parentId?: SortOrderInput | SortOrder
     goalId?: SortOrderInput | SortOrder
     metadata?: SortOrderInput | SortOrder
+    totalTime?: SortOrder
     _count?: TaskCountOrderByAggregateInput
+    _avg?: TaskAvgOrderByAggregateInput
     _max?: TaskMaxOrderByAggregateInput
     _min?: TaskMinOrderByAggregateInput
+    _sum?: TaskSumOrderByAggregateInput
   }
 
   export type TaskScalarWhereWithAggregatesInput = {
@@ -9293,6 +14569,7 @@ export namespace Prisma {
     parentId?: StringNullableWithAggregatesFilter<"Task"> | string | null
     goalId?: StringNullableWithAggregatesFilter<"Task"> | string | null
     metadata?: JsonNullableWithAggregatesFilter<"Task">
+    totalTime?: IntWithAggregatesFilter<"Task"> | number
   }
 
   export type GoalWhereInput = {
@@ -9321,6 +14598,7 @@ export namespace Prisma {
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     tasks?: TaskListRelationFilter
     tags?: TagListRelationFilter
+    progressLogs?: ProgressLogListRelationFilter
   }
 
   export type GoalOrderByWithRelationInput = {
@@ -9346,6 +14624,7 @@ export namespace Prisma {
     user?: UserOrderByWithRelationInput
     tasks?: TaskOrderByRelationAggregateInput
     tags?: TagOrderByRelationAggregateInput
+    progressLogs?: ProgressLogOrderByRelationAggregateInput
   }
 
   export type GoalWhereUniqueInput = Prisma.AtLeast<{
@@ -9374,6 +14653,7 @@ export namespace Prisma {
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
     tasks?: TaskListRelationFilter
     tags?: TagListRelationFilter
+    progressLogs?: ProgressLogListRelationFilter
   }, "id">
 
   export type GoalOrderByWithAggregationInput = {
@@ -9637,6 +14917,315 @@ export namespace Prisma {
     updatedAt?: DateTimeWithAggregatesFilter<"Tag"> | Date | string
   }
 
+  export type TimeRecordWhereInput = {
+    AND?: TimeRecordWhereInput | TimeRecordWhereInput[]
+    OR?: TimeRecordWhereInput[]
+    NOT?: TimeRecordWhereInput | TimeRecordWhereInput[]
+    id?: StringFilter<"TimeRecord"> | string
+    startTime?: DateTimeFilter<"TimeRecord"> | Date | string
+    endTime?: DateTimeNullableFilter<"TimeRecord"> | Date | string | null
+    duration?: IntNullableFilter<"TimeRecord"> | number | null
+    note?: StringNullableFilter<"TimeRecord"> | string | null
+    createdAt?: DateTimeFilter<"TimeRecord"> | Date | string
+    updatedAt?: DateTimeFilter<"TimeRecord"> | Date | string
+    userId?: StringFilter<"TimeRecord"> | string
+    taskId?: StringFilter<"TimeRecord"> | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    task?: XOR<TaskScalarRelationFilter, TaskWhereInput>
+  }
+
+  export type TimeRecordOrderByWithRelationInput = {
+    id?: SortOrder
+    startTime?: SortOrder
+    endTime?: SortOrderInput | SortOrder
+    duration?: SortOrderInput | SortOrder
+    note?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrder
+    user?: UserOrderByWithRelationInput
+    task?: TaskOrderByWithRelationInput
+  }
+
+  export type TimeRecordWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: TimeRecordWhereInput | TimeRecordWhereInput[]
+    OR?: TimeRecordWhereInput[]
+    NOT?: TimeRecordWhereInput | TimeRecordWhereInput[]
+    startTime?: DateTimeFilter<"TimeRecord"> | Date | string
+    endTime?: DateTimeNullableFilter<"TimeRecord"> | Date | string | null
+    duration?: IntNullableFilter<"TimeRecord"> | number | null
+    note?: StringNullableFilter<"TimeRecord"> | string | null
+    createdAt?: DateTimeFilter<"TimeRecord"> | Date | string
+    updatedAt?: DateTimeFilter<"TimeRecord"> | Date | string
+    userId?: StringFilter<"TimeRecord"> | string
+    taskId?: StringFilter<"TimeRecord"> | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    task?: XOR<TaskScalarRelationFilter, TaskWhereInput>
+  }, "id">
+
+  export type TimeRecordOrderByWithAggregationInput = {
+    id?: SortOrder
+    startTime?: SortOrder
+    endTime?: SortOrderInput | SortOrder
+    duration?: SortOrderInput | SortOrder
+    note?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrder
+    _count?: TimeRecordCountOrderByAggregateInput
+    _avg?: TimeRecordAvgOrderByAggregateInput
+    _max?: TimeRecordMaxOrderByAggregateInput
+    _min?: TimeRecordMinOrderByAggregateInput
+    _sum?: TimeRecordSumOrderByAggregateInput
+  }
+
+  export type TimeRecordScalarWhereWithAggregatesInput = {
+    AND?: TimeRecordScalarWhereWithAggregatesInput | TimeRecordScalarWhereWithAggregatesInput[]
+    OR?: TimeRecordScalarWhereWithAggregatesInput[]
+    NOT?: TimeRecordScalarWhereWithAggregatesInput | TimeRecordScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"TimeRecord"> | string
+    startTime?: DateTimeWithAggregatesFilter<"TimeRecord"> | Date | string
+    endTime?: DateTimeNullableWithAggregatesFilter<"TimeRecord"> | Date | string | null
+    duration?: IntNullableWithAggregatesFilter<"TimeRecord"> | number | null
+    note?: StringNullableWithAggregatesFilter<"TimeRecord"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"TimeRecord"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"TimeRecord"> | Date | string
+    userId?: StringWithAggregatesFilter<"TimeRecord"> | string
+    taskId?: StringWithAggregatesFilter<"TimeRecord"> | string
+  }
+
+  export type ProgressLogWhereInput = {
+    AND?: ProgressLogWhereInput | ProgressLogWhereInput[]
+    OR?: ProgressLogWhereInput[]
+    NOT?: ProgressLogWhereInput | ProgressLogWhereInput[]
+    id?: StringFilter<"ProgressLog"> | string
+    progress?: FloatFilter<"ProgressLog"> | number
+    note?: StringNullableFilter<"ProgressLog"> | string | null
+    createdAt?: DateTimeFilter<"ProgressLog"> | Date | string
+    updatedAt?: DateTimeFilter<"ProgressLog"> | Date | string
+    userId?: StringFilter<"ProgressLog"> | string
+    taskId?: StringNullableFilter<"ProgressLog"> | string | null
+    goalId?: StringNullableFilter<"ProgressLog"> | string | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    task?: XOR<TaskNullableScalarRelationFilter, TaskWhereInput> | null
+    goal?: XOR<GoalNullableScalarRelationFilter, GoalWhereInput> | null
+  }
+
+  export type ProgressLogOrderByWithRelationInput = {
+    id?: SortOrder
+    progress?: SortOrder
+    note?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrderInput | SortOrder
+    goalId?: SortOrderInput | SortOrder
+    user?: UserOrderByWithRelationInput
+    task?: TaskOrderByWithRelationInput
+    goal?: GoalOrderByWithRelationInput
+  }
+
+  export type ProgressLogWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ProgressLogWhereInput | ProgressLogWhereInput[]
+    OR?: ProgressLogWhereInput[]
+    NOT?: ProgressLogWhereInput | ProgressLogWhereInput[]
+    progress?: FloatFilter<"ProgressLog"> | number
+    note?: StringNullableFilter<"ProgressLog"> | string | null
+    createdAt?: DateTimeFilter<"ProgressLog"> | Date | string
+    updatedAt?: DateTimeFilter<"ProgressLog"> | Date | string
+    userId?: StringFilter<"ProgressLog"> | string
+    taskId?: StringNullableFilter<"ProgressLog"> | string | null
+    goalId?: StringNullableFilter<"ProgressLog"> | string | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    task?: XOR<TaskNullableScalarRelationFilter, TaskWhereInput> | null
+    goal?: XOR<GoalNullableScalarRelationFilter, GoalWhereInput> | null
+  }, "id">
+
+  export type ProgressLogOrderByWithAggregationInput = {
+    id?: SortOrder
+    progress?: SortOrder
+    note?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrderInput | SortOrder
+    goalId?: SortOrderInput | SortOrder
+    _count?: ProgressLogCountOrderByAggregateInput
+    _avg?: ProgressLogAvgOrderByAggregateInput
+    _max?: ProgressLogMaxOrderByAggregateInput
+    _min?: ProgressLogMinOrderByAggregateInput
+    _sum?: ProgressLogSumOrderByAggregateInput
+  }
+
+  export type ProgressLogScalarWhereWithAggregatesInput = {
+    AND?: ProgressLogScalarWhereWithAggregatesInput | ProgressLogScalarWhereWithAggregatesInput[]
+    OR?: ProgressLogScalarWhereWithAggregatesInput[]
+    NOT?: ProgressLogScalarWhereWithAggregatesInput | ProgressLogScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ProgressLog"> | string
+    progress?: FloatWithAggregatesFilter<"ProgressLog"> | number
+    note?: StringNullableWithAggregatesFilter<"ProgressLog"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"ProgressLog"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ProgressLog"> | Date | string
+    userId?: StringWithAggregatesFilter<"ProgressLog"> | string
+    taskId?: StringNullableWithAggregatesFilter<"ProgressLog"> | string | null
+    goalId?: StringNullableWithAggregatesFilter<"ProgressLog"> | string | null
+  }
+
+  export type ImportedFileWhereInput = {
+    AND?: ImportedFileWhereInput | ImportedFileWhereInput[]
+    OR?: ImportedFileWhereInput[]
+    NOT?: ImportedFileWhereInput | ImportedFileWhereInput[]
+    id?: StringFilter<"ImportedFile"> | string
+    fileName?: StringFilter<"ImportedFile"> | string
+    fileType?: StringFilter<"ImportedFile"> | string
+    fileSize?: IntFilter<"ImportedFile"> | number
+    ossPath?: StringFilter<"ImportedFile"> | string
+    description?: StringNullableFilter<"ImportedFile"> | string | null
+    tags?: StringNullableListFilter<"ImportedFile">
+    uploadedAt?: DateTimeFilter<"ImportedFile"> | Date | string
+    updatedAt?: DateTimeFilter<"ImportedFile"> | Date | string
+    userId?: StringFilter<"ImportedFile"> | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }
+
+  export type ImportedFileOrderByWithRelationInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    fileType?: SortOrder
+    fileSize?: SortOrder
+    ossPath?: SortOrder
+    description?: SortOrderInput | SortOrder
+    tags?: SortOrder
+    uploadedAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    user?: UserOrderByWithRelationInput
+  }
+
+  export type ImportedFileWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ImportedFileWhereInput | ImportedFileWhereInput[]
+    OR?: ImportedFileWhereInput[]
+    NOT?: ImportedFileWhereInput | ImportedFileWhereInput[]
+    fileName?: StringFilter<"ImportedFile"> | string
+    fileType?: StringFilter<"ImportedFile"> | string
+    fileSize?: IntFilter<"ImportedFile"> | number
+    ossPath?: StringFilter<"ImportedFile"> | string
+    description?: StringNullableFilter<"ImportedFile"> | string | null
+    tags?: StringNullableListFilter<"ImportedFile">
+    uploadedAt?: DateTimeFilter<"ImportedFile"> | Date | string
+    updatedAt?: DateTimeFilter<"ImportedFile"> | Date | string
+    userId?: StringFilter<"ImportedFile"> | string
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
+  }, "id">
+
+  export type ImportedFileOrderByWithAggregationInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    fileType?: SortOrder
+    fileSize?: SortOrder
+    ossPath?: SortOrder
+    description?: SortOrderInput | SortOrder
+    tags?: SortOrder
+    uploadedAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    _count?: ImportedFileCountOrderByAggregateInput
+    _avg?: ImportedFileAvgOrderByAggregateInput
+    _max?: ImportedFileMaxOrderByAggregateInput
+    _min?: ImportedFileMinOrderByAggregateInput
+    _sum?: ImportedFileSumOrderByAggregateInput
+  }
+
+  export type ImportedFileScalarWhereWithAggregatesInput = {
+    AND?: ImportedFileScalarWhereWithAggregatesInput | ImportedFileScalarWhereWithAggregatesInput[]
+    OR?: ImportedFileScalarWhereWithAggregatesInput[]
+    NOT?: ImportedFileScalarWhereWithAggregatesInput | ImportedFileScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ImportedFile"> | string
+    fileName?: StringWithAggregatesFilter<"ImportedFile"> | string
+    fileType?: StringWithAggregatesFilter<"ImportedFile"> | string
+    fileSize?: IntWithAggregatesFilter<"ImportedFile"> | number
+    ossPath?: StringWithAggregatesFilter<"ImportedFile"> | string
+    description?: StringNullableWithAggregatesFilter<"ImportedFile"> | string | null
+    tags?: StringNullableListFilter<"ImportedFile">
+    uploadedAt?: DateTimeWithAggregatesFilter<"ImportedFile"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ImportedFile"> | Date | string
+    userId?: StringWithAggregatesFilter<"ImportedFile"> | string
+  }
+
+  export type LogArchiveWhereInput = {
+    AND?: LogArchiveWhereInput | LogArchiveWhereInput[]
+    OR?: LogArchiveWhereInput[]
+    NOT?: LogArchiveWhereInput | LogArchiveWhereInput[]
+    id?: StringFilter<"LogArchive"> | string
+    content?: StringFilter<"LogArchive"> | string
+    logDate?: DateTimeFilter<"LogArchive"> | Date | string
+    archiveDate?: DateTimeFilter<"LogArchive"> | Date | string
+    year?: IntFilter<"LogArchive"> | number
+    month?: IntFilter<"LogArchive"> | number
+    day?: IntFilter<"LogArchive"> | number
+    tags?: StringNullableListFilter<"LogArchive">
+  }
+
+  export type LogArchiveOrderByWithRelationInput = {
+    id?: SortOrder
+    content?: SortOrder
+    logDate?: SortOrder
+    archiveDate?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    day?: SortOrder
+    tags?: SortOrder
+  }
+
+  export type LogArchiveWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: LogArchiveWhereInput | LogArchiveWhereInput[]
+    OR?: LogArchiveWhereInput[]
+    NOT?: LogArchiveWhereInput | LogArchiveWhereInput[]
+    content?: StringFilter<"LogArchive"> | string
+    logDate?: DateTimeFilter<"LogArchive"> | Date | string
+    archiveDate?: DateTimeFilter<"LogArchive"> | Date | string
+    year?: IntFilter<"LogArchive"> | number
+    month?: IntFilter<"LogArchive"> | number
+    day?: IntFilter<"LogArchive"> | number
+    tags?: StringNullableListFilter<"LogArchive">
+  }, "id">
+
+  export type LogArchiveOrderByWithAggregationInput = {
+    id?: SortOrder
+    content?: SortOrder
+    logDate?: SortOrder
+    archiveDate?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    day?: SortOrder
+    tags?: SortOrder
+    _count?: LogArchiveCountOrderByAggregateInput
+    _avg?: LogArchiveAvgOrderByAggregateInput
+    _max?: LogArchiveMaxOrderByAggregateInput
+    _min?: LogArchiveMinOrderByAggregateInput
+    _sum?: LogArchiveSumOrderByAggregateInput
+  }
+
+  export type LogArchiveScalarWhereWithAggregatesInput = {
+    AND?: LogArchiveScalarWhereWithAggregatesInput | LogArchiveScalarWhereWithAggregatesInput[]
+    OR?: LogArchiveScalarWhereWithAggregatesInput[]
+    NOT?: LogArchiveScalarWhereWithAggregatesInput | LogArchiveScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"LogArchive"> | string
+    content?: StringWithAggregatesFilter<"LogArchive"> | string
+    logDate?: DateTimeWithAggregatesFilter<"LogArchive"> | Date | string
+    archiveDate?: DateTimeWithAggregatesFilter<"LogArchive"> | Date | string
+    year?: IntWithAggregatesFilter<"LogArchive"> | number
+    month?: IntWithAggregatesFilter<"LogArchive"> | number
+    day?: IntWithAggregatesFilter<"LogArchive"> | number
+    tags?: StringNullableListFilter<"LogArchive">
+  }
+
   export type UserCreateInput = {
     id?: string
     email: string
@@ -9647,6 +15236,9 @@ export namespace Prisma {
     goals?: GoalCreateNestedManyWithoutUserInput
     messages?: MessageCreateNestedManyWithoutUserInput
     tasks?: TaskCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
@@ -9659,6 +15251,9 @@ export namespace Prisma {
     goals?: GoalUncheckedCreateNestedManyWithoutUserInput
     messages?: MessageUncheckedCreateNestedManyWithoutUserInput
     tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
@@ -9671,6 +15266,9 @@ export namespace Prisma {
     goals?: GoalUpdateManyWithoutUserNestedInput
     messages?: MessageUpdateManyWithoutUserNestedInput
     tasks?: TaskUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
@@ -9683,6 +15281,9 @@ export namespace Prisma {
     goals?: GoalUncheckedUpdateManyWithoutUserNestedInput
     messages?: MessageUncheckedUpdateManyWithoutUserNestedInput
     tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
@@ -9722,11 +15323,14 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     goal?: GoalCreateNestedOneWithoutTasksInput
     parent?: TaskCreateNestedOneWithoutSubTasksInput
     subTasks?: TaskCreateNestedManyWithoutParentInput
     user: UserCreateNestedOneWithoutTasksInput
     tags?: TagCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutTaskInput
   }
 
   export type TaskUncheckedCreateInput = {
@@ -9742,8 +15346,11 @@ export namespace Prisma {
     parentId?: string | null
     goalId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     subTasks?: TaskUncheckedCreateNestedManyWithoutParentInput
     tags?: TagUncheckedCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutTaskInput
   }
 
   export type TaskUpdateInput = {
@@ -9756,11 +15363,14 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     goal?: GoalUpdateOneWithoutTasksNestedInput
     parent?: TaskUpdateOneWithoutSubTasksNestedInput
     subTasks?: TaskUpdateManyWithoutParentNestedInput
     user?: UserUpdateOneRequiredWithoutTasksNestedInput
     tags?: TagUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateInput = {
@@ -9776,8 +15386,11 @@ export namespace Prisma {
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     subTasks?: TaskUncheckedUpdateManyWithoutParentNestedInput
     tags?: TagUncheckedUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskCreateManyInput = {
@@ -9793,6 +15406,7 @@ export namespace Prisma {
     parentId?: string | null
     goalId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
   }
 
   export type TaskUpdateManyMutationInput = {
@@ -9805,6 +15419,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
   }
 
   export type TaskUncheckedUpdateManyInput = {
@@ -9820,6 +15435,7 @@ export namespace Prisma {
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
   }
 
   export type GoalCreateInput = {
@@ -9843,6 +15459,7 @@ export namespace Prisma {
     user: UserCreateNestedOneWithoutGoalsInput
     tasks?: TaskCreateNestedManyWithoutGoalInput
     tags?: TagCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutGoalInput
   }
 
   export type GoalUncheckedCreateInput = {
@@ -9866,6 +15483,7 @@ export namespace Prisma {
     subGoals?: GoalUncheckedCreateNestedManyWithoutParentInput
     tasks?: TaskUncheckedCreateNestedManyWithoutGoalInput
     tags?: TagUncheckedCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutGoalInput
   }
 
   export type GoalUpdateInput = {
@@ -9889,6 +15507,7 @@ export namespace Prisma {
     user?: UserUpdateOneRequiredWithoutGoalsNestedInput
     tasks?: TaskUpdateManyWithoutGoalNestedInput
     tags?: TagUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateInput = {
@@ -9912,6 +15531,7 @@ export namespace Prisma {
     subGoals?: GoalUncheckedUpdateManyWithoutParentNestedInput
     tasks?: TaskUncheckedUpdateManyWithoutGoalNestedInput
     tags?: TagUncheckedUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalCreateManyInput = {
@@ -10203,6 +15823,329 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
+  export type TimeRecordCreateInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutTimeRecordsInput
+    task: TaskCreateNestedOneWithoutTimeRecordsInput
+  }
+
+  export type TimeRecordUncheckedCreateInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    taskId: string
+  }
+
+  export type TimeRecordUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutTimeRecordsNestedInput
+    task?: TaskUpdateOneRequiredWithoutTimeRecordsNestedInput
+  }
+
+  export type TimeRecordUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    taskId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type TimeRecordCreateManyInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    taskId: string
+  }
+
+  export type TimeRecordUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TimeRecordUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    taskId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProgressLogCreateInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutProgressLogsInput
+    task?: TaskCreateNestedOneWithoutProgressLogsInput
+    goal?: GoalCreateNestedOneWithoutProgressLogsInput
+  }
+
+  export type ProgressLogUncheckedCreateInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    taskId?: string | null
+    goalId?: string | null
+  }
+
+  export type ProgressLogUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutProgressLogsNestedInput
+    task?: TaskUpdateOneWithoutProgressLogsNestedInput
+    goal?: GoalUpdateOneWithoutProgressLogsNestedInput
+  }
+
+  export type ProgressLogUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    taskId?: NullableStringFieldUpdateOperationsInput | string | null
+    goalId?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProgressLogCreateManyInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    taskId?: string | null
+    goalId?: string | null
+  }
+
+  export type ProgressLogUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProgressLogUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    taskId?: NullableStringFieldUpdateOperationsInput | string | null
+    goalId?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ImportedFileCreateInput = {
+    id?: string
+    fileName: string
+    fileType: string
+    fileSize: number
+    ossPath: string
+    description?: string | null
+    tags?: ImportedFileCreatetagsInput | string[]
+    uploadedAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutImportedFilesInput
+  }
+
+  export type ImportedFileUncheckedCreateInput = {
+    id?: string
+    fileName: string
+    fileType: string
+    fileSize: number
+    ossPath: string
+    description?: string | null
+    tags?: ImportedFileCreatetagsInput | string[]
+    uploadedAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+  }
+
+  export type ImportedFileUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    fileType?: StringFieldUpdateOperationsInput | string
+    fileSize?: IntFieldUpdateOperationsInput | number
+    ossPath?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tags?: ImportedFileUpdatetagsInput | string[]
+    uploadedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutImportedFilesNestedInput
+  }
+
+  export type ImportedFileUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    fileType?: StringFieldUpdateOperationsInput | string
+    fileSize?: IntFieldUpdateOperationsInput | number
+    ossPath?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tags?: ImportedFileUpdatetagsInput | string[]
+    uploadedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ImportedFileCreateManyInput = {
+    id?: string
+    fileName: string
+    fileType: string
+    fileSize: number
+    ossPath: string
+    description?: string | null
+    tags?: ImportedFileCreatetagsInput | string[]
+    uploadedAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+  }
+
+  export type ImportedFileUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    fileType?: StringFieldUpdateOperationsInput | string
+    fileSize?: IntFieldUpdateOperationsInput | number
+    ossPath?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tags?: ImportedFileUpdatetagsInput | string[]
+    uploadedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ImportedFileUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    fileType?: StringFieldUpdateOperationsInput | string
+    fileSize?: IntFieldUpdateOperationsInput | number
+    ossPath?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tags?: ImportedFileUpdatetagsInput | string[]
+    uploadedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type LogArchiveCreateInput = {
+    id?: string
+    content: string
+    logDate: Date | string
+    archiveDate?: Date | string
+    year: number
+    month: number
+    day: number
+    tags?: LogArchiveCreatetagsInput | string[]
+  }
+
+  export type LogArchiveUncheckedCreateInput = {
+    id?: string
+    content: string
+    logDate: Date | string
+    archiveDate?: Date | string
+    year: number
+    month: number
+    day: number
+    tags?: LogArchiveCreatetagsInput | string[]
+  }
+
+  export type LogArchiveUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    logDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    archiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    day?: IntFieldUpdateOperationsInput | number
+    tags?: LogArchiveUpdatetagsInput | string[]
+  }
+
+  export type LogArchiveUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    logDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    archiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    day?: IntFieldUpdateOperationsInput | number
+    tags?: LogArchiveUpdatetagsInput | string[]
+  }
+
+  export type LogArchiveCreateManyInput = {
+    id?: string
+    content: string
+    logDate: Date | string
+    archiveDate?: Date | string
+    year: number
+    month: number
+    day: number
+    tags?: LogArchiveCreatetagsInput | string[]
+  }
+
+  export type LogArchiveUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    logDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    archiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    day?: IntFieldUpdateOperationsInput | number
+    tags?: LogArchiveUpdatetagsInput | string[]
+  }
+
+  export type LogArchiveUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    content?: StringFieldUpdateOperationsInput | string
+    logDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    archiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    year?: IntFieldUpdateOperationsInput | number
+    month?: IntFieldUpdateOperationsInput | number
+    day?: IntFieldUpdateOperationsInput | number
+    tags?: LogArchiveUpdatetagsInput | string[]
+  }
+
   export type StringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -10262,6 +16205,24 @@ export namespace Prisma {
     none?: TaskWhereInput
   }
 
+  export type TimeRecordListRelationFilter = {
+    every?: TimeRecordWhereInput
+    some?: TimeRecordWhereInput
+    none?: TimeRecordWhereInput
+  }
+
+  export type ProgressLogListRelationFilter = {
+    every?: ProgressLogWhereInput
+    some?: ProgressLogWhereInput
+    none?: ProgressLogWhereInput
+  }
+
+  export type ImportedFileListRelationFilter = {
+    every?: ImportedFileWhereInput
+    some?: ImportedFileWhereInput
+    none?: ImportedFileWhereInput
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -10276,6 +16237,18 @@ export namespace Prisma {
   }
 
   export type TaskOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type TimeRecordOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ProgressLogOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ImportedFileOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -10404,6 +16377,17 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
   export type GoalNullableScalarRelationFilter = {
     is?: GoalWhereInput | null
     isNot?: GoalWhereInput | null
@@ -10442,6 +16426,11 @@ export namespace Prisma {
     parentId?: SortOrder
     goalId?: SortOrder
     metadata?: SortOrder
+    totalTime?: SortOrder
+  }
+
+  export type TaskAvgOrderByAggregateInput = {
+    totalTime?: SortOrder
   }
 
   export type TaskMaxOrderByAggregateInput = {
@@ -10456,6 +16445,7 @@ export namespace Prisma {
     userId?: SortOrder
     parentId?: SortOrder
     goalId?: SortOrder
+    totalTime?: SortOrder
   }
 
   export type TaskMinOrderByAggregateInput = {
@@ -10470,6 +16460,11 @@ export namespace Prisma {
     userId?: SortOrder
     parentId?: SortOrder
     goalId?: SortOrder
+    totalTime?: SortOrder
+  }
+
+  export type TaskSumOrderByAggregateInput = {
+    totalTime?: SortOrder
   }
 
   export type EnumTaskStatusWithAggregatesFilter<$PrismaModel = never> = {
@@ -10532,6 +16527,22 @@ export namespace Prisma {
     _max?: NestedJsonNullableFilter<$PrismaModel>
   }
 
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
   export type EnumGoalLevelFilter<$PrismaModel = never> = {
     equals?: $Enums.GoalLevel | EnumGoalLevelFieldRefInput<$PrismaModel>
     in?: $Enums.GoalLevel[] | ListEnumGoalLevelFieldRefInput<$PrismaModel>
@@ -10555,17 +16566,6 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
-  }
-
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type GoalCountOrderByAggregateInput = {
@@ -10668,22 +16668,6 @@ export namespace Prisma {
     _sum?: NestedFloatFilter<$PrismaModel>
     _min?: NestedFloatFilter<$PrismaModel>
     _max?: NestedFloatFilter<$PrismaModel>
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type CategoryNullableScalarRelationFilter = {
@@ -10789,6 +16773,219 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type TaskScalarRelationFilter = {
+    is?: TaskWhereInput
+    isNot?: TaskWhereInput
+  }
+
+  export type TimeRecordCountOrderByAggregateInput = {
+    id?: SortOrder
+    startTime?: SortOrder
+    endTime?: SortOrder
+    duration?: SortOrder
+    note?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrder
+  }
+
+  export type TimeRecordAvgOrderByAggregateInput = {
+    duration?: SortOrder
+  }
+
+  export type TimeRecordMaxOrderByAggregateInput = {
+    id?: SortOrder
+    startTime?: SortOrder
+    endTime?: SortOrder
+    duration?: SortOrder
+    note?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrder
+  }
+
+  export type TimeRecordMinOrderByAggregateInput = {
+    id?: SortOrder
+    startTime?: SortOrder
+    endTime?: SortOrder
+    duration?: SortOrder
+    note?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrder
+  }
+
+  export type TimeRecordSumOrderByAggregateInput = {
+    duration?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type ProgressLogCountOrderByAggregateInput = {
+    id?: SortOrder
+    progress?: SortOrder
+    note?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrder
+    goalId?: SortOrder
+  }
+
+  export type ProgressLogAvgOrderByAggregateInput = {
+    progress?: SortOrder
+  }
+
+  export type ProgressLogMaxOrderByAggregateInput = {
+    id?: SortOrder
+    progress?: SortOrder
+    note?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrder
+    goalId?: SortOrder
+  }
+
+  export type ProgressLogMinOrderByAggregateInput = {
+    id?: SortOrder
+    progress?: SortOrder
+    note?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+    taskId?: SortOrder
+    goalId?: SortOrder
+  }
+
+  export type ProgressLogSumOrderByAggregateInput = {
+    progress?: SortOrder
+  }
+
+  export type StringNullableListFilter<$PrismaModel = never> = {
+    equals?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    has?: string | StringFieldRefInput<$PrismaModel> | null
+    hasEvery?: string[] | ListStringFieldRefInput<$PrismaModel>
+    hasSome?: string[] | ListStringFieldRefInput<$PrismaModel>
+    isEmpty?: boolean
+  }
+
+  export type ImportedFileCountOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    fileType?: SortOrder
+    fileSize?: SortOrder
+    ossPath?: SortOrder
+    description?: SortOrder
+    tags?: SortOrder
+    uploadedAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type ImportedFileAvgOrderByAggregateInput = {
+    fileSize?: SortOrder
+  }
+
+  export type ImportedFileMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    fileType?: SortOrder
+    fileSize?: SortOrder
+    ossPath?: SortOrder
+    description?: SortOrder
+    uploadedAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type ImportedFileMinOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    fileType?: SortOrder
+    fileSize?: SortOrder
+    ossPath?: SortOrder
+    description?: SortOrder
+    uploadedAt?: SortOrder
+    updatedAt?: SortOrder
+    userId?: SortOrder
+  }
+
+  export type ImportedFileSumOrderByAggregateInput = {
+    fileSize?: SortOrder
+  }
+
+  export type LogArchiveCountOrderByAggregateInput = {
+    id?: SortOrder
+    content?: SortOrder
+    logDate?: SortOrder
+    archiveDate?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    day?: SortOrder
+    tags?: SortOrder
+  }
+
+  export type LogArchiveAvgOrderByAggregateInput = {
+    year?: SortOrder
+    month?: SortOrder
+    day?: SortOrder
+  }
+
+  export type LogArchiveMaxOrderByAggregateInput = {
+    id?: SortOrder
+    content?: SortOrder
+    logDate?: SortOrder
+    archiveDate?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    day?: SortOrder
+  }
+
+  export type LogArchiveMinOrderByAggregateInput = {
+    id?: SortOrder
+    content?: SortOrder
+    logDate?: SortOrder
+    archiveDate?: SortOrder
+    year?: SortOrder
+    month?: SortOrder
+    day?: SortOrder
+  }
+
+  export type LogArchiveSumOrderByAggregateInput = {
+    year?: SortOrder
+    month?: SortOrder
+    day?: SortOrder
+  }
+
   export type GoalCreateNestedManyWithoutUserInput = {
     create?: XOR<GoalCreateWithoutUserInput, GoalUncheckedCreateWithoutUserInput> | GoalCreateWithoutUserInput[] | GoalUncheckedCreateWithoutUserInput[]
     connectOrCreate?: GoalCreateOrConnectWithoutUserInput | GoalCreateOrConnectWithoutUserInput[]
@@ -10810,6 +17007,27 @@ export namespace Prisma {
     connect?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
   }
 
+  export type TimeRecordCreateNestedManyWithoutUserInput = {
+    create?: XOR<TimeRecordCreateWithoutUserInput, TimeRecordUncheckedCreateWithoutUserInput> | TimeRecordCreateWithoutUserInput[] | TimeRecordUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TimeRecordCreateOrConnectWithoutUserInput | TimeRecordCreateOrConnectWithoutUserInput[]
+    createMany?: TimeRecordCreateManyUserInputEnvelope
+    connect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+  }
+
+  export type ProgressLogCreateNestedManyWithoutUserInput = {
+    create?: XOR<ProgressLogCreateWithoutUserInput, ProgressLogUncheckedCreateWithoutUserInput> | ProgressLogCreateWithoutUserInput[] | ProgressLogUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutUserInput | ProgressLogCreateOrConnectWithoutUserInput[]
+    createMany?: ProgressLogCreateManyUserInputEnvelope
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+  }
+
+  export type ImportedFileCreateNestedManyWithoutUserInput = {
+    create?: XOR<ImportedFileCreateWithoutUserInput, ImportedFileUncheckedCreateWithoutUserInput> | ImportedFileCreateWithoutUserInput[] | ImportedFileUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ImportedFileCreateOrConnectWithoutUserInput | ImportedFileCreateOrConnectWithoutUserInput[]
+    createMany?: ImportedFileCreateManyUserInputEnvelope
+    connect?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+  }
+
   export type GoalUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<GoalCreateWithoutUserInput, GoalUncheckedCreateWithoutUserInput> | GoalCreateWithoutUserInput[] | GoalUncheckedCreateWithoutUserInput[]
     connectOrCreate?: GoalCreateOrConnectWithoutUserInput | GoalCreateOrConnectWithoutUserInput[]
@@ -10829,6 +17047,27 @@ export namespace Prisma {
     connectOrCreate?: TaskCreateOrConnectWithoutUserInput | TaskCreateOrConnectWithoutUserInput[]
     createMany?: TaskCreateManyUserInputEnvelope
     connect?: TaskWhereUniqueInput | TaskWhereUniqueInput[]
+  }
+
+  export type TimeRecordUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<TimeRecordCreateWithoutUserInput, TimeRecordUncheckedCreateWithoutUserInput> | TimeRecordCreateWithoutUserInput[] | TimeRecordUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TimeRecordCreateOrConnectWithoutUserInput | TimeRecordCreateOrConnectWithoutUserInput[]
+    createMany?: TimeRecordCreateManyUserInputEnvelope
+    connect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+  }
+
+  export type ProgressLogUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<ProgressLogCreateWithoutUserInput, ProgressLogUncheckedCreateWithoutUserInput> | ProgressLogCreateWithoutUserInput[] | ProgressLogUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutUserInput | ProgressLogCreateOrConnectWithoutUserInput[]
+    createMany?: ProgressLogCreateManyUserInputEnvelope
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+  }
+
+  export type ImportedFileUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<ImportedFileCreateWithoutUserInput, ImportedFileUncheckedCreateWithoutUserInput> | ImportedFileCreateWithoutUserInput[] | ImportedFileUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ImportedFileCreateOrConnectWithoutUserInput | ImportedFileCreateOrConnectWithoutUserInput[]
+    createMany?: ImportedFileCreateManyUserInputEnvelope
+    connect?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -10885,6 +17124,48 @@ export namespace Prisma {
     deleteMany?: TaskScalarWhereInput | TaskScalarWhereInput[]
   }
 
+  export type TimeRecordUpdateManyWithoutUserNestedInput = {
+    create?: XOR<TimeRecordCreateWithoutUserInput, TimeRecordUncheckedCreateWithoutUserInput> | TimeRecordCreateWithoutUserInput[] | TimeRecordUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TimeRecordCreateOrConnectWithoutUserInput | TimeRecordCreateOrConnectWithoutUserInput[]
+    upsert?: TimeRecordUpsertWithWhereUniqueWithoutUserInput | TimeRecordUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: TimeRecordCreateManyUserInputEnvelope
+    set?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    disconnect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    delete?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    connect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    update?: TimeRecordUpdateWithWhereUniqueWithoutUserInput | TimeRecordUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: TimeRecordUpdateManyWithWhereWithoutUserInput | TimeRecordUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: TimeRecordScalarWhereInput | TimeRecordScalarWhereInput[]
+  }
+
+  export type ProgressLogUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ProgressLogCreateWithoutUserInput, ProgressLogUncheckedCreateWithoutUserInput> | ProgressLogCreateWithoutUserInput[] | ProgressLogUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutUserInput | ProgressLogCreateOrConnectWithoutUserInput[]
+    upsert?: ProgressLogUpsertWithWhereUniqueWithoutUserInput | ProgressLogUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ProgressLogCreateManyUserInputEnvelope
+    set?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    disconnect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    delete?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    update?: ProgressLogUpdateWithWhereUniqueWithoutUserInput | ProgressLogUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ProgressLogUpdateManyWithWhereWithoutUserInput | ProgressLogUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ProgressLogScalarWhereInput | ProgressLogScalarWhereInput[]
+  }
+
+  export type ImportedFileUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ImportedFileCreateWithoutUserInput, ImportedFileUncheckedCreateWithoutUserInput> | ImportedFileCreateWithoutUserInput[] | ImportedFileUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ImportedFileCreateOrConnectWithoutUserInput | ImportedFileCreateOrConnectWithoutUserInput[]
+    upsert?: ImportedFileUpsertWithWhereUniqueWithoutUserInput | ImportedFileUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ImportedFileCreateManyUserInputEnvelope
+    set?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+    disconnect?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+    delete?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+    connect?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+    update?: ImportedFileUpdateWithWhereUniqueWithoutUserInput | ImportedFileUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ImportedFileUpdateManyWithWhereWithoutUserInput | ImportedFileUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ImportedFileScalarWhereInput | ImportedFileScalarWhereInput[]
+  }
+
   export type GoalUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<GoalCreateWithoutUserInput, GoalUncheckedCreateWithoutUserInput> | GoalCreateWithoutUserInput[] | GoalUncheckedCreateWithoutUserInput[]
     connectOrCreate?: GoalCreateOrConnectWithoutUserInput | GoalCreateOrConnectWithoutUserInput[]
@@ -10927,6 +17208,48 @@ export namespace Prisma {
     deleteMany?: TaskScalarWhereInput | TaskScalarWhereInput[]
   }
 
+  export type TimeRecordUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<TimeRecordCreateWithoutUserInput, TimeRecordUncheckedCreateWithoutUserInput> | TimeRecordCreateWithoutUserInput[] | TimeRecordUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: TimeRecordCreateOrConnectWithoutUserInput | TimeRecordCreateOrConnectWithoutUserInput[]
+    upsert?: TimeRecordUpsertWithWhereUniqueWithoutUserInput | TimeRecordUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: TimeRecordCreateManyUserInputEnvelope
+    set?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    disconnect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    delete?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    connect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    update?: TimeRecordUpdateWithWhereUniqueWithoutUserInput | TimeRecordUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: TimeRecordUpdateManyWithWhereWithoutUserInput | TimeRecordUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: TimeRecordScalarWhereInput | TimeRecordScalarWhereInput[]
+  }
+
+  export type ProgressLogUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ProgressLogCreateWithoutUserInput, ProgressLogUncheckedCreateWithoutUserInput> | ProgressLogCreateWithoutUserInput[] | ProgressLogUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutUserInput | ProgressLogCreateOrConnectWithoutUserInput[]
+    upsert?: ProgressLogUpsertWithWhereUniqueWithoutUserInput | ProgressLogUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ProgressLogCreateManyUserInputEnvelope
+    set?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    disconnect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    delete?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    update?: ProgressLogUpdateWithWhereUniqueWithoutUserInput | ProgressLogUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ProgressLogUpdateManyWithWhereWithoutUserInput | ProgressLogUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ProgressLogScalarWhereInput | ProgressLogScalarWhereInput[]
+  }
+
+  export type ImportedFileUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ImportedFileCreateWithoutUserInput, ImportedFileUncheckedCreateWithoutUserInput> | ImportedFileCreateWithoutUserInput[] | ImportedFileUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ImportedFileCreateOrConnectWithoutUserInput | ImportedFileCreateOrConnectWithoutUserInput[]
+    upsert?: ImportedFileUpsertWithWhereUniqueWithoutUserInput | ImportedFileUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ImportedFileCreateManyUserInputEnvelope
+    set?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+    disconnect?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+    delete?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+    connect?: ImportedFileWhereUniqueInput | ImportedFileWhereUniqueInput[]
+    update?: ImportedFileUpdateWithWhereUniqueWithoutUserInput | ImportedFileUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ImportedFileUpdateManyWithWhereWithoutUserInput | ImportedFileUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ImportedFileScalarWhereInput | ImportedFileScalarWhereInput[]
+  }
+
   export type GoalCreateNestedOneWithoutTasksInput = {
     create?: XOR<GoalCreateWithoutTasksInput, GoalUncheckedCreateWithoutTasksInput>
     connectOrCreate?: GoalCreateOrConnectWithoutTasksInput
@@ -10958,6 +17281,20 @@ export namespace Prisma {
     connect?: TagWhereUniqueInput | TagWhereUniqueInput[]
   }
 
+  export type TimeRecordCreateNestedManyWithoutTaskInput = {
+    create?: XOR<TimeRecordCreateWithoutTaskInput, TimeRecordUncheckedCreateWithoutTaskInput> | TimeRecordCreateWithoutTaskInput[] | TimeRecordUncheckedCreateWithoutTaskInput[]
+    connectOrCreate?: TimeRecordCreateOrConnectWithoutTaskInput | TimeRecordCreateOrConnectWithoutTaskInput[]
+    createMany?: TimeRecordCreateManyTaskInputEnvelope
+    connect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+  }
+
+  export type ProgressLogCreateNestedManyWithoutTaskInput = {
+    create?: XOR<ProgressLogCreateWithoutTaskInput, ProgressLogUncheckedCreateWithoutTaskInput> | ProgressLogCreateWithoutTaskInput[] | ProgressLogUncheckedCreateWithoutTaskInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutTaskInput | ProgressLogCreateOrConnectWithoutTaskInput[]
+    createMany?: ProgressLogCreateManyTaskInputEnvelope
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+  }
+
   export type TaskUncheckedCreateNestedManyWithoutParentInput = {
     create?: XOR<TaskCreateWithoutParentInput, TaskUncheckedCreateWithoutParentInput> | TaskCreateWithoutParentInput[] | TaskUncheckedCreateWithoutParentInput[]
     connectOrCreate?: TaskCreateOrConnectWithoutParentInput | TaskCreateOrConnectWithoutParentInput[]
@@ -10971,6 +17308,20 @@ export namespace Prisma {
     connect?: TagWhereUniqueInput | TagWhereUniqueInput[]
   }
 
+  export type TimeRecordUncheckedCreateNestedManyWithoutTaskInput = {
+    create?: XOR<TimeRecordCreateWithoutTaskInput, TimeRecordUncheckedCreateWithoutTaskInput> | TimeRecordCreateWithoutTaskInput[] | TimeRecordUncheckedCreateWithoutTaskInput[]
+    connectOrCreate?: TimeRecordCreateOrConnectWithoutTaskInput | TimeRecordCreateOrConnectWithoutTaskInput[]
+    createMany?: TimeRecordCreateManyTaskInputEnvelope
+    connect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+  }
+
+  export type ProgressLogUncheckedCreateNestedManyWithoutTaskInput = {
+    create?: XOR<ProgressLogCreateWithoutTaskInput, ProgressLogUncheckedCreateWithoutTaskInput> | ProgressLogCreateWithoutTaskInput[] | ProgressLogUncheckedCreateWithoutTaskInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutTaskInput | ProgressLogCreateOrConnectWithoutTaskInput[]
+    createMany?: ProgressLogCreateManyTaskInputEnvelope
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+  }
+
   export type EnumTaskStatusFieldUpdateOperationsInput = {
     set?: $Enums.TaskStatus
   }
@@ -10981,6 +17332,14 @@ export namespace Prisma {
 
   export type NullableDateTimeFieldUpdateOperationsInput = {
     set?: Date | string | null
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type GoalUpdateOneWithoutTasksNestedInput = {
@@ -11038,6 +17397,34 @@ export namespace Prisma {
     deleteMany?: TagScalarWhereInput | TagScalarWhereInput[]
   }
 
+  export type TimeRecordUpdateManyWithoutTaskNestedInput = {
+    create?: XOR<TimeRecordCreateWithoutTaskInput, TimeRecordUncheckedCreateWithoutTaskInput> | TimeRecordCreateWithoutTaskInput[] | TimeRecordUncheckedCreateWithoutTaskInput[]
+    connectOrCreate?: TimeRecordCreateOrConnectWithoutTaskInput | TimeRecordCreateOrConnectWithoutTaskInput[]
+    upsert?: TimeRecordUpsertWithWhereUniqueWithoutTaskInput | TimeRecordUpsertWithWhereUniqueWithoutTaskInput[]
+    createMany?: TimeRecordCreateManyTaskInputEnvelope
+    set?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    disconnect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    delete?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    connect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    update?: TimeRecordUpdateWithWhereUniqueWithoutTaskInput | TimeRecordUpdateWithWhereUniqueWithoutTaskInput[]
+    updateMany?: TimeRecordUpdateManyWithWhereWithoutTaskInput | TimeRecordUpdateManyWithWhereWithoutTaskInput[]
+    deleteMany?: TimeRecordScalarWhereInput | TimeRecordScalarWhereInput[]
+  }
+
+  export type ProgressLogUpdateManyWithoutTaskNestedInput = {
+    create?: XOR<ProgressLogCreateWithoutTaskInput, ProgressLogUncheckedCreateWithoutTaskInput> | ProgressLogCreateWithoutTaskInput[] | ProgressLogUncheckedCreateWithoutTaskInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutTaskInput | ProgressLogCreateOrConnectWithoutTaskInput[]
+    upsert?: ProgressLogUpsertWithWhereUniqueWithoutTaskInput | ProgressLogUpsertWithWhereUniqueWithoutTaskInput[]
+    createMany?: ProgressLogCreateManyTaskInputEnvelope
+    set?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    disconnect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    delete?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    update?: ProgressLogUpdateWithWhereUniqueWithoutTaskInput | ProgressLogUpdateWithWhereUniqueWithoutTaskInput[]
+    updateMany?: ProgressLogUpdateManyWithWhereWithoutTaskInput | ProgressLogUpdateManyWithWhereWithoutTaskInput[]
+    deleteMany?: ProgressLogScalarWhereInput | ProgressLogScalarWhereInput[]
+  }
+
   export type TaskUncheckedUpdateManyWithoutParentNestedInput = {
     create?: XOR<TaskCreateWithoutParentInput, TaskUncheckedCreateWithoutParentInput> | TaskCreateWithoutParentInput[] | TaskUncheckedCreateWithoutParentInput[]
     connectOrCreate?: TaskCreateOrConnectWithoutParentInput | TaskCreateOrConnectWithoutParentInput[]
@@ -11063,6 +17450,34 @@ export namespace Prisma {
     update?: TagUpdateWithWhereUniqueWithoutTasksInput | TagUpdateWithWhereUniqueWithoutTasksInput[]
     updateMany?: TagUpdateManyWithWhereWithoutTasksInput | TagUpdateManyWithWhereWithoutTasksInput[]
     deleteMany?: TagScalarWhereInput | TagScalarWhereInput[]
+  }
+
+  export type TimeRecordUncheckedUpdateManyWithoutTaskNestedInput = {
+    create?: XOR<TimeRecordCreateWithoutTaskInput, TimeRecordUncheckedCreateWithoutTaskInput> | TimeRecordCreateWithoutTaskInput[] | TimeRecordUncheckedCreateWithoutTaskInput[]
+    connectOrCreate?: TimeRecordCreateOrConnectWithoutTaskInput | TimeRecordCreateOrConnectWithoutTaskInput[]
+    upsert?: TimeRecordUpsertWithWhereUniqueWithoutTaskInput | TimeRecordUpsertWithWhereUniqueWithoutTaskInput[]
+    createMany?: TimeRecordCreateManyTaskInputEnvelope
+    set?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    disconnect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    delete?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    connect?: TimeRecordWhereUniqueInput | TimeRecordWhereUniqueInput[]
+    update?: TimeRecordUpdateWithWhereUniqueWithoutTaskInput | TimeRecordUpdateWithWhereUniqueWithoutTaskInput[]
+    updateMany?: TimeRecordUpdateManyWithWhereWithoutTaskInput | TimeRecordUpdateManyWithWhereWithoutTaskInput[]
+    deleteMany?: TimeRecordScalarWhereInput | TimeRecordScalarWhereInput[]
+  }
+
+  export type ProgressLogUncheckedUpdateManyWithoutTaskNestedInput = {
+    create?: XOR<ProgressLogCreateWithoutTaskInput, ProgressLogUncheckedCreateWithoutTaskInput> | ProgressLogCreateWithoutTaskInput[] | ProgressLogUncheckedCreateWithoutTaskInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutTaskInput | ProgressLogCreateOrConnectWithoutTaskInput[]
+    upsert?: ProgressLogUpsertWithWhereUniqueWithoutTaskInput | ProgressLogUpsertWithWhereUniqueWithoutTaskInput[]
+    createMany?: ProgressLogCreateManyTaskInputEnvelope
+    set?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    disconnect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    delete?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    update?: ProgressLogUpdateWithWhereUniqueWithoutTaskInput | ProgressLogUpdateWithWhereUniqueWithoutTaskInput[]
+    updateMany?: ProgressLogUpdateManyWithWhereWithoutTaskInput | ProgressLogUpdateManyWithWhereWithoutTaskInput[]
+    deleteMany?: ProgressLogScalarWhereInput | ProgressLogScalarWhereInput[]
   }
 
   export type GoalCreateNestedOneWithoutSubGoalsInput = {
@@ -11097,6 +17512,13 @@ export namespace Prisma {
     connect?: TagWhereUniqueInput | TagWhereUniqueInput[]
   }
 
+  export type ProgressLogCreateNestedManyWithoutGoalInput = {
+    create?: XOR<ProgressLogCreateWithoutGoalInput, ProgressLogUncheckedCreateWithoutGoalInput> | ProgressLogCreateWithoutGoalInput[] | ProgressLogUncheckedCreateWithoutGoalInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutGoalInput | ProgressLogCreateOrConnectWithoutGoalInput[]
+    createMany?: ProgressLogCreateManyGoalInputEnvelope
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+  }
+
   export type GoalUncheckedCreateNestedManyWithoutParentInput = {
     create?: XOR<GoalCreateWithoutParentInput, GoalUncheckedCreateWithoutParentInput> | GoalCreateWithoutParentInput[] | GoalUncheckedCreateWithoutParentInput[]
     connectOrCreate?: GoalCreateOrConnectWithoutParentInput | GoalCreateOrConnectWithoutParentInput[]
@@ -11117,6 +17539,13 @@ export namespace Prisma {
     connect?: TagWhereUniqueInput | TagWhereUniqueInput[]
   }
 
+  export type ProgressLogUncheckedCreateNestedManyWithoutGoalInput = {
+    create?: XOR<ProgressLogCreateWithoutGoalInput, ProgressLogUncheckedCreateWithoutGoalInput> | ProgressLogCreateWithoutGoalInput[] | ProgressLogUncheckedCreateWithoutGoalInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutGoalInput | ProgressLogCreateOrConnectWithoutGoalInput[]
+    createMany?: ProgressLogCreateManyGoalInputEnvelope
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+  }
+
   export type EnumGoalLevelFieldUpdateOperationsInput = {
     set?: $Enums.GoalLevel
   }
@@ -11126,14 +17555,6 @@ export namespace Prisma {
   }
 
   export type FloatFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
-  export type IntFieldUpdateOperationsInput = {
     set?: number
     increment?: number
     decrement?: number
@@ -11200,6 +17621,20 @@ export namespace Prisma {
     deleteMany?: TagScalarWhereInput | TagScalarWhereInput[]
   }
 
+  export type ProgressLogUpdateManyWithoutGoalNestedInput = {
+    create?: XOR<ProgressLogCreateWithoutGoalInput, ProgressLogUncheckedCreateWithoutGoalInput> | ProgressLogCreateWithoutGoalInput[] | ProgressLogUncheckedCreateWithoutGoalInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutGoalInput | ProgressLogCreateOrConnectWithoutGoalInput[]
+    upsert?: ProgressLogUpsertWithWhereUniqueWithoutGoalInput | ProgressLogUpsertWithWhereUniqueWithoutGoalInput[]
+    createMany?: ProgressLogCreateManyGoalInputEnvelope
+    set?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    disconnect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    delete?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    update?: ProgressLogUpdateWithWhereUniqueWithoutGoalInput | ProgressLogUpdateWithWhereUniqueWithoutGoalInput[]
+    updateMany?: ProgressLogUpdateManyWithWhereWithoutGoalInput | ProgressLogUpdateManyWithWhereWithoutGoalInput[]
+    deleteMany?: ProgressLogScalarWhereInput | ProgressLogScalarWhereInput[]
+  }
+
   export type GoalUncheckedUpdateManyWithoutParentNestedInput = {
     create?: XOR<GoalCreateWithoutParentInput, GoalUncheckedCreateWithoutParentInput> | GoalCreateWithoutParentInput[] | GoalUncheckedCreateWithoutParentInput[]
     connectOrCreate?: GoalCreateOrConnectWithoutParentInput | GoalCreateOrConnectWithoutParentInput[]
@@ -11239,6 +17674,20 @@ export namespace Prisma {
     update?: TagUpdateWithWhereUniqueWithoutGoalsInput | TagUpdateWithWhereUniqueWithoutGoalsInput[]
     updateMany?: TagUpdateManyWithWhereWithoutGoalsInput | TagUpdateManyWithWhereWithoutGoalsInput[]
     deleteMany?: TagScalarWhereInput | TagScalarWhereInput[]
+  }
+
+  export type ProgressLogUncheckedUpdateManyWithoutGoalNestedInput = {
+    create?: XOR<ProgressLogCreateWithoutGoalInput, ProgressLogUncheckedCreateWithoutGoalInput> | ProgressLogCreateWithoutGoalInput[] | ProgressLogUncheckedCreateWithoutGoalInput[]
+    connectOrCreate?: ProgressLogCreateOrConnectWithoutGoalInput | ProgressLogCreateOrConnectWithoutGoalInput[]
+    upsert?: ProgressLogUpsertWithWhereUniqueWithoutGoalInput | ProgressLogUpsertWithWhereUniqueWithoutGoalInput[]
+    createMany?: ProgressLogCreateManyGoalInputEnvelope
+    set?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    disconnect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    delete?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    connect?: ProgressLogWhereUniqueInput | ProgressLogWhereUniqueInput[]
+    update?: ProgressLogUpdateWithWhereUniqueWithoutGoalInput | ProgressLogUpdateWithWhereUniqueWithoutGoalInput[]
+    updateMany?: ProgressLogUpdateManyWithWhereWithoutGoalInput | ProgressLogUpdateManyWithWhereWithoutGoalInput[]
+    deleteMany?: ProgressLogScalarWhereInput | ProgressLogScalarWhereInput[]
   }
 
   export type CategoryCreateNestedOneWithoutMessagesInput = {
@@ -11523,6 +17972,120 @@ export namespace Prisma {
     deleteMany?: TaskScalarWhereInput | TaskScalarWhereInput[]
   }
 
+  export type UserCreateNestedOneWithoutTimeRecordsInput = {
+    create?: XOR<UserCreateWithoutTimeRecordsInput, UserUncheckedCreateWithoutTimeRecordsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTimeRecordsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type TaskCreateNestedOneWithoutTimeRecordsInput = {
+    create?: XOR<TaskCreateWithoutTimeRecordsInput, TaskUncheckedCreateWithoutTimeRecordsInput>
+    connectOrCreate?: TaskCreateOrConnectWithoutTimeRecordsInput
+    connect?: TaskWhereUniqueInput
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type UserUpdateOneRequiredWithoutTimeRecordsNestedInput = {
+    create?: XOR<UserCreateWithoutTimeRecordsInput, UserUncheckedCreateWithoutTimeRecordsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutTimeRecordsInput
+    upsert?: UserUpsertWithoutTimeRecordsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutTimeRecordsInput, UserUpdateWithoutTimeRecordsInput>, UserUncheckedUpdateWithoutTimeRecordsInput>
+  }
+
+  export type TaskUpdateOneRequiredWithoutTimeRecordsNestedInput = {
+    create?: XOR<TaskCreateWithoutTimeRecordsInput, TaskUncheckedCreateWithoutTimeRecordsInput>
+    connectOrCreate?: TaskCreateOrConnectWithoutTimeRecordsInput
+    upsert?: TaskUpsertWithoutTimeRecordsInput
+    connect?: TaskWhereUniqueInput
+    update?: XOR<XOR<TaskUpdateToOneWithWhereWithoutTimeRecordsInput, TaskUpdateWithoutTimeRecordsInput>, TaskUncheckedUpdateWithoutTimeRecordsInput>
+  }
+
+  export type UserCreateNestedOneWithoutProgressLogsInput = {
+    create?: XOR<UserCreateWithoutProgressLogsInput, UserUncheckedCreateWithoutProgressLogsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProgressLogsInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type TaskCreateNestedOneWithoutProgressLogsInput = {
+    create?: XOR<TaskCreateWithoutProgressLogsInput, TaskUncheckedCreateWithoutProgressLogsInput>
+    connectOrCreate?: TaskCreateOrConnectWithoutProgressLogsInput
+    connect?: TaskWhereUniqueInput
+  }
+
+  export type GoalCreateNestedOneWithoutProgressLogsInput = {
+    create?: XOR<GoalCreateWithoutProgressLogsInput, GoalUncheckedCreateWithoutProgressLogsInput>
+    connectOrCreate?: GoalCreateOrConnectWithoutProgressLogsInput
+    connect?: GoalWhereUniqueInput
+  }
+
+  export type UserUpdateOneRequiredWithoutProgressLogsNestedInput = {
+    create?: XOR<UserCreateWithoutProgressLogsInput, UserUncheckedCreateWithoutProgressLogsInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProgressLogsInput
+    upsert?: UserUpsertWithoutProgressLogsInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProgressLogsInput, UserUpdateWithoutProgressLogsInput>, UserUncheckedUpdateWithoutProgressLogsInput>
+  }
+
+  export type TaskUpdateOneWithoutProgressLogsNestedInput = {
+    create?: XOR<TaskCreateWithoutProgressLogsInput, TaskUncheckedCreateWithoutProgressLogsInput>
+    connectOrCreate?: TaskCreateOrConnectWithoutProgressLogsInput
+    upsert?: TaskUpsertWithoutProgressLogsInput
+    disconnect?: TaskWhereInput | boolean
+    delete?: TaskWhereInput | boolean
+    connect?: TaskWhereUniqueInput
+    update?: XOR<XOR<TaskUpdateToOneWithWhereWithoutProgressLogsInput, TaskUpdateWithoutProgressLogsInput>, TaskUncheckedUpdateWithoutProgressLogsInput>
+  }
+
+  export type GoalUpdateOneWithoutProgressLogsNestedInput = {
+    create?: XOR<GoalCreateWithoutProgressLogsInput, GoalUncheckedCreateWithoutProgressLogsInput>
+    connectOrCreate?: GoalCreateOrConnectWithoutProgressLogsInput
+    upsert?: GoalUpsertWithoutProgressLogsInput
+    disconnect?: GoalWhereInput | boolean
+    delete?: GoalWhereInput | boolean
+    connect?: GoalWhereUniqueInput
+    update?: XOR<XOR<GoalUpdateToOneWithWhereWithoutProgressLogsInput, GoalUpdateWithoutProgressLogsInput>, GoalUncheckedUpdateWithoutProgressLogsInput>
+  }
+
+  export type ImportedFileCreatetagsInput = {
+    set: string[]
+  }
+
+  export type UserCreateNestedOneWithoutImportedFilesInput = {
+    create?: XOR<UserCreateWithoutImportedFilesInput, UserUncheckedCreateWithoutImportedFilesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutImportedFilesInput
+    connect?: UserWhereUniqueInput
+  }
+
+  export type ImportedFileUpdatetagsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
+  export type UserUpdateOneRequiredWithoutImportedFilesNestedInput = {
+    create?: XOR<UserCreateWithoutImportedFilesInput, UserUncheckedCreateWithoutImportedFilesInput>
+    connectOrCreate?: UserCreateOrConnectWithoutImportedFilesInput
+    upsert?: UserUpsertWithoutImportedFilesInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutImportedFilesInput, UserUpdateWithoutImportedFilesInput>, UserUncheckedUpdateWithoutImportedFilesInput>
+  }
+
+  export type LogArchiveCreatetagsInput = {
+    set: string[]
+  }
+
+  export type LogArchiveUpdatetagsInput = {
+    set?: string[]
+    push?: string | string[]
+  }
+
   export type NestedStringFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel>
     in?: string[] | ListStringFieldRefInput<$PrismaModel>
@@ -11714,6 +18277,33 @@ export namespace Prisma {
     not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
   }
 
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[] | ListIntFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type NestedFloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
   export type NestedEnumGoalLevelFilter<$PrismaModel = never> = {
     equals?: $Enums.GoalLevel | EnumGoalLevelFieldRefInput<$PrismaModel>
     in?: $Enums.GoalLevel[] | ListEnumGoalLevelFieldRefInput<$PrismaModel>
@@ -11726,17 +18316,6 @@ export namespace Prisma {
     in?: $Enums.GoalStatus[] | ListEnumGoalStatusFieldRefInput<$PrismaModel>
     notIn?: $Enums.GoalStatus[] | ListEnumGoalStatusFieldRefInput<$PrismaModel>
     not?: NestedEnumGoalStatusFilter<$PrismaModel> | $Enums.GoalStatus
-  }
-
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
   }
 
   export type NestedEnumGoalLevelWithAggregatesFilter<$PrismaModel = never> = {
@@ -11775,20 +18354,31 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     lt?: number | IntFieldRefInput<$PrismaModel>
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type GoalCreateWithoutUserInput = {
@@ -11811,6 +18401,7 @@ export namespace Prisma {
     subGoals?: GoalCreateNestedManyWithoutParentInput
     tasks?: TaskCreateNestedManyWithoutGoalInput
     tags?: TagCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutGoalInput
   }
 
   export type GoalUncheckedCreateWithoutUserInput = {
@@ -11833,6 +18424,7 @@ export namespace Prisma {
     subGoals?: GoalUncheckedCreateNestedManyWithoutParentInput
     tasks?: TaskUncheckedCreateNestedManyWithoutGoalInput
     tags?: TagUncheckedCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutGoalInput
   }
 
   export type GoalCreateOrConnectWithoutUserInput = {
@@ -11889,10 +18481,13 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     goal?: GoalCreateNestedOneWithoutTasksInput
     parent?: TaskCreateNestedOneWithoutSubTasksInput
     subTasks?: TaskCreateNestedManyWithoutParentInput
     tags?: TagCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutTaskInput
   }
 
   export type TaskUncheckedCreateWithoutUserInput = {
@@ -11907,8 +18502,11 @@ export namespace Prisma {
     parentId?: string | null
     goalId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     subTasks?: TaskUncheckedCreateNestedManyWithoutParentInput
     tags?: TagUncheckedCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutTaskInput
   }
 
   export type TaskCreateOrConnectWithoutUserInput = {
@@ -11918,6 +18516,102 @@ export namespace Prisma {
 
   export type TaskCreateManyUserInputEnvelope = {
     data: TaskCreateManyUserInput | TaskCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type TimeRecordCreateWithoutUserInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    task: TaskCreateNestedOneWithoutTimeRecordsInput
+  }
+
+  export type TimeRecordUncheckedCreateWithoutUserInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    taskId: string
+  }
+
+  export type TimeRecordCreateOrConnectWithoutUserInput = {
+    where: TimeRecordWhereUniqueInput
+    create: XOR<TimeRecordCreateWithoutUserInput, TimeRecordUncheckedCreateWithoutUserInput>
+  }
+
+  export type TimeRecordCreateManyUserInputEnvelope = {
+    data: TimeRecordCreateManyUserInput | TimeRecordCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ProgressLogCreateWithoutUserInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    task?: TaskCreateNestedOneWithoutProgressLogsInput
+    goal?: GoalCreateNestedOneWithoutProgressLogsInput
+  }
+
+  export type ProgressLogUncheckedCreateWithoutUserInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    taskId?: string | null
+    goalId?: string | null
+  }
+
+  export type ProgressLogCreateOrConnectWithoutUserInput = {
+    where: ProgressLogWhereUniqueInput
+    create: XOR<ProgressLogCreateWithoutUserInput, ProgressLogUncheckedCreateWithoutUserInput>
+  }
+
+  export type ProgressLogCreateManyUserInputEnvelope = {
+    data: ProgressLogCreateManyUserInput | ProgressLogCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ImportedFileCreateWithoutUserInput = {
+    id?: string
+    fileName: string
+    fileType: string
+    fileSize: number
+    ossPath: string
+    description?: string | null
+    tags?: ImportedFileCreatetagsInput | string[]
+    uploadedAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ImportedFileUncheckedCreateWithoutUserInput = {
+    id?: string
+    fileName: string
+    fileType: string
+    fileSize: number
+    ossPath: string
+    description?: string | null
+    tags?: ImportedFileCreatetagsInput | string[]
+    uploadedAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ImportedFileCreateOrConnectWithoutUserInput = {
+    where: ImportedFileWhereUniqueInput
+    create: XOR<ImportedFileCreateWithoutUserInput, ImportedFileUncheckedCreateWithoutUserInput>
+  }
+
+  export type ImportedFileCreateManyUserInputEnvelope = {
+    data: ImportedFileCreateManyUserInput | ImportedFileCreateManyUserInput[]
     skipDuplicates?: boolean
   }
 
@@ -12023,6 +18717,100 @@ export namespace Prisma {
     parentId?: StringNullableFilter<"Task"> | string | null
     goalId?: StringNullableFilter<"Task"> | string | null
     metadata?: JsonNullableFilter<"Task">
+    totalTime?: IntFilter<"Task"> | number
+  }
+
+  export type TimeRecordUpsertWithWhereUniqueWithoutUserInput = {
+    where: TimeRecordWhereUniqueInput
+    update: XOR<TimeRecordUpdateWithoutUserInput, TimeRecordUncheckedUpdateWithoutUserInput>
+    create: XOR<TimeRecordCreateWithoutUserInput, TimeRecordUncheckedCreateWithoutUserInput>
+  }
+
+  export type TimeRecordUpdateWithWhereUniqueWithoutUserInput = {
+    where: TimeRecordWhereUniqueInput
+    data: XOR<TimeRecordUpdateWithoutUserInput, TimeRecordUncheckedUpdateWithoutUserInput>
+  }
+
+  export type TimeRecordUpdateManyWithWhereWithoutUserInput = {
+    where: TimeRecordScalarWhereInput
+    data: XOR<TimeRecordUpdateManyMutationInput, TimeRecordUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type TimeRecordScalarWhereInput = {
+    AND?: TimeRecordScalarWhereInput | TimeRecordScalarWhereInput[]
+    OR?: TimeRecordScalarWhereInput[]
+    NOT?: TimeRecordScalarWhereInput | TimeRecordScalarWhereInput[]
+    id?: StringFilter<"TimeRecord"> | string
+    startTime?: DateTimeFilter<"TimeRecord"> | Date | string
+    endTime?: DateTimeNullableFilter<"TimeRecord"> | Date | string | null
+    duration?: IntNullableFilter<"TimeRecord"> | number | null
+    note?: StringNullableFilter<"TimeRecord"> | string | null
+    createdAt?: DateTimeFilter<"TimeRecord"> | Date | string
+    updatedAt?: DateTimeFilter<"TimeRecord"> | Date | string
+    userId?: StringFilter<"TimeRecord"> | string
+    taskId?: StringFilter<"TimeRecord"> | string
+  }
+
+  export type ProgressLogUpsertWithWhereUniqueWithoutUserInput = {
+    where: ProgressLogWhereUniqueInput
+    update: XOR<ProgressLogUpdateWithoutUserInput, ProgressLogUncheckedUpdateWithoutUserInput>
+    create: XOR<ProgressLogCreateWithoutUserInput, ProgressLogUncheckedCreateWithoutUserInput>
+  }
+
+  export type ProgressLogUpdateWithWhereUniqueWithoutUserInput = {
+    where: ProgressLogWhereUniqueInput
+    data: XOR<ProgressLogUpdateWithoutUserInput, ProgressLogUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ProgressLogUpdateManyWithWhereWithoutUserInput = {
+    where: ProgressLogScalarWhereInput
+    data: XOR<ProgressLogUpdateManyMutationInput, ProgressLogUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type ProgressLogScalarWhereInput = {
+    AND?: ProgressLogScalarWhereInput | ProgressLogScalarWhereInput[]
+    OR?: ProgressLogScalarWhereInput[]
+    NOT?: ProgressLogScalarWhereInput | ProgressLogScalarWhereInput[]
+    id?: StringFilter<"ProgressLog"> | string
+    progress?: FloatFilter<"ProgressLog"> | number
+    note?: StringNullableFilter<"ProgressLog"> | string | null
+    createdAt?: DateTimeFilter<"ProgressLog"> | Date | string
+    updatedAt?: DateTimeFilter<"ProgressLog"> | Date | string
+    userId?: StringFilter<"ProgressLog"> | string
+    taskId?: StringNullableFilter<"ProgressLog"> | string | null
+    goalId?: StringNullableFilter<"ProgressLog"> | string | null
+  }
+
+  export type ImportedFileUpsertWithWhereUniqueWithoutUserInput = {
+    where: ImportedFileWhereUniqueInput
+    update: XOR<ImportedFileUpdateWithoutUserInput, ImportedFileUncheckedUpdateWithoutUserInput>
+    create: XOR<ImportedFileCreateWithoutUserInput, ImportedFileUncheckedCreateWithoutUserInput>
+  }
+
+  export type ImportedFileUpdateWithWhereUniqueWithoutUserInput = {
+    where: ImportedFileWhereUniqueInput
+    data: XOR<ImportedFileUpdateWithoutUserInput, ImportedFileUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ImportedFileUpdateManyWithWhereWithoutUserInput = {
+    where: ImportedFileScalarWhereInput
+    data: XOR<ImportedFileUpdateManyMutationInput, ImportedFileUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type ImportedFileScalarWhereInput = {
+    AND?: ImportedFileScalarWhereInput | ImportedFileScalarWhereInput[]
+    OR?: ImportedFileScalarWhereInput[]
+    NOT?: ImportedFileScalarWhereInput | ImportedFileScalarWhereInput[]
+    id?: StringFilter<"ImportedFile"> | string
+    fileName?: StringFilter<"ImportedFile"> | string
+    fileType?: StringFilter<"ImportedFile"> | string
+    fileSize?: IntFilter<"ImportedFile"> | number
+    ossPath?: StringFilter<"ImportedFile"> | string
+    description?: StringNullableFilter<"ImportedFile"> | string | null
+    tags?: StringNullableListFilter<"ImportedFile">
+    uploadedAt?: DateTimeFilter<"ImportedFile"> | Date | string
+    updatedAt?: DateTimeFilter<"ImportedFile"> | Date | string
+    userId?: StringFilter<"ImportedFile"> | string
   }
 
   export type GoalCreateWithoutTasksInput = {
@@ -12045,6 +18833,7 @@ export namespace Prisma {
     subGoals?: GoalCreateNestedManyWithoutParentInput
     user: UserCreateNestedOneWithoutGoalsInput
     tags?: TagCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutGoalInput
   }
 
   export type GoalUncheckedCreateWithoutTasksInput = {
@@ -12067,6 +18856,7 @@ export namespace Prisma {
     metadata?: NullableJsonNullValueInput | InputJsonValue
     subGoals?: GoalUncheckedCreateNestedManyWithoutParentInput
     tags?: TagUncheckedCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutGoalInput
   }
 
   export type GoalCreateOrConnectWithoutTasksInput = {
@@ -12084,10 +18874,13 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     goal?: GoalCreateNestedOneWithoutTasksInput
     parent?: TaskCreateNestedOneWithoutSubTasksInput
     user: UserCreateNestedOneWithoutTasksInput
     tags?: TagCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutTaskInput
   }
 
   export type TaskUncheckedCreateWithoutSubTasksInput = {
@@ -12103,7 +18896,10 @@ export namespace Prisma {
     parentId?: string | null
     goalId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     tags?: TagUncheckedCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutTaskInput
   }
 
   export type TaskCreateOrConnectWithoutSubTasksInput = {
@@ -12121,10 +18917,13 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     goal?: GoalCreateNestedOneWithoutTasksInput
     subTasks?: TaskCreateNestedManyWithoutParentInput
     user: UserCreateNestedOneWithoutTasksInput
     tags?: TagCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutTaskInput
   }
 
   export type TaskUncheckedCreateWithoutParentInput = {
@@ -12139,8 +18938,11 @@ export namespace Prisma {
     userId: string
     goalId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     subTasks?: TaskUncheckedCreateNestedManyWithoutParentInput
     tags?: TagUncheckedCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutTaskInput
   }
 
   export type TaskCreateOrConnectWithoutParentInput = {
@@ -12162,6 +18964,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     goals?: GoalCreateNestedManyWithoutUserInput
     messages?: MessageCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutTasksInput = {
@@ -12173,6 +18978,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     goals?: GoalUncheckedCreateNestedManyWithoutUserInput
     messages?: MessageUncheckedCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutTasksInput = {
@@ -12203,6 +19011,68 @@ export namespace Prisma {
   export type TagCreateOrConnectWithoutTasksInput = {
     where: TagWhereUniqueInput
     create: XOR<TagCreateWithoutTasksInput, TagUncheckedCreateWithoutTasksInput>
+  }
+
+  export type TimeRecordCreateWithoutTaskInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutTimeRecordsInput
+  }
+
+  export type TimeRecordUncheckedCreateWithoutTaskInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+  }
+
+  export type TimeRecordCreateOrConnectWithoutTaskInput = {
+    where: TimeRecordWhereUniqueInput
+    create: XOR<TimeRecordCreateWithoutTaskInput, TimeRecordUncheckedCreateWithoutTaskInput>
+  }
+
+  export type TimeRecordCreateManyTaskInputEnvelope = {
+    data: TimeRecordCreateManyTaskInput | TimeRecordCreateManyTaskInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ProgressLogCreateWithoutTaskInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutProgressLogsInput
+    goal?: GoalCreateNestedOneWithoutProgressLogsInput
+  }
+
+  export type ProgressLogUncheckedCreateWithoutTaskInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    goalId?: string | null
+  }
+
+  export type ProgressLogCreateOrConnectWithoutTaskInput = {
+    where: ProgressLogWhereUniqueInput
+    create: XOR<ProgressLogCreateWithoutTaskInput, ProgressLogUncheckedCreateWithoutTaskInput>
+  }
+
+  export type ProgressLogCreateManyTaskInputEnvelope = {
+    data: ProgressLogCreateManyTaskInput | ProgressLogCreateManyTaskInput[]
+    skipDuplicates?: boolean
   }
 
   export type GoalUpsertWithoutTasksInput = {
@@ -12236,6 +19106,7 @@ export namespace Prisma {
     subGoals?: GoalUpdateManyWithoutParentNestedInput
     user?: UserUpdateOneRequiredWithoutGoalsNestedInput
     tags?: TagUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateWithoutTasksInput = {
@@ -12258,6 +19129,7 @@ export namespace Prisma {
     metadata?: NullableJsonNullValueInput | InputJsonValue
     subGoals?: GoalUncheckedUpdateManyWithoutParentNestedInput
     tags?: TagUncheckedUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutGoalNestedInput
   }
 
   export type TaskUpsertWithoutSubTasksInput = {
@@ -12281,10 +19153,13 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     goal?: GoalUpdateOneWithoutTasksNestedInput
     parent?: TaskUpdateOneWithoutSubTasksNestedInput
     user?: UserUpdateOneRequiredWithoutTasksNestedInput
     tags?: TagUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateWithoutSubTasksInput = {
@@ -12300,7 +19175,10 @@ export namespace Prisma {
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     tags?: TagUncheckedUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUpsertWithWhereUniqueWithoutParentInput = {
@@ -12339,6 +19217,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     goals?: GoalUpdateManyWithoutUserNestedInput
     messages?: MessageUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutTasksInput = {
@@ -12350,6 +19231,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     goals?: GoalUncheckedUpdateManyWithoutUserNestedInput
     messages?: MessageUncheckedUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TagUpsertWithWhereUniqueWithoutTasksInput = {
@@ -12379,6 +19263,38 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Tag"> | Date | string
   }
 
+  export type TimeRecordUpsertWithWhereUniqueWithoutTaskInput = {
+    where: TimeRecordWhereUniqueInput
+    update: XOR<TimeRecordUpdateWithoutTaskInput, TimeRecordUncheckedUpdateWithoutTaskInput>
+    create: XOR<TimeRecordCreateWithoutTaskInput, TimeRecordUncheckedCreateWithoutTaskInput>
+  }
+
+  export type TimeRecordUpdateWithWhereUniqueWithoutTaskInput = {
+    where: TimeRecordWhereUniqueInput
+    data: XOR<TimeRecordUpdateWithoutTaskInput, TimeRecordUncheckedUpdateWithoutTaskInput>
+  }
+
+  export type TimeRecordUpdateManyWithWhereWithoutTaskInput = {
+    where: TimeRecordScalarWhereInput
+    data: XOR<TimeRecordUpdateManyMutationInput, TimeRecordUncheckedUpdateManyWithoutTaskInput>
+  }
+
+  export type ProgressLogUpsertWithWhereUniqueWithoutTaskInput = {
+    where: ProgressLogWhereUniqueInput
+    update: XOR<ProgressLogUpdateWithoutTaskInput, ProgressLogUncheckedUpdateWithoutTaskInput>
+    create: XOR<ProgressLogCreateWithoutTaskInput, ProgressLogUncheckedCreateWithoutTaskInput>
+  }
+
+  export type ProgressLogUpdateWithWhereUniqueWithoutTaskInput = {
+    where: ProgressLogWhereUniqueInput
+    data: XOR<ProgressLogUpdateWithoutTaskInput, ProgressLogUncheckedUpdateWithoutTaskInput>
+  }
+
+  export type ProgressLogUpdateManyWithWhereWithoutTaskInput = {
+    where: ProgressLogScalarWhereInput
+    data: XOR<ProgressLogUpdateManyMutationInput, ProgressLogUncheckedUpdateManyWithoutTaskInput>
+  }
+
   export type GoalCreateWithoutSubGoalsInput = {
     id?: string
     title: string
@@ -12399,6 +19315,7 @@ export namespace Prisma {
     user: UserCreateNestedOneWithoutGoalsInput
     tasks?: TaskCreateNestedManyWithoutGoalInput
     tags?: TagCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutGoalInput
   }
 
   export type GoalUncheckedCreateWithoutSubGoalsInput = {
@@ -12421,6 +19338,7 @@ export namespace Prisma {
     metadata?: NullableJsonNullValueInput | InputJsonValue
     tasks?: TaskUncheckedCreateNestedManyWithoutGoalInput
     tags?: TagUncheckedCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutGoalInput
   }
 
   export type GoalCreateOrConnectWithoutSubGoalsInput = {
@@ -12448,6 +19366,7 @@ export namespace Prisma {
     user: UserCreateNestedOneWithoutGoalsInput
     tasks?: TaskCreateNestedManyWithoutGoalInput
     tags?: TagCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutGoalInput
   }
 
   export type GoalUncheckedCreateWithoutParentInput = {
@@ -12470,6 +19389,7 @@ export namespace Prisma {
     subGoals?: GoalUncheckedCreateNestedManyWithoutParentInput
     tasks?: TaskUncheckedCreateNestedManyWithoutGoalInput
     tags?: TagUncheckedCreateNestedManyWithoutGoalsInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutGoalInput
   }
 
   export type GoalCreateOrConnectWithoutParentInput = {
@@ -12491,6 +19411,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     messages?: MessageCreateNestedManyWithoutUserInput
     tasks?: TaskCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutGoalsInput = {
@@ -12502,6 +19425,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     messages?: MessageUncheckedCreateNestedManyWithoutUserInput
     tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutGoalsInput = {
@@ -12519,10 +19445,13 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     parent?: TaskCreateNestedOneWithoutSubTasksInput
     subTasks?: TaskCreateNestedManyWithoutParentInput
     user: UserCreateNestedOneWithoutTasksInput
     tags?: TagCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutTaskInput
   }
 
   export type TaskUncheckedCreateWithoutGoalInput = {
@@ -12537,8 +19466,11 @@ export namespace Prisma {
     userId: string
     parentId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     subTasks?: TaskUncheckedCreateNestedManyWithoutParentInput
     tags?: TagUncheckedCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutTaskInput
   }
 
   export type TaskCreateOrConnectWithoutGoalInput = {
@@ -12576,6 +19508,36 @@ export namespace Prisma {
     create: XOR<TagCreateWithoutGoalsInput, TagUncheckedCreateWithoutGoalsInput>
   }
 
+  export type ProgressLogCreateWithoutGoalInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutProgressLogsInput
+    task?: TaskCreateNestedOneWithoutProgressLogsInput
+  }
+
+  export type ProgressLogUncheckedCreateWithoutGoalInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    taskId?: string | null
+  }
+
+  export type ProgressLogCreateOrConnectWithoutGoalInput = {
+    where: ProgressLogWhereUniqueInput
+    create: XOR<ProgressLogCreateWithoutGoalInput, ProgressLogUncheckedCreateWithoutGoalInput>
+  }
+
+  export type ProgressLogCreateManyGoalInputEnvelope = {
+    data: ProgressLogCreateManyGoalInput | ProgressLogCreateManyGoalInput[]
+    skipDuplicates?: boolean
+  }
+
   export type GoalUpsertWithoutSubGoalsInput = {
     update: XOR<GoalUpdateWithoutSubGoalsInput, GoalUncheckedUpdateWithoutSubGoalsInput>
     create: XOR<GoalCreateWithoutSubGoalsInput, GoalUncheckedCreateWithoutSubGoalsInput>
@@ -12607,6 +19569,7 @@ export namespace Prisma {
     user?: UserUpdateOneRequiredWithoutGoalsNestedInput
     tasks?: TaskUpdateManyWithoutGoalNestedInput
     tags?: TagUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateWithoutSubGoalsInput = {
@@ -12629,6 +19592,7 @@ export namespace Prisma {
     metadata?: NullableJsonNullValueInput | InputJsonValue
     tasks?: TaskUncheckedUpdateManyWithoutGoalNestedInput
     tags?: TagUncheckedUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUpsertWithWhereUniqueWithoutParentInput = {
@@ -12667,6 +19631,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     messages?: MessageUpdateManyWithoutUserNestedInput
     tasks?: TaskUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutGoalsInput = {
@@ -12678,6 +19645,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     messages?: MessageUncheckedUpdateManyWithoutUserNestedInput
     tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TaskUpsertWithWhereUniqueWithoutGoalInput = {
@@ -12710,6 +19680,22 @@ export namespace Prisma {
   export type TagUpdateManyWithWhereWithoutGoalsInput = {
     where: TagScalarWhereInput
     data: XOR<TagUpdateManyMutationInput, TagUncheckedUpdateManyWithoutGoalsInput>
+  }
+
+  export type ProgressLogUpsertWithWhereUniqueWithoutGoalInput = {
+    where: ProgressLogWhereUniqueInput
+    update: XOR<ProgressLogUpdateWithoutGoalInput, ProgressLogUncheckedUpdateWithoutGoalInput>
+    create: XOR<ProgressLogCreateWithoutGoalInput, ProgressLogUncheckedCreateWithoutGoalInput>
+  }
+
+  export type ProgressLogUpdateWithWhereUniqueWithoutGoalInput = {
+    where: ProgressLogWhereUniqueInput
+    data: XOR<ProgressLogUpdateWithoutGoalInput, ProgressLogUncheckedUpdateWithoutGoalInput>
+  }
+
+  export type ProgressLogUpdateManyWithWhereWithoutGoalInput = {
+    where: ProgressLogScalarWhereInput
+    data: XOR<ProgressLogUpdateManyMutationInput, ProgressLogUncheckedUpdateManyWithoutGoalInput>
   }
 
   export type CategoryCreateWithoutMessagesInput = {
@@ -12748,6 +19734,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     goals?: GoalCreateNestedManyWithoutUserInput
     tasks?: TaskCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutMessagesInput = {
@@ -12759,6 +19748,9 @@ export namespace Prisma {
     updatedAt?: Date | string
     goals?: GoalUncheckedCreateNestedManyWithoutUserInput
     tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutMessagesInput = {
@@ -12844,6 +19836,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     goals?: GoalUpdateManyWithoutUserNestedInput
     tasks?: TaskUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutMessagesInput = {
@@ -12855,6 +19850,9 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     goals?: GoalUncheckedUpdateManyWithoutUserNestedInput
     tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type TagUpsertWithWhereUniqueWithoutMessagesInput = {
@@ -13064,6 +20062,7 @@ export namespace Prisma {
     subGoals?: GoalCreateNestedManyWithoutParentInput
     user: UserCreateNestedOneWithoutGoalsInput
     tasks?: TaskCreateNestedManyWithoutGoalInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutGoalInput
   }
 
   export type GoalUncheckedCreateWithoutTagsInput = {
@@ -13086,6 +20085,7 @@ export namespace Prisma {
     metadata?: NullableJsonNullValueInput | InputJsonValue
     subGoals?: GoalUncheckedCreateNestedManyWithoutParentInput
     tasks?: TaskUncheckedCreateNestedManyWithoutGoalInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutGoalInput
   }
 
   export type GoalCreateOrConnectWithoutTagsInput = {
@@ -13132,10 +20132,13 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     goal?: GoalCreateNestedOneWithoutTasksInput
     parent?: TaskCreateNestedOneWithoutSubTasksInput
     subTasks?: TaskCreateNestedManyWithoutParentInput
     user: UserCreateNestedOneWithoutTasksInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutTaskInput
   }
 
   export type TaskUncheckedCreateWithoutTagsInput = {
@@ -13151,7 +20154,10 @@ export namespace Prisma {
     parentId?: string | null
     goalId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
     subTasks?: TaskUncheckedCreateNestedManyWithoutParentInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutTaskInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutTaskInput
   }
 
   export type TaskCreateOrConnectWithoutTagsInput = {
@@ -13207,6 +20213,514 @@ export namespace Prisma {
     data: XOR<TaskUpdateManyMutationInput, TaskUncheckedUpdateManyWithoutTagsInput>
   }
 
+  export type UserCreateWithoutTimeRecordsInput = {
+    id?: string
+    email: string
+    name?: string | null
+    password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    goals?: GoalCreateNestedManyWithoutUserInput
+    messages?: MessageCreateNestedManyWithoutUserInput
+    tasks?: TaskCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutTimeRecordsInput = {
+    id?: string
+    email: string
+    name?: string | null
+    password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    goals?: GoalUncheckedCreateNestedManyWithoutUserInput
+    messages?: MessageUncheckedCreateNestedManyWithoutUserInput
+    tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutTimeRecordsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutTimeRecordsInput, UserUncheckedCreateWithoutTimeRecordsInput>
+  }
+
+  export type TaskCreateWithoutTimeRecordsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    status?: $Enums.TaskStatus
+    priority?: $Enums.TaskPriority
+    dueDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
+    goal?: GoalCreateNestedOneWithoutTasksInput
+    parent?: TaskCreateNestedOneWithoutSubTasksInput
+    subTasks?: TaskCreateNestedManyWithoutParentInput
+    user: UserCreateNestedOneWithoutTasksInput
+    tags?: TagCreateNestedManyWithoutTasksInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutTaskInput
+  }
+
+  export type TaskUncheckedCreateWithoutTimeRecordsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    status?: $Enums.TaskStatus
+    priority?: $Enums.TaskPriority
+    dueDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    parentId?: string | null
+    goalId?: string | null
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
+    subTasks?: TaskUncheckedCreateNestedManyWithoutParentInput
+    tags?: TagUncheckedCreateNestedManyWithoutTasksInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutTaskInput
+  }
+
+  export type TaskCreateOrConnectWithoutTimeRecordsInput = {
+    where: TaskWhereUniqueInput
+    create: XOR<TaskCreateWithoutTimeRecordsInput, TaskUncheckedCreateWithoutTimeRecordsInput>
+  }
+
+  export type UserUpsertWithoutTimeRecordsInput = {
+    update: XOR<UserUpdateWithoutTimeRecordsInput, UserUncheckedUpdateWithoutTimeRecordsInput>
+    create: XOR<UserCreateWithoutTimeRecordsInput, UserUncheckedCreateWithoutTimeRecordsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutTimeRecordsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutTimeRecordsInput, UserUncheckedUpdateWithoutTimeRecordsInput>
+  }
+
+  export type UserUpdateWithoutTimeRecordsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    goals?: GoalUpdateManyWithoutUserNestedInput
+    messages?: MessageUpdateManyWithoutUserNestedInput
+    tasks?: TaskUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutTimeRecordsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    goals?: GoalUncheckedUpdateManyWithoutUserNestedInput
+    messages?: MessageUncheckedUpdateManyWithoutUserNestedInput
+    tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type TaskUpsertWithoutTimeRecordsInput = {
+    update: XOR<TaskUpdateWithoutTimeRecordsInput, TaskUncheckedUpdateWithoutTimeRecordsInput>
+    create: XOR<TaskCreateWithoutTimeRecordsInput, TaskUncheckedCreateWithoutTimeRecordsInput>
+    where?: TaskWhereInput
+  }
+
+  export type TaskUpdateToOneWithWhereWithoutTimeRecordsInput = {
+    where?: TaskWhereInput
+    data: XOR<TaskUpdateWithoutTimeRecordsInput, TaskUncheckedUpdateWithoutTimeRecordsInput>
+  }
+
+  export type TaskUpdateWithoutTimeRecordsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: EnumTaskStatusFieldUpdateOperationsInput | $Enums.TaskStatus
+    priority?: EnumTaskPriorityFieldUpdateOperationsInput | $Enums.TaskPriority
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
+    goal?: GoalUpdateOneWithoutTasksNestedInput
+    parent?: TaskUpdateOneWithoutSubTasksNestedInput
+    subTasks?: TaskUpdateManyWithoutParentNestedInput
+    user?: UserUpdateOneRequiredWithoutTasksNestedInput
+    tags?: TagUpdateManyWithoutTasksNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutTaskNestedInput
+  }
+
+  export type TaskUncheckedUpdateWithoutTimeRecordsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: EnumTaskStatusFieldUpdateOperationsInput | $Enums.TaskStatus
+    priority?: EnumTaskPriorityFieldUpdateOperationsInput | $Enums.TaskPriority
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableStringFieldUpdateOperationsInput | string | null
+    goalId?: NullableStringFieldUpdateOperationsInput | string | null
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
+    subTasks?: TaskUncheckedUpdateManyWithoutParentNestedInput
+    tags?: TagUncheckedUpdateManyWithoutTasksNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutTaskNestedInput
+  }
+
+  export type UserCreateWithoutProgressLogsInput = {
+    id?: string
+    email: string
+    name?: string | null
+    password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    goals?: GoalCreateNestedManyWithoutUserInput
+    messages?: MessageCreateNestedManyWithoutUserInput
+    tasks?: TaskCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutProgressLogsInput = {
+    id?: string
+    email: string
+    name?: string | null
+    password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    goals?: GoalUncheckedCreateNestedManyWithoutUserInput
+    messages?: MessageUncheckedCreateNestedManyWithoutUserInput
+    tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutUserInput
+    importedFiles?: ImportedFileUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutProgressLogsInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutProgressLogsInput, UserUncheckedCreateWithoutProgressLogsInput>
+  }
+
+  export type TaskCreateWithoutProgressLogsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    status?: $Enums.TaskStatus
+    priority?: $Enums.TaskPriority
+    dueDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
+    goal?: GoalCreateNestedOneWithoutTasksInput
+    parent?: TaskCreateNestedOneWithoutSubTasksInput
+    subTasks?: TaskCreateNestedManyWithoutParentInput
+    user: UserCreateNestedOneWithoutTasksInput
+    tags?: TagCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutTaskInput
+  }
+
+  export type TaskUncheckedCreateWithoutProgressLogsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    status?: $Enums.TaskStatus
+    priority?: $Enums.TaskPriority
+    dueDate?: Date | string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    parentId?: string | null
+    goalId?: string | null
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
+    subTasks?: TaskUncheckedCreateNestedManyWithoutParentInput
+    tags?: TagUncheckedCreateNestedManyWithoutTasksInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutTaskInput
+  }
+
+  export type TaskCreateOrConnectWithoutProgressLogsInput = {
+    where: TaskWhereUniqueInput
+    create: XOR<TaskCreateWithoutProgressLogsInput, TaskUncheckedCreateWithoutProgressLogsInput>
+  }
+
+  export type GoalCreateWithoutProgressLogsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    level?: $Enums.GoalLevel
+    status?: $Enums.GoalStatus
+    startDate: Date | string
+    endDate: Date | string
+    progress?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    metrics?: NullableJsonNullValueInput | InputJsonValue
+    resources?: NullableJsonNullValueInput | InputJsonValue
+    priority?: number
+    weight?: number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    parent?: GoalCreateNestedOneWithoutSubGoalsInput
+    subGoals?: GoalCreateNestedManyWithoutParentInput
+    user: UserCreateNestedOneWithoutGoalsInput
+    tasks?: TaskCreateNestedManyWithoutGoalInput
+    tags?: TagCreateNestedManyWithoutGoalsInput
+  }
+
+  export type GoalUncheckedCreateWithoutProgressLogsInput = {
+    id?: string
+    title: string
+    description?: string | null
+    level?: $Enums.GoalLevel
+    status?: $Enums.GoalStatus
+    startDate: Date | string
+    endDate: Date | string
+    progress?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    parentId?: string | null
+    metrics?: NullableJsonNullValueInput | InputJsonValue
+    resources?: NullableJsonNullValueInput | InputJsonValue
+    priority?: number
+    weight?: number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    subGoals?: GoalUncheckedCreateNestedManyWithoutParentInput
+    tasks?: TaskUncheckedCreateNestedManyWithoutGoalInput
+    tags?: TagUncheckedCreateNestedManyWithoutGoalsInput
+  }
+
+  export type GoalCreateOrConnectWithoutProgressLogsInput = {
+    where: GoalWhereUniqueInput
+    create: XOR<GoalCreateWithoutProgressLogsInput, GoalUncheckedCreateWithoutProgressLogsInput>
+  }
+
+  export type UserUpsertWithoutProgressLogsInput = {
+    update: XOR<UserUpdateWithoutProgressLogsInput, UserUncheckedUpdateWithoutProgressLogsInput>
+    create: XOR<UserCreateWithoutProgressLogsInput, UserUncheckedCreateWithoutProgressLogsInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutProgressLogsInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutProgressLogsInput, UserUncheckedUpdateWithoutProgressLogsInput>
+  }
+
+  export type UserUpdateWithoutProgressLogsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    goals?: GoalUpdateManyWithoutUserNestedInput
+    messages?: MessageUpdateManyWithoutUserNestedInput
+    tasks?: TaskUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutProgressLogsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    goals?: GoalUncheckedUpdateManyWithoutUserNestedInput
+    messages?: MessageUncheckedUpdateManyWithoutUserNestedInput
+    tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutUserNestedInput
+    importedFiles?: ImportedFileUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type TaskUpsertWithoutProgressLogsInput = {
+    update: XOR<TaskUpdateWithoutProgressLogsInput, TaskUncheckedUpdateWithoutProgressLogsInput>
+    create: XOR<TaskCreateWithoutProgressLogsInput, TaskUncheckedCreateWithoutProgressLogsInput>
+    where?: TaskWhereInput
+  }
+
+  export type TaskUpdateToOneWithWhereWithoutProgressLogsInput = {
+    where?: TaskWhereInput
+    data: XOR<TaskUpdateWithoutProgressLogsInput, TaskUncheckedUpdateWithoutProgressLogsInput>
+  }
+
+  export type TaskUpdateWithoutProgressLogsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: EnumTaskStatusFieldUpdateOperationsInput | $Enums.TaskStatus
+    priority?: EnumTaskPriorityFieldUpdateOperationsInput | $Enums.TaskPriority
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
+    goal?: GoalUpdateOneWithoutTasksNestedInput
+    parent?: TaskUpdateOneWithoutSubTasksNestedInput
+    subTasks?: TaskUpdateManyWithoutParentNestedInput
+    user?: UserUpdateOneRequiredWithoutTasksNestedInput
+    tags?: TagUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutTaskNestedInput
+  }
+
+  export type TaskUncheckedUpdateWithoutProgressLogsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: EnumTaskStatusFieldUpdateOperationsInput | $Enums.TaskStatus
+    priority?: EnumTaskPriorityFieldUpdateOperationsInput | $Enums.TaskPriority
+    dueDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableStringFieldUpdateOperationsInput | string | null
+    goalId?: NullableStringFieldUpdateOperationsInput | string | null
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
+    subTasks?: TaskUncheckedUpdateManyWithoutParentNestedInput
+    tags?: TagUncheckedUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutTaskNestedInput
+  }
+
+  export type GoalUpsertWithoutProgressLogsInput = {
+    update: XOR<GoalUpdateWithoutProgressLogsInput, GoalUncheckedUpdateWithoutProgressLogsInput>
+    create: XOR<GoalCreateWithoutProgressLogsInput, GoalUncheckedCreateWithoutProgressLogsInput>
+    where?: GoalWhereInput
+  }
+
+  export type GoalUpdateToOneWithWhereWithoutProgressLogsInput = {
+    where?: GoalWhereInput
+    data: XOR<GoalUpdateWithoutProgressLogsInput, GoalUncheckedUpdateWithoutProgressLogsInput>
+  }
+
+  export type GoalUpdateWithoutProgressLogsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    level?: EnumGoalLevelFieldUpdateOperationsInput | $Enums.GoalLevel
+    status?: EnumGoalStatusFieldUpdateOperationsInput | $Enums.GoalStatus
+    startDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    metrics?: NullableJsonNullValueInput | InputJsonValue
+    resources?: NullableJsonNullValueInput | InputJsonValue
+    priority?: IntFieldUpdateOperationsInput | number
+    weight?: FloatFieldUpdateOperationsInput | number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    parent?: GoalUpdateOneWithoutSubGoalsNestedInput
+    subGoals?: GoalUpdateManyWithoutParentNestedInput
+    user?: UserUpdateOneRequiredWithoutGoalsNestedInput
+    tasks?: TaskUpdateManyWithoutGoalNestedInput
+    tags?: TagUpdateManyWithoutGoalsNestedInput
+  }
+
+  export type GoalUncheckedUpdateWithoutProgressLogsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    title?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    level?: EnumGoalLevelFieldUpdateOperationsInput | $Enums.GoalLevel
+    status?: EnumGoalStatusFieldUpdateOperationsInput | $Enums.GoalStatus
+    startDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    endDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableStringFieldUpdateOperationsInput | string | null
+    metrics?: NullableJsonNullValueInput | InputJsonValue
+    resources?: NullableJsonNullValueInput | InputJsonValue
+    priority?: IntFieldUpdateOperationsInput | number
+    weight?: FloatFieldUpdateOperationsInput | number
+    metadata?: NullableJsonNullValueInput | InputJsonValue
+    subGoals?: GoalUncheckedUpdateManyWithoutParentNestedInput
+    tasks?: TaskUncheckedUpdateManyWithoutGoalNestedInput
+    tags?: TagUncheckedUpdateManyWithoutGoalsNestedInput
+  }
+
+  export type UserCreateWithoutImportedFilesInput = {
+    id?: string
+    email: string
+    name?: string | null
+    password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    goals?: GoalCreateNestedManyWithoutUserInput
+    messages?: MessageCreateNestedManyWithoutUserInput
+    tasks?: TaskCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutImportedFilesInput = {
+    id?: string
+    email: string
+    name?: string | null
+    password: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    goals?: GoalUncheckedCreateNestedManyWithoutUserInput
+    messages?: MessageUncheckedCreateNestedManyWithoutUserInput
+    tasks?: TaskUncheckedCreateNestedManyWithoutUserInput
+    timeRecords?: TimeRecordUncheckedCreateNestedManyWithoutUserInput
+    progressLogs?: ProgressLogUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutImportedFilesInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutImportedFilesInput, UserUncheckedCreateWithoutImportedFilesInput>
+  }
+
+  export type UserUpsertWithoutImportedFilesInput = {
+    update: XOR<UserUpdateWithoutImportedFilesInput, UserUncheckedUpdateWithoutImportedFilesInput>
+    create: XOR<UserCreateWithoutImportedFilesInput, UserUncheckedCreateWithoutImportedFilesInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutImportedFilesInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutImportedFilesInput, UserUncheckedUpdateWithoutImportedFilesInput>
+  }
+
+  export type UserUpdateWithoutImportedFilesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    goals?: GoalUpdateManyWithoutUserNestedInput
+    messages?: MessageUpdateManyWithoutUserNestedInput
+    tasks?: TaskUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutImportedFilesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    password?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    goals?: GoalUncheckedUpdateManyWithoutUserNestedInput
+    messages?: MessageUncheckedUpdateManyWithoutUserNestedInput
+    tasks?: TaskUncheckedUpdateManyWithoutUserNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutUserNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutUserNestedInput
+  }
+
   export type GoalCreateManyUserInput = {
     id?: string
     title: string
@@ -13249,6 +20763,40 @@ export namespace Prisma {
     parentId?: string | null
     goalId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
+  }
+
+  export type TimeRecordCreateManyUserInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    taskId: string
+  }
+
+  export type ProgressLogCreateManyUserInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    taskId?: string | null
+    goalId?: string | null
+  }
+
+  export type ImportedFileCreateManyUserInput = {
+    id?: string
+    fileName: string
+    fileType: string
+    fileSize: number
+    ossPath: string
+    description?: string | null
+    tags?: ImportedFileCreatetagsInput | string[]
+    uploadedAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type GoalUpdateWithoutUserInput = {
@@ -13271,6 +20819,7 @@ export namespace Prisma {
     subGoals?: GoalUpdateManyWithoutParentNestedInput
     tasks?: TaskUpdateManyWithoutGoalNestedInput
     tags?: TagUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateWithoutUserInput = {
@@ -13293,6 +20842,7 @@ export namespace Prisma {
     subGoals?: GoalUncheckedUpdateManyWithoutParentNestedInput
     tasks?: TaskUncheckedUpdateManyWithoutGoalNestedInput
     tags?: TagUncheckedUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateManyWithoutUserInput = {
@@ -13359,10 +20909,13 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     goal?: GoalUpdateOneWithoutTasksNestedInput
     parent?: TaskUpdateOneWithoutSubTasksNestedInput
     subTasks?: TaskUpdateManyWithoutParentNestedInput
     tags?: TagUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateWithoutUserInput = {
@@ -13377,8 +20930,11 @@ export namespace Prisma {
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     subTasks?: TaskUncheckedUpdateManyWithoutParentNestedInput
     tags?: TagUncheckedUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateManyWithoutUserInput = {
@@ -13393,6 +20949,106 @@ export namespace Prisma {
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type TimeRecordUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    task?: TaskUpdateOneRequiredWithoutTimeRecordsNestedInput
+  }
+
+  export type TimeRecordUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    taskId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type TimeRecordUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    taskId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProgressLogUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    task?: TaskUpdateOneWithoutProgressLogsNestedInput
+    goal?: GoalUpdateOneWithoutProgressLogsNestedInput
+  }
+
+  export type ProgressLogUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    taskId?: NullableStringFieldUpdateOperationsInput | string | null
+    goalId?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProgressLogUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    taskId?: NullableStringFieldUpdateOperationsInput | string | null
+    goalId?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ImportedFileUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    fileType?: StringFieldUpdateOperationsInput | string
+    fileSize?: IntFieldUpdateOperationsInput | number
+    ossPath?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tags?: ImportedFileUpdatetagsInput | string[]
+    uploadedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ImportedFileUncheckedUpdateWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    fileType?: StringFieldUpdateOperationsInput | string
+    fileSize?: IntFieldUpdateOperationsInput | number
+    ossPath?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tags?: ImportedFileUpdatetagsInput | string[]
+    uploadedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ImportedFileUncheckedUpdateManyWithoutUserInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    fileType?: StringFieldUpdateOperationsInput | string
+    fileSize?: IntFieldUpdateOperationsInput | number
+    ossPath?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    tags?: ImportedFileUpdatetagsInput | string[]
+    uploadedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TaskCreateManyParentInput = {
@@ -13407,6 +21063,28 @@ export namespace Prisma {
     userId: string
     goalId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
+  }
+
+  export type TimeRecordCreateManyTaskInput = {
+    id?: string
+    startTime: Date | string
+    endTime?: Date | string | null
+    duration?: number | null
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+  }
+
+  export type ProgressLogCreateManyTaskInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    goalId?: string | null
   }
 
   export type TaskUpdateWithoutParentInput = {
@@ -13419,10 +21097,13 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     goal?: GoalUpdateOneWithoutTasksNestedInput
     subTasks?: TaskUpdateManyWithoutParentNestedInput
     user?: UserUpdateOneRequiredWithoutTasksNestedInput
     tags?: TagUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateWithoutParentInput = {
@@ -13437,8 +21118,11 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     subTasks?: TaskUncheckedUpdateManyWithoutParentNestedInput
     tags?: TagUncheckedUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateManyWithoutParentInput = {
@@ -13453,6 +21137,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
   }
 
   export type TagUpdateWithoutTasksInput = {
@@ -13481,6 +21166,69 @@ export namespace Prisma {
     color?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TimeRecordUpdateWithoutTaskInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutTimeRecordsNestedInput
+  }
+
+  export type TimeRecordUncheckedUpdateWithoutTaskInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type TimeRecordUncheckedUpdateManyWithoutTaskInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    startTime?: DateTimeFieldUpdateOperationsInput | Date | string
+    endTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    duration?: NullableIntFieldUpdateOperationsInput | number | null
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ProgressLogUpdateWithoutTaskInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutProgressLogsNestedInput
+    goal?: GoalUpdateOneWithoutProgressLogsNestedInput
+  }
+
+  export type ProgressLogUncheckedUpdateWithoutTaskInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    goalId?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProgressLogUncheckedUpdateManyWithoutTaskInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    goalId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type GoalCreateManyParentInput = {
@@ -13514,6 +21262,17 @@ export namespace Prisma {
     userId: string
     parentId?: string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: number
+  }
+
+  export type ProgressLogCreateManyGoalInput = {
+    id?: string
+    progress: number
+    note?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    userId: string
+    taskId?: string | null
   }
 
   export type GoalUpdateWithoutParentInput = {
@@ -13536,6 +21295,7 @@ export namespace Prisma {
     user?: UserUpdateOneRequiredWithoutGoalsNestedInput
     tasks?: TaskUpdateManyWithoutGoalNestedInput
     tags?: TagUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateWithoutParentInput = {
@@ -13558,6 +21318,7 @@ export namespace Prisma {
     subGoals?: GoalUncheckedUpdateManyWithoutParentNestedInput
     tasks?: TaskUncheckedUpdateManyWithoutGoalNestedInput
     tags?: TagUncheckedUpdateManyWithoutGoalsNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateManyWithoutParentInput = {
@@ -13589,10 +21350,13 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     parent?: TaskUpdateOneWithoutSubTasksNestedInput
     subTasks?: TaskUpdateManyWithoutParentNestedInput
     user?: UserUpdateOneRequiredWithoutTasksNestedInput
     tags?: TagUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateWithoutGoalInput = {
@@ -13607,8 +21371,11 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     subTasks?: TaskUncheckedUpdateManyWithoutParentNestedInput
     tags?: TagUncheckedUpdateManyWithoutTasksNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateManyWithoutGoalInput = {
@@ -13623,6 +21390,7 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
   }
 
   export type TagUpdateWithoutGoalsInput = {
@@ -13651,6 +21419,36 @@ export namespace Prisma {
     color?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProgressLogUpdateWithoutGoalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    user?: UserUpdateOneRequiredWithoutProgressLogsNestedInput
+    task?: TaskUpdateOneWithoutProgressLogsNestedInput
+  }
+
+  export type ProgressLogUncheckedUpdateWithoutGoalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    taskId?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProgressLogUncheckedUpdateManyWithoutGoalInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    progress?: FloatFieldUpdateOperationsInput | number
+    note?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    userId?: StringFieldUpdateOperationsInput | string
+    taskId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type TagUpdateWithoutMessagesInput = {
@@ -13787,6 +21585,7 @@ export namespace Prisma {
     subGoals?: GoalUpdateManyWithoutParentNestedInput
     user?: UserUpdateOneRequiredWithoutGoalsNestedInput
     tasks?: TaskUpdateManyWithoutGoalNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateWithoutTagsInput = {
@@ -13809,6 +21608,7 @@ export namespace Prisma {
     metadata?: NullableJsonNullValueInput | InputJsonValue
     subGoals?: GoalUncheckedUpdateManyWithoutParentNestedInput
     tasks?: TaskUncheckedUpdateManyWithoutGoalNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutGoalNestedInput
   }
 
   export type GoalUncheckedUpdateManyWithoutTagsInput = {
@@ -13877,10 +21677,13 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     goal?: GoalUpdateOneWithoutTasksNestedInput
     parent?: TaskUpdateOneWithoutSubTasksNestedInput
     subTasks?: TaskUpdateManyWithoutParentNestedInput
     user?: UserUpdateOneRequiredWithoutTasksNestedInput
+    timeRecords?: TimeRecordUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateWithoutTagsInput = {
@@ -13896,7 +21699,10 @@ export namespace Prisma {
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
     subTasks?: TaskUncheckedUpdateManyWithoutParentNestedInput
+    timeRecords?: TimeRecordUncheckedUpdateManyWithoutTaskNestedInput
+    progressLogs?: ProgressLogUncheckedUpdateManyWithoutTaskNestedInput
   }
 
   export type TaskUncheckedUpdateManyWithoutTagsInput = {
@@ -13912,6 +21718,7 @@ export namespace Prisma {
     parentId?: NullableStringFieldUpdateOperationsInput | string | null
     goalId?: NullableStringFieldUpdateOperationsInput | string | null
     metadata?: NullableJsonNullValueInput | InputJsonValue
+    totalTime?: IntFieldUpdateOperationsInput | number
   }
 
 

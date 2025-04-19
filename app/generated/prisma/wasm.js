@@ -138,7 +138,8 @@ exports.Prisma.TaskScalarFieldEnum = {
   userId: 'userId',
   parentId: 'parentId',
   goalId: 'goalId',
-  metadata: 'metadata'
+  metadata: 'metadata',
+  totalTime: 'totalTime'
 };
 
 exports.Prisma.GoalScalarFieldEnum = {
@@ -189,6 +190,53 @@ exports.Prisma.TagScalarFieldEnum = {
   color: 'color',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.TimeRecordScalarFieldEnum = {
+  id: 'id',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  duration: 'duration',
+  note: 'note',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId',
+  taskId: 'taskId'
+};
+
+exports.Prisma.ProgressLogScalarFieldEnum = {
+  id: 'id',
+  progress: 'progress',
+  note: 'note',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId',
+  taskId: 'taskId',
+  goalId: 'goalId'
+};
+
+exports.Prisma.ImportedFileScalarFieldEnum = {
+  id: 'id',
+  fileName: 'fileName',
+  fileType: 'fileType',
+  fileSize: 'fileSize',
+  ossPath: 'ossPath',
+  description: 'description',
+  tags: 'tags',
+  uploadedAt: 'uploadedAt',
+  updatedAt: 'updatedAt',
+  userId: 'userId'
+};
+
+exports.Prisma.LogArchiveScalarFieldEnum = {
+  id: 'id',
+  content: 'content',
+  logDate: 'logDate',
+  archiveDate: 'archiveDate',
+  year: 'year',
+  month: 'month',
+  day: 'day',
+  tags: 'tags'
 };
 
 exports.Prisma.SortOrder = {
@@ -251,7 +299,11 @@ exports.Prisma.ModelName = {
   Goal: 'Goal',
   Message: 'Message',
   Category: 'Category',
-  Tag: 'Tag'
+  Tag: 'Tag',
+  TimeRecord: 'TimeRecord',
+  ProgressLog: 'ProgressLog',
+  ImportedFile: 'ImportedFile',
+  LogArchive: 'LogArchive'
 };
 
 /**

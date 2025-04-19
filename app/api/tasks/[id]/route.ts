@@ -21,10 +21,10 @@ const taskUpdateSchema = z.object({
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const taskId = params.id;
+    const taskId = context.params.id;
 
     const task = await prisma.task.findUnique({
       where: { id: taskId },
@@ -71,10 +71,10 @@ export async function GET(
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const taskId = params.id;
+    const taskId = context.params.id;
     const body = await req.json();
 
     // 验证请求数据
@@ -160,10 +160,10 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const taskId = params.id;
+    const taskId = context.params.id;
 
     // 检查任务是否存在
     const task = await prisma.task.findUnique({

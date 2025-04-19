@@ -15,12 +15,13 @@ const taskStatusUpdateSchema = z.object({
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const taskId = params.id;
+    // 确保 params 是已解析的对象
+    const taskId = context.params.id;
     const body = await req.json();
-    
+
     // 验证请求数据
     const validation = taskStatusUpdateSchema.safeParse(body);
     if (!validation.success) {
@@ -29,21 +30,21 @@ export async function PATCH(
         { status: 400 }
       );
     }
-    
+
     const { status } = validation.data;
-    
+
     // 检查任务是否存在
     const task = await prisma.task.findUnique({
       where: { id: taskId },
     });
-    
+
     if (!task) {
       return NextResponse.json(
         { error: "Task not found" },
         { status: 404 }
       );
     }
-    
+
     // 更新任务状态
     const updatedTask = await prisma.task.update({
       where: { id: taskId },
@@ -58,7 +59,7 @@ export async function PATCH(
         },
       },
     });
-    
+
     return NextResponse.json(updatedTask);
   } catch (error) {
     console.error("Error updating task status:", error);

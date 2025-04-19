@@ -17,8 +17,10 @@ import {
   X,
   Database,
   Target,
+  Archive,
   MessageSquare,
-  FileInput
+  FileInput,
+  FileText
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useAuth } from "@/hooks/useAuth";
@@ -112,6 +114,9 @@ export function Sidebar() {
             <SidebarLink href="/input" icon={<FileInput className="h-5 w-5" />} onClick={closeSidebar}>
               信息采集 (INPUT)
             </SidebarLink>
+            <SidebarLink href="/input/files" icon={<FileText className="h-5 w-5" />} onClick={closeSidebar}>
+              文件管理
+            </SidebarLink>
 
             <div className="pt-4 pb-2">
               <p className="px-3 text-xs font-medium text-muted-foreground">PDCA 循环</p>
@@ -148,6 +153,9 @@ export function Sidebar() {
             </SidebarLink>
             <SidebarLink href="/admin/database" icon={<Database className="h-5 w-5" />} onClick={closeSidebar}>
               数据库
+            </SidebarLink>
+            <SidebarLink href="/admin/logs" icon={<Archive className="h-5 w-5" />} onClick={closeSidebar}>
+              日志归档
             </SidebarLink>
           </nav>
 

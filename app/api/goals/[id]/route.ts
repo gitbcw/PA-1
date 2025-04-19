@@ -26,10 +26,10 @@ const goalUpdateSchema = z.object({
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const goalId = params.id;
+    const goalId = context.params.id;
 
     const goal = await prisma.goal.findUnique({
       where: { id: goalId },
@@ -79,10 +79,10 @@ export async function GET(
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const goalId = params.id;
+    const goalId = context.params.id;
     const body = await req.json();
 
     // 验证请求数据
@@ -176,10 +176,10 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
   try {
-    const goalId = params.id;
+    const goalId = context.params.id;
 
     // 检查目标是否存在
     const goal = await prisma.goal.findUnique({

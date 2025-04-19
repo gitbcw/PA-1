@@ -40,3 +40,17 @@ export function getFutureDateISOString(days: number): string {
   date.setDate(date.getDate() + days);
   return date.toISOString().split('T')[0] + 'T00:00:00.000Z';
 }
+
+/**
+ * 格式化时间为 HH:MM 格式
+ * @param dateTime 日期时间字符串
+ * @returns 格式化后的时间字符串
+ */
+export function formatTime(dateTime: string): string {
+  const date = new Date(dateTime);
+  return date.toLocaleTimeString('zh-CN', {
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false
+  });
+}

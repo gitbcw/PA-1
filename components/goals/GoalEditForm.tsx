@@ -16,8 +16,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { LoaderCircle, Save, ArrowLeft, Trash2 } from "lucide-react";
+import { LoaderCircle, Save, ArrowLeft, Trash2, AlertCircle } from "lucide-react";
 import { formatDate } from "@/utils/date";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 interface GoalEditFormProps {
   goalId?: string;
@@ -29,6 +30,9 @@ export function GoalEditForm({ goalId, userId }: GoalEditFormProps) {
   const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [availableParentGoals, setAvailableParentGoals] = useState<Goal[]>([]);
+  const [loadingParentGoals, setLoadingParentGoals] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [goal, setGoal] = useState<Partial<Goal>>({
     title: "",
     description: "",
@@ -64,6 +68,32 @@ export function GoalEditForm({ goalId, userId }: GoalEditFormProps) {
     }
   }, [goalId]);
 
+  // 加载可用的父目标
+  useEffect(() => {
+    if (userId) {
+      setLoadingParentGoals(true);
+      fetch(`/api/goals?userId=${userId}`)
+        .then((res) => {
+          if (!res.ok) throw new Error("Failed to fetch goals");
+          return res.json();
+        })
+        .then((data) => {
+          // 过滤掉当前目标和可能导致循环依赖的目标
+          const filteredGoals = goalId
+            ? data.filter((g: Goal) => g.id !== goalId)
+            : data;
+          setAvailableParentGoals(filteredGoals);
+        })
+        .catch((error) => {
+          console.error("Error loading parent goals:", error);
+          toast.error("加载可用父目标失败");
+        })
+        .finally(() => {
+          setLoadingParentGoals(false);
+        });
+    }
+  }, [userId, goalId]);
+
   // 处理表单字段变化
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -91,9 +121,50 @@ export function GoalEditForm({ goalId, userId }: GoalEditFormProps) {
     }
   };
 
+  // 验证目标关系，防止循环依赖
+  const validateGoalRelationship = (parentId: string | null | undefined): boolean => {
+    if (!parentId) return true;
+    if (!goalId) return true; // 新建目标不需要验证
+
+    // 检查选择的父目标是否是当前目标的子目标或子孙目标
+    const checkForCyclicDependency = (goalToCheck: string): boolean => {
+      const childGoals = availableParentGoals.filter(g => g.parentId === goalToCheck);
+      if (childGoals.some(g => g.id === parentId)) return false;
+      return childGoals.every(g => checkForCyclicDependency(g.id));
+    };
+
+    return checkForCyclicDependency(goalId);
+  };
+
+  // 处理父目标选择变化
+  const handleParentGoalChange = (value: string) => {
+    // 如果选择了"none"，表示移除父目标
+    if (!value || value === "none") {
+      setGoal(prev => ({ ...prev, parentId: null }));
+      setError(null);
+      return;
+    }
+
+    // 验证是否会导致循环依赖
+    if (!validateGoalRelationship(value)) {
+      setError("选择的父目标会导致循环依赖，请选择其他目标");
+      return;
+    }
+
+    setGoal(prev => ({ ...prev, parentId: value }));
+    setError(null);
+  };
+
   // 保存目标
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // 再次验证，防止循环依赖
+    if (goal.parentId && !validateGoalRelationship(goal.parentId)) {
+      setError("选择的父目标会导致循环依赖，请选择其他目标");
+      return;
+    }
+
     setSaving(true);
 
     try {
@@ -126,7 +197,7 @@ export function GoalEditForm({ goalId, userId }: GoalEditFormProps) {
   // 删除目标
   const handleDelete = async () => {
     if (!goalId) return;
-    
+
     if (!confirm("确定要删除这个目标吗？此操作无法撤销。")) {
       return;
     }
@@ -320,6 +391,42 @@ export function GoalEditForm({ goalId, userId }: GoalEditFormProps) {
                     handleNumberChange(e, 0, 1)
                   }
                 />
+              </div>
+            </div>
+
+            {/* 目标关系 */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-medium">目标关系</h3>
+
+              {error && (
+                <Alert variant="destructive" className="mb-4">
+                  <AlertCircle className="h-4 w-4" />
+                  <AlertDescription>{error}</AlertDescription>
+                </Alert>
+              )}
+
+              <div className="space-y-2">
+                <Label htmlFor="parentId">父目标</Label>
+                <Select
+                  value={goal.parentId || "none"}
+                  onValueChange={handleParentGoalChange}
+                  disabled={loadingParentGoals}
+                >
+                  <SelectTrigger>
+                    <SelectValue placeholder="选择父目标" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="none">无父目标</SelectItem>
+                    {availableParentGoals.map((parentGoal) => (
+                      <SelectItem key={parentGoal.id} value={parentGoal.id}>
+                        {parentGoal.title} ({parentGoal.level})
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <p className="text-sm text-muted-foreground mt-1">
+                  选择一个父目标可以建立目标之间的层次关系，帮助你更好地组织和管理目标。
+                </p>
               </div>
             </div>
 

@@ -76,9 +76,13 @@ export default function GoalManager() {
     level: "MONTHLY",
     startDate: "",
     endDate: "",
+    parentId: "",
     metrics: [],
     resources: []
   });
+
+  // 可用的父目标
+  const [availableParentGoals, setAvailableParentGoals] = useState([]);
 
   // 加载目标
   const loadGoals = async () => {
@@ -189,6 +193,7 @@ export default function GoalManager() {
       level: "MONTHLY",
       startDate: "",
       endDate: "",
+      parentId: "",
       metrics: [],
       resources: []
     });
@@ -198,12 +203,21 @@ export default function GoalManager() {
   // 打开编辑对话框
   const openEditDialog = (goal) => {
     setSelectedGoal(goal);
+
+    // 加载可用的父目标（排除当前目标及其子目标）
+    const filteredParentGoals = goals.filter(g =>
+      g.id !== goal.id &&
+      (!g.parentId || g.parentId !== goal.id)
+    );
+    setAvailableParentGoals(filteredParentGoals);
+
     setFormData({
       title: goal.title,
       description: goal.description || "",
       level: goal.level,
       startDate: new Date(goal.startDate).toISOString().split('T')[0],
       endDate: new Date(goal.endDate).toISOString().split('T')[0],
+      parentId: goal.parentId || "",
       metrics: goal.metrics || [],
       resources: goal.resources || []
     });
@@ -217,6 +231,9 @@ export default function GoalManager() {
     const today = new Date();
     const thirtyDaysLater = new Date();
     thirtyDaysLater.setDate(today.getDate() + 30);
+
+    // 设置可用的父目标
+    setAvailableParentGoals(goals);
 
     setFormData({
       ...formData,
@@ -474,6 +491,29 @@ export default function GoalManager() {
                   className="col-span-3"
                   rows={3}
                 />
+              </div>
+              <div className="grid grid-cols-4 items-center gap-4">
+                <Label htmlFor="parentId" className="text-right">
+                  父目标
+                </Label>
+                <Select
+                  value={formData.parentId || "none"}
+                  onValueChange={(value) => handleSelectChange("parentId", value === "none" ? "" : value)}
+                >
+                  <SelectTrigger className="col-span-3">
+                    <SelectValue placeholder="选择父目标" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="none">无父目标</SelectItem>
+                    {availableParentGoals
+                      .filter(g => !selectedGoal || g.id !== selectedGoal.id)
+                      .map((goal) => (
+                        <SelectItem key={goal.id} value={goal.id}>
+                          {goal.title} ({goalLevelMap[goal.level]?.label || goal.level})
+                        </SelectItem>
+                      ))}
+                  </SelectContent>
+                </Select>
               </div>
             </div>
             <DialogFooter>

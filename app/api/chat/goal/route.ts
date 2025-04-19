@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
 
     // 获取最后一条人类消息
     const lastMessage = messages[messages.length - 1];
-    
+
     if (lastMessage.role !== "user") {
       return NextResponse.json(
         { error: "Last message must be from user" },
@@ -79,8 +79,10 @@ export async function POST(req: NextRequest) {
       ).toString("base64");
     }
 
+    // 返回标准的JSON响应，而不是流式响应
+    // 这样可以确保消息正确地显示在前端
     return NextResponse.json(
-      { messages: [responseMessage] },
+      { text: response },
       { headers }
     );
   } catch (error) {
